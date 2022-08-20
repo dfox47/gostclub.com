@@ -1,0 +1,83 @@
+/* Tourmaster styles
+----------------------------------------------------------------- */
+
+#tourmaster-urgency-message {
+	width: auto;
+	min-width: 200px;
+}
+
+
+/* Video in the header */
+.tourmaster-background-video {
+	margin:0 !important;
+}
+
+
+/* Calendar */
+#ui-datepicker-div {
+	z-index:2 !important;
+}
+.tourmaster-body .ui-datepicker table {
+	width: 100%;
+	margin-top: 10px;
+}
+.tourmaster-body .ui-datepicker table tr td {
+	padding: 5px 0;
+	border-bottom: 1px solid #ddd;
+}
+.tourmaster-body .ui-datepicker table tr td span,
+.tourmaster-body .ui-datepicker table tr td a {
+	padding: 8px 0;
+}
+
+
+/* Text fields */
+.tourmaster-form-field input[type="text"],
+.tourmaster-form-field input[type="email"],
+.tourmaster-form-field input[type="password"],
+.tourmaster-form-field textarea,
+.tourmaster-form-field select {
+	height:auto;
+}
+
+
+/* Tours list */
+.tourmaster-tour-info-wrap .tourmaster-tour-info {
+	margin-bottom:0;
+	font-weight: inherit;
+}
+.tourmaster-tour-grid .tourmaster-tour-info-wrap {
+	margin-top: 0.8em;
+	margin-bottom: 1em;
+}
+.tourmaster-tour-grid .tourmaster-tour-content {
+	font-weight: inherit;
+}
+
+/* Widget: Tour search */
+.tourmaster-tour-search-wrap {
+	padding-top: 0.001px;
+}
+.tourmaster-tour-search-wrap.tourmaster-with-frame {
+	background-color:transparent;
+	padding:0;
+}
+.elementor-widget-container .tourmaster-tour-search-wrap .tourmaster-form-field,
+.tourmaster-tour-search-wrap form {
+	overflow: hidden;
+}
+.tourmaster-style-column .tourmaster-tour-search-wrap input.tourmaster-tour-search-submit[type="submit"] {
+	margin-top: 32px !important;
+	margin-bottom: 20px;
+}
+
+/* Widget: Tour - Category */
+.tourmaster-tour-category-widget .tourmaster-tour-category-head .tourmaster-tour-category-title a {
+	color: #fff;
+}
+
+/* Widget: Tour */
+.tourmaster-tour-widget .tourmaster-tour-title {
+	margin-top: 0;
+	line-height:1.5em;
+}

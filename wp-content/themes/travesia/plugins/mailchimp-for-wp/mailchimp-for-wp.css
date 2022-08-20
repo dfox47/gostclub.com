@@ -1,0 +1,61 @@
+/* MailChimp for WP styles
+----------------------------------------------------------------- */
+.mc4wp-form {
+	position:relative;
+	padding:0.9em 1em 0 1.45em;
+}
+.mc4wp-form .mc4wp-form-fields input[type="text"]{
+	display: block;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid;
+	border-radius: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 1.25em;
+	margin-top: 2em;
+}
+.mc4wp-form .mc4wp-form-fields input[type="email"] {
+	padding: 1em;
+	width: 100%;
+	vertical-align:top;
+    -webkit-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+	border: none;
+	border-bottom: 1px solid;
+	border-radius: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 1.25em;
+	margin-top: 1.55em;
+}
+.mc4wp-form .mc4wp-form-fields input[type="submit"] {
+	z-index: 1;
+	vertical-align: top;
+	padding: 1.418em 3.7em;
+	margin-top: 4em;
+	letter-spacing: 2px;
+	margin-bottom: 4em;
+}
+.mc4wp-form .mc4wp-form-fields input:focus{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow:  none;
+}
+.mc4wp-form .mc4wp-form-fields input[type="email"] + label {
+	margin-top: 0.75em;
+	display: inline-block;
+}
+.mc4wp-form .mc4wp-alert {
+	margin: 1.5em 0;
+	padding: 1em;
+	line-height:1.5em;
+}
+.mailchimp_title{
+	margin-bottom: 0;
+}
+.mailchimp_title + .mailchimp_title{
+	margin-top: 0;
+	margin-bottom: 0.55em;
+}

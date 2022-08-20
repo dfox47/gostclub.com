@@ -1,0 +1,42 @@
+[17-Mar-2017 17:10:35 Europe/Sofia] PHP Fatal error:  Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/404.php on line 11
+[23-Mar-2017 21:51:32 Europe/Sofia] PHP Fatal error:  Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/404.php on line 11
+[06-Feb-2018 05:29:33 Europe/Sofia] PHP Fatal error:  Call to undefined function is_active_sidebar() in /home/gostclub/public_html/wp-content/themes/supermag/sidebar.php on line 11
+[06-Feb-2018 05:29:33 Europe/Sofia] PHP Fatal error:  Call to undefined function is_active_sidebar() in /home/gostclub/public_html/wp-content/themes/supermag/sidebar.php on line 11
+[14-Mar-2019 13:37:02 Europe/Sofia] PHP Fatal error:  Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[06-Sep-2019 19:35:39 Europe/Sofia] PHP Fatal error:  Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[28-Nov-2020 19:06:10 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[28-Nov-2020 19:06:10 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[28-Nov-2020 19:11:23 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[28-Nov-2020 19:13:18 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[28-Nov-2020 19:13:46 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[28-Nov-2020 19:22:25 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[28-Nov-2020 19:27:53 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[28-Nov-2020 19:35:03 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/index.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/index.php on line 16
+[22-May-2021 00:07:32 Europe/Sofia] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/gostclub/public_html/wp-content/themes/supermag/404.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/gostclub/public_html/wp-content/themes/supermag/404.php on line 11

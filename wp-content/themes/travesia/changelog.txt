@@ -1,0 +1,55 @@
+Version 1.1.4
+    	Added:
+    		- Compatibility with WP 5.2.2
+    		- Compatibility with PHP7.3
+			- Contact Form 7
+
+        Fixed:
+            - Update plugins to their latest versions
+
+        Changed:
+    		- Update demo data
+
+Version 1.1.3
+    Fixed:
+        - Plugins are updated to their latest versions
+        - Compatibility with PHP7.2 is improved
+        - Scripts libraries are updated
+
+Version 1.1.2
+    Added:
+            - Compatibility with Gutenberg
+            - WP GDPR Compliance plugin
+            - Alert to Demo data installation
+            - Privacy Policy page
+    Fixed:
+            - Compatibility with WP 5.0
+            - Update plugins to their latest versions
+            - Improve theme styles
+            - Fonts settings
+            - Style for IE
+            - Update documentation
+
+    Changed:
+            - Update default contact forms to make them GDPR-compliant
+            - Update demo data
+
+Version 1.1.1
+    Fixed:
+    -Styles Tour Master plagin
+    -Plugins updated
+
+Version 1.1.0
+	Added:
+	  - Added Tidiochat
+
+    Fixed:
+      - WordPress Version 4.9.4 ready
+      - Plugins updated
+      - Compatibility with PHP7
+      - Importer updated
+    Removed:
+      - Remove trx-booking-tour plugin
+
+Version 1.0
+	Release
