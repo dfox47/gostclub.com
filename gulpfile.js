@@ -12,7 +12,7 @@ let gutil           = require('gulp-util')
 let concat          = require('gulp-concat')
 let cssMinify       = require('gulp-csso')
 let rename          = require('gulp-rename')
-let sass            = require('gulp-sass')
+let sass            = require('gulp-sass')(require('sass'))
 let uglify          = require('gulp-uglify')
 
 // FTP config
@@ -21,17 +21,19 @@ let password        = config.password
 let port            = config.port
 let user            = config.user
 
-let remoteFolder        = '/gostclub.com/public_html/wp-content/themes/supermag/'
-let remoteFolderHooks   = remoteFolder + 'acmethemes/hooks/'
-let remoteFolderCss     = remoteFolder + 'css/'
-let remoteFolderJs      = remoteFolder + 'js/'
-let remoteFolderParts   = remoteFolder + 'template-parts/'
+let remoteFolder    = '/gostclub.com/public_html/wp-content/themes/supermag/'
+let remoteHooks     = remoteFolder + 'acmethemes/hooks/'
+let remoteAssets    = remoteFolder + 'assets/'
+let remoteCss       = remoteAssets + 'css/'
+let remoteJs        = remoteAssets + 'js/'
+let remoteParts     = remoteFolder + 'template-parts/'
 
-let localFolder         = 'wp-content/themes/supermag/'
-let localFolderHooks    = localFolder + 'acmethemes/hooks/'
-let localFolderCss      = localFolder + 'css/'
-let localFolderJs       = localFolder + 'js/'
-let localFolderParts    = localFolder + 'template-parts/'
+let localFolder     = 'wp-content/themes/supermag/'
+let localHooks      = localFolder + 'acmethemes/hooks/'
+let localAssets     = localFolder + 'assets/'
+let localCss        = localAssets + 'css/'
+let localJs         = localAssets + 'js/'
+let localParts      = localFolder + 'template-parts/'
 
 function getFtpConnection() {
 	return ftp.create({
@@ -50,24 +52,24 @@ let conn = getFtpConnection()
 
 
 gulp.task('css', function () {
-	return gulp.src(localFolderCss + 'styles.scss')
+	return gulp.src(localCss + 'styles.scss')
 		.pipe(sass())
 		.pipe(cssMinify())
 		.pipe(rename({
-			// basename: 'styles',
-			suffix: '.min'
+			basename: 'style',
+			// suffix: '.min'
 		}))
 		.pipe(conn.dest(remoteFolder));
 });
 
 gulp.task('css_copy', function () {
-	return gulp.src(localFolderCss + '**/*')
-		.pipe(conn.dest(remoteFolderCss));
+	return gulp.src(localCss + '**/*')
+		.pipe(conn.dest(remoteCss));
 });
 
 gulp.task('hooks_copy', function () {
-	return gulp.src(localFolderHooks + '**/*')
-		.pipe(conn.dest(remoteFolderHooks));
+	return gulp.src(localHooks + '**/*')
+		.pipe(conn.dest(remoteHooks));
 });
 
 gulp.task('php', function () {
@@ -76,16 +78,16 @@ gulp.task('php', function () {
 });
 
 gulp.task('template-parts', function () {
-	return gulp.src(localFolderParts + '**/*')
-		.pipe(conn.dest(remoteFolderParts));
+	return gulp.src(localParts + '**/*')
+		.pipe(conn.dest(remoteParts));
 });
 
 gulp.task('js', function () {
 	return gulp.src([
-		localFolderJs + 'jquery-3.4.1.min.js',
-		localFolderJs + 'easeljs-0.7.1.min.js',
-		localFolderJs + 'TweenMax.min.js',
-		localFolderJs + '**/*.js'
+		localJs + 'jquery-3.4.1.min.js',
+		localJs + 'easeljs-0.7.1.min.js',
+		localJs + 'TweenMax.min.js',
+		localJs + '**/*.js'
 	])
 		.pipe(concat('all.js'))
 		// .pipe(uglify())
@@ -96,15 +98,16 @@ gulp.task('js', function () {
 });
 
 gulp.task('js_copy', function () {
-	return gulp.src(localFolderJs + '**/*')
-		.pipe(conn.dest(remoteFolderJs));
+	return gulp.src(localJs + '**/*')
+		.pipe(conn.dest(remoteJs));
 });
 
 gulp.task('watch', function() {
-	// gulp.watch(localFolder + '*.php',           gulp.series('php'))
-	gulp.watch(localFolderHooks + '**/*',          gulp.series('hooks_copy'))
-	// gulp.watch(localFolderJs + '**/*',          gulp.series('js', 'js_copy'))
-	// gulp.watch(localFolderParts + '**/*',       gulp.series('template-parts'))
+	// gulp.watch(localFolder + '*.php',            gulp.series('php'))
+	gulp.watch(localHooks + '**/*',           gulp.series('hooks_copy'))
+	gulp.watch(localCss + '**/*',             gulp.series('css', 'css_copy'))
+	// gulp.watch(localJs + '**/*',           gulp.series('js', 'js_copy'))
+	// gulp.watch(localParts + '**/*',        gulp.series('template-parts'))
 });
 
 gulp.task('default', gulp.series('watch'))
