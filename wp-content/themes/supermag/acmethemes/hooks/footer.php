@@ -9,14 +9,12 @@
  *
  */
 if ( ! function_exists( 'supermag_after_content' ) ) :
-
-    function supermag_after_content() {
-      ?>
-        </div><!-- #content -->
-        </div><!-- content-wrapper-->
-    <?php
-    }
+	function supermag_after_content() { ?>
+		</div><!-- #content -->
+		</div><!-- content-wrapper-->
+	<?php }
 endif;
+
 add_action( 'supermag_action_after_content', 'supermag_after_content', 10 );
 
 /**
@@ -30,54 +28,56 @@ add_action( 'supermag_action_after_content', 'supermag_after_content', 10 );
  */
 if ( ! function_exists( 'supermag_footer' ) ) :
 
-    function supermag_footer() {
+	function supermag_footer() {
+		global $supermag_customizer_all_values; ?>
 
-        global $supermag_customizer_all_values;
-        ?>
-        <div class="clearfix"></div>
-        <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="wrapper footer-wrapper">
-                <div class="top-bottom">
-                    <div id="footer-top">
-                        <div class="footer-columns">
-                           <?php if( is_active_sidebar( 'footer-col-one' ) ) : ?>
-                                <div class="footer-sidebar acme-col-3">
-                                    <?php dynamic_sidebar( 'footer-col-one' ); ?>
-                                </div>
-                            <?php endif; ?>
+		<div class="clearfix"></div>
 
-                            <?php if( is_active_sidebar( 'footer-col-two' ) ) : ?>
-                                <div class="footer-sidebar acme-col-3">
-                                    <?php dynamic_sidebar( 'footer-col-two' ); ?>
-                                </div>
-                            <?php endif; ?>
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="wrapper footer-wrapper">
+				<div class="top-bottom">
+					<div id="footer-top">
+						<div class="footer-columns">
+							<?php if( is_active_sidebar( 'footer-col-one' ) ) : ?>
+								<div class="footer-sidebar acme-col-3">
+									<?php dynamic_sidebar( 'footer-col-one' ); ?>
+								</div>
+							<?php endif; ?>
 
-                            <?php if( is_active_sidebar( 'footer-col-three' ) ) : ?>
-                                <div class="footer-sidebar acme-col-3">
-                                    <?php dynamic_sidebar( 'footer-col-three' ); ?>
-                                </div>
-                            <?php endif; ?>
-                            <div class="clear"></div>
+							<?php if( is_active_sidebar( 'footer-col-two' ) ) : ?>
+								<div class="footer-sidebar acme-col-3">
+									<?php dynamic_sidebar( 'footer-col-two' ); ?>
+								</div>
+							<?php endif; ?>
 
-                        </div>
-                    </div><!-- #foter-top -->
-                    <div class="clearfix"></div>
-                 </div><!-- top-bottom-->
-                <div class="footer-copyright border text-center">
-                    <p>
-                        <?php if( isset( $supermag_customizer_all_values['supermag-footer-copyright'] ) ): ?>
-                            <?php echo wp_kses_post( $supermag_customizer_all_values['supermag-footer-copyright'] ); ?>
-                        <?php endif; ?>
-                    </p>
-                    <div class="site-info">
-                    <a href="http://www.acmethemes.com/" rel="designer">AcmeThemes</a> - <a href="http://wp-templates.ru/" title="Шаблоны WordPress">WP</a> - <a href="http://builderbody.ru/kreatin-instrukciya-po-primeneniyu/" title="Креатин — инструкция по применению">Creatine</a>
-                    </div><!-- .site-info -->
-                </div>
-            </div><!-- footer-wrapper-->
-        </footer><!-- #colophon -->
-    <?php
-    }
+							<?php if( is_active_sidebar( 'footer-col-three' ) ) : ?>
+								<div class="footer-sidebar acme-col-3">
+									<?php dynamic_sidebar( 'footer-col-three' ); ?>
+								</div>
+							<?php endif; ?>
+							<div class="clear"></div>
+						</div>
+					</div><!-- #foter-top -->
+
+					<div class="clearfix"></div>
+				</div><!-- top-bottom-->
+
+				<div class="footer-copyright border text-center">
+					<p>
+						<?php if( isset( $supermag_customizer_all_values['supermag-footer-copyright'] ) ): ?>
+							<?php echo wp_kses_post( $supermag_customizer_all_values['supermag-footer-copyright'] ); ?>
+						<?php endif; ?>
+					</p>
+
+					<div class="site-info">
+						<a href="http://www.acmethemes.com/" rel="designer">AcmeThemes</a> - <a href="http://wp-templates.ru/" title="Шаблоны WordPress">WP</a> - <a href="http://builderbody.ru/kreatin-instrukciya-po-primeneniyu/" title="Креатин — инструкция по применению">Creatine</a>
+					</div>
+				</div>
+			</div><!-- footer-wrapper-->
+		</footer><!-- #colophon -->
+	<?php }
 endif;
+
 add_action( 'supermag_action_footer', 'supermag_footer', 10 );
 
 /**
@@ -90,11 +90,17 @@ add_action( 'supermag_action_footer', 'supermag_footer', 10 );
  *
  */
 if ( ! function_exists( 'supermag_page_end' ) ) :
-
-    function supermag_page_end() {
-        ?>
-        </div><!-- #page -->
-    <?php
-    }
+	function supermag_page_end() { ?>
+		</div><!-- #page -->
+	<?php }
 endif;
-add_action( 'supermag_action_after', 'supermag_page_end', 10 );
+
+add_action( 'supermag_action_after', 'supermag_page_end', 10 ); ?>
+
+
+
+<?php $themeFolderJs = '/wp-content/themes/supermag/assets/js'; ?>
+
+<script src="<?php echo $themeFolderJs; ?>/jquery-3.6.0.min.js"></script>
+<script src="<?php echo $themeFolderJs; ?>/owl.carousel.min.js"></script>
+<script src="<?php echo $themeFolderJs; ?>/custom.js"></script>
