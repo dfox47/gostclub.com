@@ -22,11 +22,13 @@ let port            = config.port
 let user            = config.user
 
 let remoteFolder        = '/gostclub.com/public_html/wp-content/themes/supermag/'
+let remoteFolderHooks   = remoteFolder + 'acmethemes/hooks/'
 let remoteFolderCss     = remoteFolder + 'css/'
 let remoteFolderJs      = remoteFolder + 'js/'
 let remoteFolderParts   = remoteFolder + 'template-parts/'
 
-let localFolder         = 'www/wp-content/themes/supermag/'
+let localFolder         = 'wp-content/themes/supermag/'
+let localFolderHooks    = localFolder + 'acmethemes/hooks/'
 let localFolderCss      = localFolder + 'css/'
 let localFolderJs       = localFolder + 'js/'
 let localFolderParts    = localFolder + 'template-parts/'
@@ -63,6 +65,11 @@ gulp.task('css_copy', function () {
 		.pipe(conn.dest(remoteFolderCss));
 });
 
+gulp.task('hooks_copy', function () {
+	return gulp.src(localFolderHooks + '**/*')
+		.pipe(conn.dest(remoteFolderHooks));
+});
+
 gulp.task('php', function () {
 	return gulp.src(localFolder + '*.php')
 		.pipe(conn.dest(remoteFolder));
@@ -95,7 +102,7 @@ gulp.task('js_copy', function () {
 
 gulp.task('watch', function() {
 	// gulp.watch(localFolder + '*.php',           gulp.series('php'))
-	// gulp.watch(localFolderCss + '**/*',         gulp.series('css', 'css_copy'))
+	gulp.watch(localFolderHooks + '**/*',          gulp.series('hooks_copy'))
 	// gulp.watch(localFolderJs + '**/*',          gulp.series('js', 'js_copy'))
 	// gulp.watch(localFolderParts + '**/*',       gulp.series('template-parts'))
 });
