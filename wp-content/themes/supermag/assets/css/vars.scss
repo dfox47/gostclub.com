@@ -1,69 +1,23 @@
-
-
-
 @charset "utf-8";
 // sCSS Document
 // Powered by foxartbox | info@foxartbox.com
 
-
-
 // colors
-$c_border:                  #444;
-$c_gotop:                   #f4f4f4;
-$c_gradient_10:             #d59bd8;
-$c_gradient_11:             #e6c2e8;
-$c_gradient_12:             #e6c2e8;
-$c_gradient_13:             #e4032b;
-$c_gradient_14:             #404040;
-$c_gradient_15:             #cdcdcf;
-$c_gradient_16:             #e93555;
-$c_gradient_17:             #a7d7d7;
-$c_gradient_18:             #8fbfbf;
-$c_gradient_19:             #c0f0f0;
-$c_gradient_1:              #85dcfe;
-$c_gradient_20:             #addddd;
-$c_gradient_2:              #5ccefb;
-$c_gradient_3:              #c9effe;
-$c_gradient_4:              #99e1fe;
-$c_gradient_5:              #feb5b8;
-$c_gradient_6:              #fe8389;
-$c_gradient_7:              #fed7d9;
-$c_gradient_8:              #feb9bd;
-$c_gradient_9:              #dba0de;
-$c_gradient_footer_1:       #ee0979;
-$c_gradient_footer_2:       #ff6a00;
-$c_gradient_home_end:       #730043;
-$c_gradient_home_start:     #070449;
-$c_main:                    #363636;
-$c_main_bg:                 #d8d2d2;
-$c_selected:                #34d955;
-$c_text:                    #707070;
-$c_text_shadow:             #919191;
-$c_text_shadow_2:           #070449;
-$c_title:                   #413c3c;
+$c_main:                #ddba74;
 
+$themeFolder:           '/wp-content/themes/foxartbox/';
+$fontsFolder:           $themeFolder + 'fonts/';
 
-
-$themeFolder:               '/wp-content/themes/foxartbox/';
-$fontsFolder:               $themeFolder + 'fonts/';
-
-
-
-$transition:                all .3s ease-in-out;
-
-
+$transition:            all .3s ease-in-out;
 
 // @medias
-$desktop:             'only screen and (max-width: 1279px)';
-$mobile:              'only screen and (max-width: 767px)';
-$tablet:              'only screen and (max-width: 1023px)';
+$desktop:               'only screen and (max-width: 1279px)';
+$mobile:                'only screen and (max-width: 767px)';
+$tablet:                'only screen and (max-width: 1023px)';
 
-
-
-$font_main:                 'Gotham Pro',       Arial, Helvetica, sans-serif;
-$font_gotham_pro:           'Gotham Pro',       Arial, Helvetica, sans-serif;
-
-
+// fonts
+$font_main:             'Gotham Pro',       Arial, Helvetica, sans-serif;
+$font_gotham_pro:       'Gotham Pro',       Arial, Helvetica, sans-serif;
 
 // Gotham Pro
 @font-face {
