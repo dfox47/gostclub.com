@@ -1,0 +1,224 @@
+
+
+
+@charset "utf-8";
+// sCSS Document
+// Powered by foxartbox | info@foxartbox.com
+
+
+
+// colors
+$c_border:                  #444;
+$c_gotop:                   #f4f4f4;
+$c_gradient_10:             #d59bd8;
+$c_gradient_11:             #e6c2e8;
+$c_gradient_12:             #e6c2e8;
+$c_gradient_13:             #e4032b;
+$c_gradient_14:             #404040;
+$c_gradient_15:             #cdcdcf;
+$c_gradient_16:             #e93555;
+$c_gradient_17:             #a7d7d7;
+$c_gradient_18:             #8fbfbf;
+$c_gradient_19:             #c0f0f0;
+$c_gradient_1:              #85dcfe;
+$c_gradient_20:             #addddd;
+$c_gradient_2:              #5ccefb;
+$c_gradient_3:              #c9effe;
+$c_gradient_4:              #99e1fe;
+$c_gradient_5:              #feb5b8;
+$c_gradient_6:              #fe8389;
+$c_gradient_7:              #fed7d9;
+$c_gradient_8:              #feb9bd;
+$c_gradient_9:              #dba0de;
+$c_gradient_footer_1:       #ee0979;
+$c_gradient_footer_2:       #ff6a00;
+$c_gradient_home_end:       #730043;
+$c_gradient_home_start:     #070449;
+$c_main:                    #363636;
+$c_main_bg:                 #d8d2d2;
+$c_selected:                #34d955;
+$c_text:                    #707070;
+$c_text_shadow:             #919191;
+$c_text_shadow_2:           #070449;
+$c_title:                   #413c3c;
+
+
+
+$themeFolder:               '/wp-content/themes/foxartbox/';
+$fontsFolder:               $themeFolder + 'fonts/';
+
+
+
+$transition:                all .3s ease-in-out;
+
+
+
+// @medias
+$desktop:             'only screen and (max-width: 1279px)';
+$mobile:              'only screen and (max-width: 767px)';
+$tablet:              'only screen and (max-width: 1023px)';
+
+
+
+$font_main:                 'Gotham Pro',       Arial, Helvetica, sans-serif;
+$font_gotham_pro:           'Gotham Pro',       Arial, Helvetica, sans-serif;
+
+
+
+// Gotham Pro
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro.eot');
+	src: local('Gotham Pro'), local('GothamPro'),
+	url($fontsFolder + 'GothamPro.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro.woff') format('woff'),
+	url($fontsFolder + 'GothamPro.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Gotham Pro Black
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-Black.eot');
+	src: local('Gotham Pro Black'), local('GothamPro-Black'),
+	url($fontsFolder + 'GothamPro-Black.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-Black.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-Black.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+// Gotham Pro Black Italic
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-BlackItalic.eot');
+	src: local('Gotham Pro Black Italic'), local('GothamPro-BlackItalic'),
+	url($fontsFolder + 'GothamPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-BlackItalic.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-BlackItalic.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-BlackItalic.ttf') format('truetype');
+	font-weight: 900;
+	font-style: italic;
+}
+
+// Gotham Pro Bold
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-Bold.eot');
+	src: local('Gotham Pro Bold'), local('GothamPro-Bold'),
+	url($fontsFolder + 'GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-Bold.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-Bold.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+// Gotham Pro Bold Italic
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-BoldItalic.eot');
+	src: local('Gotham Pro Bold Italic'), local('GothamPro-BoldItalic'),
+	url($fontsFolder + 'GothamPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-BoldItalic.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-BoldItalic.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+// Gotham Pro Italic
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-Italic.eot');
+	src: local('Gotham Pro Italic'), local('GothamPro-Italic'),
+	url($fontsFolder + 'GothamPro-Italic.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-Italic.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-Italic.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+// Gotham Pro Light
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-Light.eot');
+	src: local('Gotham Pro Light'), local('GothamPro-Light'),
+	url($fontsFolder + 'GothamPro-Light.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-Light.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-Light.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+// Gotham Pro Light Italic
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-LightItalic.eot');
+	src: local('Gotham Pro Light Italic'), local('GothamPro-LightItalic'),
+	url($fontsFolder + 'GothamPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-LightItalic.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-LightItalic.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+// Gotham Pro Medium
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-Medium.eot');
+	src: local('Gotham Pro Medium'), local('GothamPro-Medium'),
+	url($fontsFolder + 'GothamPro-Medium.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-Medium.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-Medium.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+// Gotham Pro Medium Italic
+@font-face {
+	font-family: 'Gotham Pro';
+	src: url($fontsFolder + 'GothamPro-MediumItalic.eot');
+	src: local('Gotham Pro Medium Italic'), local('GothamPro-MediumItalic'),
+	url($fontsFolder + 'GothamPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamPro-MediumItalic.woff2') format('woff2'),
+	url($fontsFolder + 'GothamPro-MediumItalic.woff') format('woff'),
+	url($fontsFolder + 'GothamPro-MediumItalic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+// Gotham Pro Narrow Bold
+@font-face {
+	font-family: 'Gotham Pro Narrow';
+	src: url($fontsFolder + 'GothamProNarrow-Bold.eot');
+	src: local('Gotham Pro Narrow Bold'), local('GothamProNarrow-Bold'),
+	url($fontsFolder + 'GothamProNarrow-Bold.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamProNarrow-Bold.woff2') format('woff2'),
+	url($fontsFolder + 'GothamProNarrow-Bold.woff') format('woff'),
+	url($fontsFolder + 'GothamProNarrow-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+// Gotham Pro Narrow Medium
+@font-face {
+	font-family: 'Gotham Pro Narrow';
+	src: url($fontsFolder + 'GothamProNarrow-Medium.eot');
+	src: local('Gotham Pro Narrow Medium'), local('GothamProNarrow-Medium'),
+	url($fontsFolder + 'GothamProNarrow-Medium.eot?#iefix') format('embedded-opentype'),
+	url($fontsFolder + 'GothamProNarrow-Medium.woff2') format('woff2'),
+	url($fontsFolder + 'GothamProNarrow-Medium.woff') format('woff'),
+	url($fontsFolder + 'GothamProNarrow-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+

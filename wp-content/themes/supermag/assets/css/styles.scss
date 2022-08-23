@@ -1,0 +1,26 @@
+/*
+Theme Name: SuperMag
+Theme URI: http://www.acmethemes.com/themes/supermag/
+Author: acmethemes
+Author URI: http://www.acmethemes.com/
+Description: AcmeThemes  ( http://acmethemes.com ) proudly presents SuperMag, a Ultimate Theme for Magazine. SuperMag is specially designed for news, magazine and blog, suitable for any magazine style site. SuperMag is also advertisement ready theme, Advertisement can be added from customizer and widgets. SuperMag is highly customizable theme. You can customize header, footer, sidebar, main homepage and inner sections. The whole site color can be changed with single click. SuperMag is widgetized theme, with advanced widgets you can design your site yourself. Its unique feature includes: drag/drop/reorder widgetized area, advanced custom widgets, advanced layout options, breaking news options, featured images options for blog/category/archive pages and single page/post, social media integration, advertisement ready, breadcrumb and more. Design your site without touching code. You can check our demo here http://www.acmethemes.com/demo/?theme=supermag
+Version: 10.1.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: supermag
+Tags: orange, brown, yellow, dark, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+
+*/
+
+@charset "utf-8";
+// sCSS Document
+// Powered by www.foxartbox.com
+
+// should be first
+@import "vars";
+@import "defaults";
+
+@import "hero_slider";
+
+// must be the last
+@import "custom";
