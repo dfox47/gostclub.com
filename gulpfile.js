@@ -78,9 +78,6 @@ gulp.task('js', function () {
 		localFolderJs + 'jquery-3.4.1.min.js',
 		localFolderJs + 'easeljs-0.7.1.min.js',
 		localFolderJs + 'TweenMax.min.js',
-		// localFolderJs + '',
-		// localFolderJs + '/lightbox-plus-jquery.js',
-		// localFolderJs + '/owl.carousel.js',
 		localFolderJs + '**/*.js'
 	])
 		.pipe(concat('all.js'))
