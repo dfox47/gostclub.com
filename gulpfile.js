@@ -85,8 +85,6 @@ gulp.task('template-parts', function () {
 gulp.task('js', function () {
 	return gulp.src([
 		localJs + 'jquery-3.4.1.min.js',
-		localJs + 'easeljs-0.7.1.min.js',
-		localJs + 'TweenMax.min.js',
 		localJs + '**/*.js'
 	])
 		.pipe(concat('all.js'))
@@ -103,11 +101,12 @@ gulp.task('js_copy', function () {
 });
 
 gulp.task('watch', function() {
-	// gulp.watch(localFolder + '*.php',            gulp.series('php'))
-	gulp.watch(localHooks + '**/*',           gulp.series('hooks_copy'))
-	gulp.watch(localCss + '**/*',             gulp.series('css', 'css_copy'))
-	// gulp.watch(localJs + '**/*',           gulp.series('js', 'js_copy'))
-	// gulp.watch(localParts + '**/*',        gulp.series('template-parts'))
+	// gulp.watch(localFolder + '*.php',    gulp.series('php'))
+	gulp.watch(localHooks + '**/*',         gulp.series('hooks_copy'))
+	gulp.watch(localCss + '**/*',           gulp.series('css', 'css_copy'))
+	// gulp.watch(localJs + '**/*',         gulp.series('js', 'js_copy'))
+	gulp.watch(localJs + '**/*',            gulp.series('js_copy'))
+	// gulp.watch(localParts + '**/*',      gulp.series('template-parts'))
 });
 
 gulp.task('default', gulp.series('watch'))
