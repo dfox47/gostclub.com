@@ -1,6 +1,7 @@
 
 .hero_slider {
-	display: none;
+	//display: none;
+	display: block;
 	height: 400px;
 	width: 100%;
 
@@ -39,5 +40,9 @@
 		position: absolute;
 		width: 100%;
 		z-index: 5;
+	}
+
+	@media all and (max-width: 767px) {
+		height: 50vw;
 	}
 }
