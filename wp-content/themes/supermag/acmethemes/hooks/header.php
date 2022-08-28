@@ -137,7 +137,7 @@ if ( ! function_exists( 'supermag_header' ) ) :
 				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/1.jpg);"></div>
 				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/2.jpg);"></div>
 				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/3.jpg);"></div>
-				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/4.jpg);"></div>
+<!--				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/4.jpg);"></div>-->
 				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/5.jpg);"></div>
 			</div>
 		</div>
