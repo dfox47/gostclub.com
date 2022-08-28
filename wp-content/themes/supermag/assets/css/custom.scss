@@ -1,3 +1,57 @@
+
+.footer_copyright {
+	border-top: 1px solid $c_border;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 20px;
+
+	&__item {
+		padding: 10px;
+	}
+}
+
+.lang_switcher {
+	align-items: center;
+	display: flex;
+	font-size: 18px;
+	justify-content: center;
+	min-height: 38px;
+	text-transform: uppercase;
+
+	a,
+	a:visited {
+		color: #fff;
+		margin: 0 0 0 8px;
+
+		&:hover {
+			color: $c_main;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 Theme Name: SuperMag
 Theme URI: http://www.acmethemes.com/themes/supermag/

@@ -62,19 +62,14 @@ if ( ! function_exists( 'supermag_footer' ) ) :
 					<div class="clearfix"></div>
 				</div><!-- top-bottom-->
 
-				<div class="footer-copyright border text-center">
-					<p>
-						<?php if( isset( $supermag_customizer_all_values['supermag-footer-copyright'] ) ): ?>
-							<?php echo wp_kses_post( $supermag_customizer_all_values['supermag-footer-copyright'] ); ?>
-						<?php endif; ?>
-					</p>
-
-					<div class="site-info">
-						<a href="http://www.acmethemes.com/" rel="designer">AcmeThemes</a> - <a href="http://wp-templates.ru/" title="Шаблоны WordPress">WP</a> - <a href="http://builderbody.ru/kreatin-instrukciya-po-primeneniyu/" title="Креатин — инструкция по применению">Creatine</a>
-					</div>
+				<div class="footer_copyright">
+					<div class="footer_copyright__item"><a href="tel:+359888086900" target="_blank">+359 888086900</a></div>
+					<div class="footer_copyright__item"><a href="mailto:gostclub1@gmail.com" target="_blank">gostclub1@gmail.com</a></div>
+					<div class="footer_copyright__item">ГОСТ клуб <?php echo date("Y"); ?></div>
+					<div class="footer_copyright__item">© All rights reserved</div>
 				</div>
-			</div><!-- footer-wrapper-->
-		</footer><!-- #colophon -->
+			</div>
+		</footer>
 	<?php }
 endif;
 
@@ -96,8 +91,6 @@ if ( ! function_exists( 'supermag_page_end' ) ) :
 endif;
 
 add_action( 'supermag_action_after', 'supermag_page_end', 10 ); ?>
-
-
 
 <?php $themeFolderJs = '/wp-content/themes/supermag/assets/js'; ?>
 
