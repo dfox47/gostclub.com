@@ -137,7 +137,6 @@ if ( ! function_exists( 'supermag_header' ) ) :
 				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/1.jpg);"></div>
 				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/2.jpg);"></div>
 				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/3.jpg);"></div>
-<!--				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/4.jpg);"></div>-->
 				<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/5.jpg);"></div>
 			</div>
 		</div>
@@ -145,8 +144,7 @@ if ( ! function_exists( 'supermag_header' ) ) :
 		<header id="masthead" class="site-header" role="banner">
 			<div class="top-header-section clearfix">
 				<div class="wrapper">
-					<?php
-					if (1 == $supermag_customizer_all_values['supermag-show-date']) {
+					<?php if (1 == $supermag_customizer_all_values['supermag-show-date']) {
 						echo ' <div class="header-latest-posts float-left bn-title">';
 						supermag_date_display();
 						echo "</div>";
@@ -186,17 +184,23 @@ if ( ! function_exists( 'supermag_header' ) ) :
 					} ?>
 
 					<div class="right-header float-right">
-						<?php if ( 1 == $supermag_customizer_all_values['supermag-enable-social'] ) {
-							/*Social Sharing*/
-							/**
-							 * supermag_action_social_links
-							 * @since supermag 1.1.0
-							 *
-							 * @hooked supermag_social_links -  10
-							 */
-							do_action('supermag_action_social_links');
-							/* Social Links*/
-						} ?>
+						<div class="lang_switcher">
+							<a href="/en/">en</a>
+							<a href="/ru/">ru</a>
+							<a href="/">bg</a>
+						</div>
+
+<!--						--><?php //if (1 == $supermag_customizer_all_values['supermag-enable-social']) {
+//							/*Social Sharing*/
+//							/**
+//							 * supermag_action_social_links
+//							 * @since supermag 1.1.0
+//							 *
+//							 * @hooked supermag_social_links -  10
+//							 */
+//							do_action('supermag_action_social_links');
+//							/* Social Links*/
+//						} ?>
 					</div>
 				</div>
 			</div><!-- .top-header-section -->
