@@ -33,7 +33,7 @@ do_action( 'supermag_action_before_head' );?>
 		?>
 
 	</head>
-<body <?php body_class();
+<body <?php body_class('lang_' . get_locale());
 /**
  * supermag_action_body_attr hook
  * @since supermag 1.0.0
