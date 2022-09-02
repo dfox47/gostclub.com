@@ -20,8 +20,9 @@ Tags: orange, brown, yellow, dark, one-column, two-columns, left-sidebar, right-
 @import "vars";
 @import "defaults";
 
-@import "owl.carousel";
+@import "header";
 @import "hero_slider";
+@import "owl.carousel";
 
 // must be the last
 @import "custom";

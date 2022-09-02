@@ -8,8 +8,7 @@
  * @return null
  *
  */
-if ( ! function_exists( 'supermag_set_global' ) ) :
-
+if (!function_exists('supermag_set_global')) :
 	function supermag_set_global() {
 		// Getting saved values start
 		$supermag_saved_theme_options = supermag_get_theme_options();
@@ -94,11 +93,11 @@ add_action( 'body_class', 'supermag_body_class', 10, 1);
  * @return null
  *
  */
-if ( ! function_exists( 'supermag_page_start' ) ) :
+if (!function_exists('supermag_page_start')) :
 
 function supermag_page_start() { ?>
-<div id="page" class="hfeed site">
-	<?php }
+<div class="hfeed site">
+<?php }
 endif;
 add_action( 'supermag_action_before', 'supermag_page_start', 15 );
 
@@ -128,9 +127,43 @@ add_action( 'supermag_action_before_header', 'supermag_skip_to_content', 10 );
  * @return null
  *
  */
-if ( ! function_exists( 'supermag_header' ) ) :
+if (!function_exists('supermag_header')) :
 	function supermag_header() {
 		global $supermag_customizer_all_values; ?>
+
+		<div class="header_new_wrap">
+			<div class="wrap">
+				<div class="header_new">
+					<a href="javascript:void(0);">Sign in</a>
+
+<!--					<a class="header_logo" href="/">G★ST</a>-->
+					<a class="header_logo" href="/">GOST</a>
+
+					<div class="header_right">
+						<a href="tel:+359888086900" target="_blank">+359(88)808-69-00</a>
+						<span class="header_search_icon js-search-toggle"></span>
+
+						<div class="header_lang_switcher">
+							<div class="header_lang_switcher__current" data-x="<?php echo get_bloginfo("language"); ?>"><?php echo substr(get_bloginfo("language"), 0, 2); ?></div>
+
+							<ul class="header_lang_switcher_list">
+								<?php if (get_bloginfo("language") !== 'en-US') { ?>
+									<li class="header_lang_switcher_list__item"><a class="header_lang_switcher_list__link" href="/en/">en</a></li>
+								<?php } ?>
+
+								<?php if (get_bloginfo("language") !== 'ru-RU') { ?>
+									<li class="header_lang_switcher_list__item"><a class="header_lang_switcher_list__link" href="/ru/">ru</a></li>
+								<?php } ?>
+
+								<?php if (get_bloginfo("language") !== 'bg-BG') { ?>
+									<li class="header_lang_switcher_list__item"><a class="header_lang_switcher_list__link" href="/">bg</a></li>
+								<?php } ?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div class="hero_slider">
 			<div class="js-owl-carousel owl-carousel">
@@ -182,26 +215,6 @@ if ( ! function_exists( 'supermag_header' ) ) :
 							</div> <!-- .header-latest-posts -->
 						<?php endif;
 					} ?>
-
-					<div class="right-header float-right">
-						<div class="lang_switcher">
-							<a href="/en/">en</a>
-							<a href="/ru/">ru</a>
-							<a href="/">bg</a>
-						</div>
-
-<!--						--><?php //if (1 == $supermag_customizer_all_values['supermag-enable-social']) {
-//							/*Social Sharing*/
-//							/**
-//							 * supermag_action_social_links
-//							 * @since supermag 1.1.0
-//							 *
-//							 * @hooked supermag_social_links -  10
-//							 */
-//							do_action('supermag_action_social_links');
-//							/* Social Links*/
-//						} ?>
-					</div>
 				</div>
 			</div><!-- .top-header-section -->
 

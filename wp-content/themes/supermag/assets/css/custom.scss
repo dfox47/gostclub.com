@@ -11,20 +11,6 @@
 	}
 }
 
-.header-latest-posts {
-	.bn-content {
-		overflow: hidden;
-		text-overflow: ellipsis;
-
-		a {
-			display: block;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			width: 100%;
-		}
-	}
-}
-
 .lang_switcher {
 	align-items: center;
 	display: flex;
@@ -42,6 +28,13 @@
 			color: $c_main;
 		}
 	}
+}
+
+.wrap {
+	margin: 0 auto;
+	max-width: 1290px;
+	padding: 0 30px;
+	width: 100%;
 }
 
 
