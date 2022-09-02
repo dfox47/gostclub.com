@@ -58,8 +58,7 @@ do_action( 'supermag_action_before' );
  *
  * @hooked supermag_skip_to_content - 10
  */
-do_action( 'supermag_action_before_header' );
-
+do_action( 'supermag_action_before_header');
 
 /**
  * supermag_action_header hook
@@ -67,8 +66,7 @@ do_action( 'supermag_action_before_header' );
  *
  * @hooked supermag_after_header - 10
  */
-do_action( 'supermag_action_header' );
-
+do_action( 'supermag_action_header');
 
 /**
  * supermag_action_after_header hook
@@ -76,8 +74,7 @@ do_action( 'supermag_action_header' );
  *
  * @hooked null
  */
-do_action( 'supermag_action_after_header' );
-
+do_action( 'supermag_action_after_header');
 
 /**
  * supermag_action_before_content hook
@@ -85,4 +82,4 @@ do_action( 'supermag_action_after_header' );
  *
  * @hooked supermag_before_content - 10
  */
-do_action( 'supermag_action_before_content' );
+do_action( 'supermag_action_before_content');
