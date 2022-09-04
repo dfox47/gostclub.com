@@ -64,7 +64,7 @@ if ( ! function_exists( 'supermag_footer' ) ) :
 
 				<div class="footer_copyright">
 <!--					<div class="footer_copyright__item"><a href="tel:+359888086900" target="_blank">+359 888086900</a></div>-->
-					<div class="footer_copyright__item"><a href="mailto:gostclub1@gmail.com" target="_blank">gostclub1@gmail.com</a></div>
+					<div class="footer_copyright__item"><a href="mailto:gost@gostclub.com" target="_blank">gost@gostclub.com</a></div>
 					<div class="footer_copyright__item">ГОСТ клуб <?php echo date("Y"); ?></div>
 					<div class="footer_copyright__item">© All rights reserved</div>
 				</div>
