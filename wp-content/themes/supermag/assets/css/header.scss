@@ -72,17 +72,17 @@
 	justify-content: space-between;
 	position: relative;
 	z-index: 5;
-
-	a,
-	a:visited {
-		color: #fff;
-	}
 }
 
 .header_new_wrap {
 	background-color: #000;
 	line-height: 1.1;
 	padding: 8px 0;
+
+	a,
+	a:visited {
+		color: #fff;
+	}
 }
 
 .header_right {

@@ -1,4 +1,24 @@
 
+.countries_list {
+	color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 16px;
+	justify-content: space-between;
+
+	&__item {
+		padding: .5em 1em;
+		white-space: nowrap;
+	}
+
+	&__link {}
+
+	@media #{$mobile} {
+		font-size: 12px;
+		justify-content: center;
+	}
+}
+
 .footer_copyright {
 	border-top: 1px solid $c_border;
 	display: flex;
