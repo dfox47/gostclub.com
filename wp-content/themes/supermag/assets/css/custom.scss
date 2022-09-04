@@ -6,12 +6,13 @@
 	font-size: 16px;
 	justify-content: space-between;
 
-	&__item {
-		padding: .5em 1em;
+	&__item {}
+
+	&__link {
+		display: block;
+		padding: .3em .5em;
 		white-space: nowrap;
 	}
-
-	&__link {}
 
 	@media #{$mobile} {
 		font-size: 12px;
