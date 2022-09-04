@@ -42,7 +42,7 @@
 		z-index: 5;
 	}
 
-	@media all and (max-width: 767px) {
+	@media #{$mobile} {
 		height: 50vw;
 	}
 }
