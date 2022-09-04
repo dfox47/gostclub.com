@@ -170,7 +170,7 @@ if (!function_exists('supermag_header')) :
 					<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Bosnia and Herzegovina</a></li>
 					<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Croatia</a></li>
 					<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Slovenia</a></li>
-					<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Kosovo</a></li>
+<!--					<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Kosovo</a></li>-->
 					<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Montenegro</a></li>
 					<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Albania</a></li>
 					<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Greece</a></li>
