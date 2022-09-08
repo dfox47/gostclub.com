@@ -14,7 +14,7 @@
 		white-space: nowrap;
 	}
 
-	@media # {$desktop} {
+	@media #{$desktop} {
 		font-size: 12px;
 	}
 }
