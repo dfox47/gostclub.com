@@ -37,17 +37,9 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 		</div>
 
 		<ul class="countries_list">
-			<!--	<li class="countries_list__item"><a class="countries_list__link" href="/ru/albaniya/">Albania</a></li>-->
-			<!--	<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Bosnia and Herzegovina</a></li>-->
 			<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Bulgaria</a></li>
-			<!--	<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Croatia</a></li>-->
 			<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Greece</a></li>
-			<!--	<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Italy</a></li>-->
-			<!--	<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Montenegro</a></li>-->
 			<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">North Macedonia</a></li>
-			<!--	<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Romania</a></li>-->
-			<!--	<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Serbia</a></li>-->
-			<!--	<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Slovenia</a></li>-->
 			<li class="countries_list__item"><a class="countries_list__link" href="javascript:void(0);">Turkey</a></li>
 		</ul>
 	</div>
