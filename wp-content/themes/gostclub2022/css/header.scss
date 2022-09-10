@@ -9,45 +9,6 @@
 	z-index: 5;
 }
 
-.header_lang_switcher {
-	position: relative;
-	text-transform: uppercase;
-
-	&:hover {
-		.header_lang_switcher_list {
-			display: block;
-		}
-	}
-
-	&__current {
-		cursor: pointer;
-		padding: .5em 1em;
-	}
-}
-
-.header_lang_switcher_list {
-	background-color: #000;
-	display: none;
-	left: 0;
-	position: absolute;
-	text-align: center;
-	top: 100%;
-	width: 100%;
-
-	a,
-	a:visited {
-		display: block;
-		padding: 8px;
-		transition: $transition;
-
-		&:hover {
-			color: $c_main;
-		}
-	}
-
-	&__item {}
-}
-
 .header_left {
 	align-items: center;
 	display: flex;
