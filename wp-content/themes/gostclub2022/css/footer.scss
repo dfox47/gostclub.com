@@ -1,0 +1,35 @@
+
+.footer {
+	margin: 50px 0 0;
+	padding: 30px 0 60px;
+}
+
+.footer_social {
+	display: none;
+	margin: 15px 0 21px;
+
+	@media #{$mobile} {
+		display: block;
+	}
+}
+
+.footer_wrap {
+	align-items: flex-start;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	@media #{$mobile} {
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		margin: 22px 0 0;
+	}
+}
+
+.footer_wrap2 {
+	@media #{$mobile} {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}

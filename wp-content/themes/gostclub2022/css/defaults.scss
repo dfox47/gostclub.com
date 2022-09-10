@@ -1,0 +1,70 @@
+
+// Standart class [START]
+* {
+	border: 0 none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	&::after,
+	&::before {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+body {
+	overflow-x: hidden;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+ul {
+	list-style: none;
+}
+// Standart class [END]
+
+
+
+// help classes [START]
+.hidden {
+	display: none;
+}
+
+.no-js {
+	.fa {
+		display: none;
+	}
+}
+
+.nobr {
+	white-space: nowrap;
+}
+
+.text-center {
+	text-align: center;
+	text-indent: 0;
+}
+
+.text-justify {
+	text-align: justify;
+	text-indent: 0;
+}
+
+.text-left {
+	text-align: left;
+	text-indent: 0;
+}
+
+.text-right {
+	text-align: right;
+	text-indent: 0;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+// help classes [END]

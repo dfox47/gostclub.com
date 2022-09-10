@@ -1,0 +1,20 @@
+/*
+Theme Name: Gostclub 2022
+Version: 1.0.1
+Description: GOST Club special theme
+Text Domain: gostclub
+Author: dfox
+Author URI: https://gostclub.com/
+*/
+
+// should be 1st
+@import "var";
+@import "defaults";
+
+@import "footer";
+@import "header";
+@import "hero_slider";
+@import "owl.carousel";
+
+// should be LAST
+@import "custom";

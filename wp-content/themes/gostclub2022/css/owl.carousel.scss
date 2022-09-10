@@ -1,0 +1,352 @@
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+
+// Core
+.owl-carousel {
+	display: none;
+	width: 100%;
+	-webkit-tap-highlight-color: transparent;
+	// position relative and z-index fix webkit rendering fonts issue
+	position: relative;
+	z-index: 1;
+
+	&.owl-drag {
+		.owl-item {
+			-ms-touch-action: pan-y;
+			touch-action: pan-y;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+	}
+
+	&.owl-grab {
+		cursor: move;
+		cursor: grab;
+	}
+
+	&.owl-hidden {
+		opacity: 0;
+	}
+
+	&.owl-loaded {
+		display: block;
+	}
+
+	&.owl-loading {
+		display: block;
+		opacity: 0;
+	}
+
+	&.owl-refresh {
+		.owl-item {
+			visibility: hidden;
+		}
+	}
+
+	&.owl-rtl {
+		direction: rtl;
+
+		.owl-item {
+			float: right;
+		}
+	}
+
+	.animated {
+		animation-duration: 1000ms;
+		animation-fill-mode: both;
+	}
+
+	.fadeOut {
+		animation-name: fadeOut;
+	}
+}
+
+.owl-item {
+	-moz-backface-visibility: hidden;
+	-moz-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-transform: translate3d(0, 0, 0);
+	float: left;
+	min-height: 1px;
+	position: relative;
+
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.owl-stage {
+	position: relative;
+	-ms-touch-action: pan-Y;
+	touch-action: manipulation;
+	-moz-backface-visibility: hidden;
+	// fix firefox animation glitch
+
+	&:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0; }
+}
+
+.owl-stage-outer {
+	position: relative;
+	overflow: hidden;
+	// fix for flashing background
+	-webkit-transform: translate3d(0px, 0px, 0px); }
+
+.owl-wrapper {
+	-moz-backface-visibility: hidden;
+	-moz-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+.owl-nav.disabled,
+.owl-dots.disabled {
+	display: none;
+}
+
+.owl-prev,
+.owl-next,
+.owl-dot {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	background: none;
+	border: none;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	padding: 0 !important;
+	user-select: none;
+}
+
+// No Js
+.no-js {
+	.owl-carousel {
+		display: block;
+	}
+}
+
+// Animate Plugin
+.owl-animated-in {
+	z-index: 0;
+}
+
+.owl-animated-out {
+	z-index: 1;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+// Auto Height Plugin
+.owl-height {
+	transition: height 500ms ease-in-out;
+}
+
+// Lazy Load Plugin
+.owl-lazy {
+	opacity: 0;
+	transition: opacity 400ms ease;
+}
+
+.owl-lazy[src^=""],
+.owl-lazy:not([src]) {
+	max-height: 0;
+}
+
+img.owl-lazy {
+	transform-style: preserve-3d;
+}
+
+// Video Plugin
+.owl-video-wrapper {
+	background: #000;
+	height: 100%;
+	position: relative;
+}
+
+.owl-video-play-icon {
+	-webkit-backface-visibility: hidden;
+	background: url(owl.video.play.png) no-repeat;
+	cursor: pointer;
+	height: 80px;
+	left: 50%;
+	margin-left: -40px;
+	margin-top: -40px;
+	position: absolute;
+	top: 50%;
+	transition: transform 100ms ease;
+	width: 80px;
+	z-index: 1;
+
+	&:hover {
+		transform: scale(1.3, 1.3);
+	}
+}
+
+.owl-video-playing {
+	.owl-video-tn,
+	.owl-video-play-icon {
+		display: none; }
+}
+
+.owl-video-tn {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 400ms ease;
+}
+
+.owl-video-frame {
+	height: 100%;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+.owl-next,
+.owl-prev {
+	background-color: #000;
+	border-radius: 0;
+	height: 56px;
+	margin-top: -28px;
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	width: 56px;
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		top: 48%;
+		transition: $transition;
+	}
+
+	&::after {
+		background-color: $c_main;
+		height: 2px;
+		margin: 0;
+		width: 0;
+	}
+
+	&::before {
+		border-left: 2px solid $c_main;
+		border-top: 2px solid $c_main;
+		height: 20px;
+		margin: -9px 0 0;
+		width: 20px;
+	}
+
+	&:hover {
+		&::after {
+			width: 200px;
+		}
+	}
+
+	@media #{$desktop_hd} {
+		bottom: -20px;
+		margin: 0;
+		top: auto;
+		transform: none;
+
+		&::after {
+			display: none;
+		}
+
+		&--next {
+			&::before {
+				margin: -5px 0 0;
+			}
+		}
+
+		&--prev {
+			&::before {
+				margin: -5px 0 0;
+			}
+		}
+	}
+
+	@media #{$tablet} {
+		height: 36px;
+		width: 36px;
+
+		&::before {
+			height: 12px;
+			margin-top: -6px;
+			width: 12px;
+		}
+	}
+
+	@media #{$mobile} {
+		bottom: -43px;
+	}
+}
+
+.owl-next {
+	left: auto;
+	right: -20px;
+
+	&::after {
+		left: 46px;
+	}
+
+	&::before {
+		left: 14px;
+		transform: rotate(135deg);
+	}
+
+	@media #{$tablet} {
+		&::before {
+			left: 10px;
+		}
+	}
+
+	@media #{$mobile} {
+		right: -8px;
+	}
+}
+
+.owl-prev {
+	left: -20px;
+	right: auto;
+
+	&::after {
+		right: 46px;
+	}
+
+	&::before {
+		right: 14px;
+		transform: rotate(-45deg);
+	}
+
+	@media #{$tablet} {
+		&::before {
+			right: 10px;
+		}
+	}
+
+	@media #{$mobile} {
+		left: -8px;
+	}
+}
