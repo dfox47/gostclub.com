@@ -9,19 +9,11 @@ $currentUrl = $_SERVER['REQUEST_URI'];
 <?php endif; ?>
 
 <footer class="footer">
-	<div class="hidden wrap">
-		<div class="footer_wrap2">
-			<div class="footer_wrap">
-				<?php // footer_menu
-				wp_nav_menu(array(
-					'container'         => false,
-					'depth'             => 2,
-					'item_spacing'      => 'preserve',
-					'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
-					'menu'              => 'footer_menu',
-					'menu_class'        => 'footer_menu',
-				)); ?>
-			</div>
+	<div class="wrap">
+		<div class="footer_copyright">
+			<div class="footer_copyright__item"><a href="mailto:gost@gostclub.com" target="_blank">gost@gostclub.com</a></div>
+			<div class="footer_copyright__item">ГОСТ клуб <?php echo(date("Y")); ?></div>
+			<div class="footer_copyright__item">© All rights reserved</div>
 		</div>
 	</div>
 </footer>
