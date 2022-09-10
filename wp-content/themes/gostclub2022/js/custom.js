@@ -14,10 +14,10 @@ $(document).ready(function() {
 		autoplay:           true,
 		autoplayHoverPause: true,
 		autoplayTimeout:    4000,
-		dots:               false,
+		dots:               true,
 		items:              1,
 		loop:               true,
-		nav:                true,
+		nav:                false,
 		navText:            ['', '']
 	})
 

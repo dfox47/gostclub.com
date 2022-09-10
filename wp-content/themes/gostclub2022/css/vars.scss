@@ -1,0 +1,38 @@
+@charset "utf-8";
+// sCSS Document
+// Powered by dfox
+
+// https://fonts.google.com/specimen/Montserrat?subset=cyrillic
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+// colors
+$c_bg:                  #111;
+$c_border:              #ba8c21;
+$c_main:                #ddba74;
+
+$themeFolder:           '/wp-content/themes/gostclub2022';
+$fonts:                 $themeFolder + '/fonts';
+
+$transition:            all .3s ease-in-out;
+
+// @medias
+$desktop_hd:            'only screen and (max-width: 1440px)';
+$desktop:               'only screen and (max-width: 1279px)';
+$mobile:                'only screen and (max-width: 767px)';
+$mobile_s:              'only screen and (max-width: 450px)';
+$tablet:                'only screen and (max-width: 1023px)';
+
+// fonts
+$font_main:         'Montserrat',           Arial, Helvetica, sans-serif;
+$font_montserrat:   'Montserrat',           Arial, Helvetica, sans-serif;
+$font_arsenica:     'Arsenica-Regular',     Arial, Helvetica, sans-serif;
+
+// Arsenica-Regular
+@font-face {
+	font-family: 'Arsenica-Regular';
+	src: url($fonts + '/Arsenica-Regular.eot');
+	src: url($fonts + '/Arsenica-Regular.eot?#iefix') format('embedded-opentype'),
+	url($fonts + '/Arsenica-Regular.woff2') format('woff2'),
+	url($fonts + '/Arsenica-Regular.woff') format('woff'),
+	url($fonts + '/Arsenica-Regular.ttf') format('truetype');
+}
