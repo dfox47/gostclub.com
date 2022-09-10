@@ -267,3 +267,9 @@ if( ! function_exists( 'supermag_breadcrumbs' ) ):
         }
     }
 endif;
+
+// countries_menu
+function countries_menu() {
+	register_nav_menu('countries_menu', 'Countries menu');
+}
+add_action('after_setup_theme', 'countries_menu');
