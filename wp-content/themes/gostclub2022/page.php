@@ -4,7 +4,7 @@
 <?php get_header(); ?>
 
 <?php if (!is_front_page()) { ?>
-	<main class="main_content_wrap">
+	<main class="main_content_wrap" data-tmp="page.php">
 		<div class="main_content">
 			<?php if ($currentUrl == '/o-kompanii/') {}
 			else { ?>

@@ -10,7 +10,7 @@ if (get_the_post_thumbnail_url()) {
 	$thumbUrl = str_replace('https://' . $_SERVER['SERVER_NAME'], '', get_the_post_thumbnail_url());
 } ?>
 
-<main class="main_content_wrap">
+<main class="main_content_wrap" data-tmp="single-post.php">
 	<div class="main_content">
 		<div class="wrap2">
 			<?php if (is_single() && $thumbUrl !== '') { ?>

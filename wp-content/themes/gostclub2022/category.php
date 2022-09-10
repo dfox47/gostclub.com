@@ -8,7 +8,7 @@ if (get_the_post_thumbnail_url()) {
 	$thumbUrl = str_replace('https://' . $_SERVER['SERVER_NAME'], '', get_the_post_thumbnail_url());
 } ?>
 
-<main class="main_content_wrap">
+<main class="main_content_wrap" data-tmp="category.php">
 	<div class="main_content">
 		<div class="wrap4">
 			<h1><?php single_cat_title(); ?></h1>

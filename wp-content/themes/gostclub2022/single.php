@@ -1,7 +1,7 @@
 
 <?php get_header(); ?>
 
-<main class="main_content_wrap">
+<main class="main_content_wrap" data-tmp="single.php">
 	<div class="main_content">
 		<div class="wrap2">
 			<?php if (single_post_title()) { ?>
