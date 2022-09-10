@@ -22,6 +22,7 @@ let port            = config.port
 let user            = config.user
 
 let remoteFolder    = '/gostclub.com/public_html/wp-content/themes/supermag/'
+// let remoteFolder    = '/gostclub.com/public_html/wp-content/themes/gostclub2022/'
 let remoteHooks     = remoteFolder + 'acmethemes/hooks/'
 let remoteAssets    = remoteFolder + 'assets/'
 let remoteCss       = remoteAssets + 'css/'
@@ -29,11 +30,27 @@ let remoteJs        = remoteAssets + 'js/'
 let remoteParts     = remoteFolder + 'template-parts/'
 
 let localFolder     = 'wp-content/themes/supermag/'
+// let localFolder     = 'wp-content/themes/gostclub2022/'
 let localHooks      = localFolder + 'acmethemes/hooks/'
 let localAssets     = localFolder + 'assets/'
 let localCss        = localAssets + 'css/'
 let localJs         = localAssets + 'js/'
 let localParts      = localFolder + 'template-parts/'
+
+
+
+// GOST club template
+let gostClubRemote          = '/gostclub.com/public_html/wp-content/themes/gostclub2022/'
+let gostClubRemoteCss       = gostClubRemote + 'css/'
+let gostClubRemoteJs        = gostClubRemote + 'js/'
+let gostClubRemoteParts     = gostClubRemote + 'template-parts/'
+
+let gostClubLocal           = 'wp-content/themes/gostclub2022/'
+let gostClubLocalCss        = gostClubLocal + 'css/'
+let gostClubLocalJs         = gostClubLocal + 'js/'
+let gostClubLocalParts      = gostClubLocal + 'template-parts/'
+
+
 
 function getFtpConnection() {
 	return ftp.create({
@@ -51,6 +68,7 @@ let conn = getFtpConnection()
 
 
 
+// supermag [START]
 gulp.task('css', function () {
 	return gulp.src(localCss + 'styles.scss')
 		.pipe(sass())
@@ -60,27 +78,27 @@ gulp.task('css', function () {
 			// suffix: '.min'
 		}))
 		.pipe(conn.dest(remoteFolder));
-});
+})
 
 gulp.task('css_copy', function () {
 	return gulp.src(localCss + '**/*')
 		.pipe(conn.dest(remoteCss));
-});
+})
 
 gulp.task('hooks_copy', function () {
 	return gulp.src(localHooks + '**/*')
 		.pipe(conn.dest(remoteHooks));
-});
+})
 
 gulp.task('php', function () {
 	return gulp.src(localFolder + '*.php')
 		.pipe(conn.dest(remoteFolder));
-});
+})
 
 gulp.task('template-parts', function () {
 	return gulp.src(localParts + '**/*')
 		.pipe(conn.dest(remoteParts));
-});
+})
 
 gulp.task('js', function () {
 	return gulp.src([
@@ -93,12 +111,63 @@ gulp.task('js', function () {
 			suffix: ".min"
 		}))
 		.pipe(conn.dest(remoteFolder));
-});
+})
 
 gulp.task('js_copy', function () {
 	return gulp.src(localJs + '**/*')
 		.pipe(conn.dest(remoteJs));
-});
+})
+// supermag [END]
+
+
+
+// gost club tasks [START]
+gulp.task('gostCss', function () {
+	return gulp.src(gostClubLocalCss + 'styles.scss')
+		.pipe(sass())
+		.pipe(cssMinify())
+		.pipe(rename({
+			basename: 'style',
+			// suffix: '.min'
+		}))
+		.pipe(conn.dest(gostClubRemote));
+})
+
+gulp.task('gostCssCopy', function () {
+	return gulp.src(gostClubLocalCss + '**/*')
+		.pipe(conn.dest(gostClubRemoteCss));
+})
+
+gulp.task('gostJs', function () {
+	return gulp.src([
+		localJs + 'jquery-3.4.1.min.js',
+		localJs + '**/*.js'
+	])
+		.pipe(concat('all.js'))
+		// .pipe(uglify())
+		.pipe(rename({
+			suffix: ".min"
+		}))
+		.pipe(conn.dest(gostClubRemote));
+})
+
+gulp.task('gostJsCopy', function () {
+	return gulp.src(localJs + '**/*')
+		.pipe(conn.dest(remoteJs));
+})
+
+gulp.task('gostPhp', function () {
+	return gulp.src(gostClubLocal + '*.php')
+		.pipe(conn.dest(gostClubRemote));
+})
+
+gulp.task('gostTemplateParts', function () {
+	return gulp.src(gostClubLocalParts + '**/*')
+		.pipe(conn.dest(gostClubRemoteParts));
+})
+// gost club tasks [END]
+
+
 
 gulp.task('watch', function() {
 	// gulp.watch(localFolder + '*.php',    gulp.series('php'))
@@ -107,6 +176,12 @@ gulp.task('watch', function() {
 	// gulp.watch(localJs + '**/*',         gulp.series('js', 'js_copy'))
 	gulp.watch(localJs + '**/*',            gulp.series('js_copy'))
 	// gulp.watch(localParts + '**/*',      gulp.series('template-parts'))
-});
+
+	// gost club template
+	gulp.watch(gostClubLocal + '*.php',     gulp.series('gostPhp'))
+	gulp.watch(gostClubLocalCss + '**/*',   gulp.series('gostCss', 'gostCssCopy'))
+	gulp.watch(gostClubLocalJs + '**/*',    gulp.series('gostJsCopy'))
+	gulp.watch(gostClubLocalParts + '**/*', gulp.series('gostTemplateParts'))
+})
 
 gulp.task('default', gulp.series('watch'))
