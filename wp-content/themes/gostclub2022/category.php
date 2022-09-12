@@ -20,7 +20,10 @@
 							} ?>
 
 							<li class="cat_items_list__item">
-								<a class="cat_items_list__link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>" style="background-image: url(<?php echo $thumbUrl; ?>)"></a>
+								<a class="cat_item_link" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+									<span class="cat_item_link__img" style="background-image: url(<?php echo $thumbUrl; ?>)"></span>
+									<span class="cat_item_link__title"><?php the_title(); ?></span>
+								</a>
 							</li>
 						<?php endwhile; ?>
 					</ul>
