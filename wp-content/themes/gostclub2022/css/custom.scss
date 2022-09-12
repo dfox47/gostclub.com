@@ -121,6 +121,35 @@ input {
 	}
 }
 
+.breadcrumbs {
+	display: flex;
+	list-style: none;
+	margin: 0 0 30px;
+
+	a,
+	a:visited {
+		color: #000;
+		transition: $transition;
+
+		&:hover {
+			color: $c_main;
+		}
+	}
+
+	&__item {
+		&::after {
+			content: ">";
+			margin: 0 10px;
+		}
+
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+
 .cat_items_list {
 	display: grid;
 	grid-gap: 30px;
