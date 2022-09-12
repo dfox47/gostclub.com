@@ -1,18 +1,18 @@
 
 <?php function get_breadcrumbs() { ?>
 	<div class="breadcrumbs">
-		<?php echo '<a href="' . home_url() . '" rel="nofollow">Home</a>';
+		<?php echo '<li class="breadcrumbs__item"><a href="' . home_url() . '" rel="nofollow">Home</a></li>';
 
-		if (is_category() || is_single()) {
-			the_category(' &bull; ');
+		if (is_category() || is_single()) { ?>
+			<li class="breadcrumbs__item"><?php the_category('</li><li class="breadcrumbs__item">');?></li>
 
-			if (is_single()) {
-				the_title();
-			}
+			<?php if (is_single()) { ?>
+				<li class="breadcrumbs__item"><?php the_title(); ?></li>
+			<?php }
 		}
-		elseif (is_page()) {
-			echo the_title();
-		}
+		elseif (is_page()) { ?>
+			<li class="breadcrumbs__item"><?php echo the_title(); ?></li>
+		<?php }
 		elseif (is_search()) {
 			echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
 			echo '"<em>';
