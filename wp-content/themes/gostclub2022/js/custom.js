@@ -13,11 +13,11 @@ $(document).ready(function() {
 	$('.js-owl-carousel-auto').owlCarousel({
 		autoplay:           true,
 		autoplayHoverPause: true,
-		autoplayTimeout:    4000,
+		autoplayTimeout:    2000,
 		dots:               true,
 		items:              1,
 		loop:               true,
-		nav:                false,
+		nav:                true,
 		navText:            ['', '']
 	})
 

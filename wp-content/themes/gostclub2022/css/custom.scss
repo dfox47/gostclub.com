@@ -71,11 +71,15 @@ input {
 	width: 25%;
 
 	@media #{$mobile} {
-		display: none;
+		width: 100%;
 	}
 }
 
 .aside_list {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
 	&__item {
 		display: block;
 		margin: 0 0 20px;
@@ -85,6 +89,18 @@ input {
 		&:hover {
 			opacity: .7;
 		}
+
+		@media #{$mobile} {
+			margin: 0;
+			max-width: 220px;
+			width: 100%;
+		}
+	}
+
+	@media #{$mobile} {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-gap: 30px;
 	}
 }
 
