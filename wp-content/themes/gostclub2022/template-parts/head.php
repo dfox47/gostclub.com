@@ -1,6 +1,6 @@
 
 <?php // thumb img url
-$thumbUrl = '';
+$thumbUrl = "";
 
 if (get_the_post_thumbnail_url()) {
 	$thumbUrl = str_replace('https://' . $_SERVER['SERVER_NAME'], '', get_the_post_thumbnail_url());
@@ -13,7 +13,7 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 		<div class="header">
 			<a href="javascript:void(0);">Sign in</a>
 
-			<a class="header_logo" href="/">GOST</a>
+			<a class="header_logo" href="/<?php echo substr(get_bloginfo("language"), 0, 2); ?>">GOST</a>
 
 			<div class="header_right">
 				<span class="header_search_icon js-search-toggle"></span>
@@ -48,10 +48,10 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 <?php if (is_front_page()) { ?>
 	<div class="hero_slider">
 		<div class="js-owl-carousel-auto owl-carousel">
-			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/1.jpg);"></div>
-			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/2.jpg);"></div>
-			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/3.jpg);"></div>
-			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/supermag/assets/img/hero_slider/5.jpg);"></div>
+			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/gostclub2022/i/hero_slider/1.jpg);"></div>
+			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/gostclub2022/i/hero_slider/2.jpg);"></div>
+			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/gostclub2022/i/hero_slider/3.jpg);"></div>
+			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/gostclub2022/i/hero_slider/5.jpg);"></div>
 		</div>
 	</div>
 <?php } ?>
