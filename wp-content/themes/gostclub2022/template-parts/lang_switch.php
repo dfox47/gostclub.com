@@ -1,6 +1,6 @@
 
 <div class="lang_switcher">
-	<div class="lang_switcher__current" data-x="<?php echo get_bloginfo("language"); ?>"><?php echo substr(get_bloginfo("language"), 0, 2); ?></div>
+	<div class="lang_switcher__current"><?php echo substr(get_bloginfo("language"), 0, 2); ?></div>
 
 	<ul class="lang_switcher_list">
 		<?php if (get_bloginfo("language") !== 'en-US') { ?>
