@@ -14,6 +14,19 @@
 	}
 }
 
+article {
+	font-size: 16px;
+
+	p {
+		margin: 1em 0;
+	}
+
+	.wp-caption {
+		margin: 30px 0;
+		max-width: 100%;
+	}
+}
+
 body {
 	background-color: #fff;
 	font-size: 14px;
@@ -108,6 +121,32 @@ input {
 	}
 }
 
+.cat_items_list {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: auto auto auto auto;
+	position: relative;
+
+	&__item {
+		display: block;
+		position: relative;
+
+		&::after {
+			content: "";
+			display: block;
+			padding: 100% 0 0;
+		}
+	}
+
+	&__link {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
 .content {
 	align-items: flex-start;
 	display: flex;
@@ -117,6 +156,30 @@ input {
 .content_main {
 	padding: 30px 30px 30px 0;
 	width: 75%;
+
+	.wp-block-latest-posts {
+		&__featured-image {
+			a {
+				display: block;
+				width: 100%;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&__post-title {
+			color: $c_main;
+			display: block;
+			font-size: 30px;
+			margin: .3em 0;
+		}
+
+		li {
+			padding: 0 0 30px;
+		}
+	}
 
 	@media #{$mobile} {
 		width: 100%;
@@ -195,6 +258,10 @@ input {
 
 .main_content {
 	padding: 30px 0;
+}
+
+.thumb_img {
+	width: 100%;
 }
 
 .wrap {
