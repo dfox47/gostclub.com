@@ -18,7 +18,7 @@ if (get_the_post_thumbnail_url()) {
 
 				<article>
 					<?php if (is_single() && $thumbUrl !== '') { ?>
-						<div class="text-center"><img class="thumb_img" src="<?php echo $thumbUrl; ?>" alt="" /></div>
+						<img class="thumb_img" src="<?php echo $thumbUrl; ?>" alt="" />
 					<?php } ?>
 
 					<h1><?php single_post_title(); ?></h1>
