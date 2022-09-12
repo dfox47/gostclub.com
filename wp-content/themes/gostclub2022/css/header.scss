@@ -35,10 +35,6 @@
 .header_right {
 	align-items: center;
 	display: flex;
-
-	@media #{$mobile} {
-		display: none;
-	}
 }
 
 .header_wrap {
