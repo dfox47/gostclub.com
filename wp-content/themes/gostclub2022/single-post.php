@@ -14,18 +14,14 @@ if (get_the_post_thumbnail_url()) {
 	<div class="wrap">
 		<div class="content">
 			<div class="content_main">
+				<?php get_breadcrumbs(); ?>
+
 				<article>
-
-
 					<?php if (is_single() && $thumbUrl !== '') { ?>
 						<div class="text-center"><img class="thumb_img" src="<?php echo $thumbUrl; ?>" alt="" /></div>
 					<?php } ?>
 
-					<?php // hide h1 at page About
-					if ($currentUrl == '/o-kompanii/') {}
-					else { ?>
-						<h1><?php single_post_title(); ?></h1>
-					<?php } ?>
+					<h1><?php single_post_title(); ?></h1>
 
 					<?php // content
 					the_content(); ?>
