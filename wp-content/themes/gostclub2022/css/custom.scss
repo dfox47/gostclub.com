@@ -102,6 +102,10 @@ input {
 		grid-template-columns: auto auto auto;
 		grid-gap: 30px;
 	}
+
+	@media #{$mobile_s} {
+		grid-template-columns: auto auto;
+	}
 }
 
 .content {
