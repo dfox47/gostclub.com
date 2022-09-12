@@ -3,21 +3,10 @@
 
 <?php get_header(); ?>
 
-<?php if (!is_front_page()) { ?>
-	<main class="main_content_wrap" data-tmp="page.php">
-		<div class="main_content">
-			<?php if ($currentUrl == '/o-kompanii/') {}
-			else { ?>
-				<div class="wrap2">
-			<?php } ?>
-				<?php // hide h1 at page About
-				if ($currentUrl == '/o-kompanii/') {}
-				// hide h1 at page news
-				elseif ($currentUrl == '/novosti/') {}
-				else { ?>
-					<h1><?php single_post_title(); ?></h1>
-				<?php } ?>
-
+<main data-tmp="page.php">
+	<div class="wrap">
+		<div class="content">
+			<div class="content_main">
 				<?php // content
 				the_content(); ?>
 
@@ -27,12 +16,12 @@
 						the_post();
 					}
 				} ?>
-			<?php if ($currentUrl == '/o-kompanii/') {}
-			else { ?>
-				</div>
-			<?php } ?>
+			</div>
+
+			<?php // aside
+			include "template-parts/aside.php"; ?>
 		</div>
-	</main>
-<?php } ?>
+	</div>
+</main>
 
 <?php get_footer(); ?>
