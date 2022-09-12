@@ -54,7 +54,8 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 			<div class="hero_slider__item" style="background-image: url(/wp-content/themes/gostclub2022/i/hero_slider/5.jpg);"></div>
 		</div>
 	</div>
-<?php } ?>
-
-<?php // breadcrumbs
-if (function_exists('get_breadcrumbs')) get_breadcrumbs(); ?>
+<?php }
+else {
+	// breadcrumbs
+	if (function_exists('get_breadcrumbs')) get_breadcrumbs();
+} ?>
