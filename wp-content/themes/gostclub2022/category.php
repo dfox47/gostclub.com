@@ -5,8 +5,6 @@
 	<div class="wrap">
 		<div class="content">
 			<div class="content_main">
-				<?php get_breadcrumbs(); ?>
-
 				<h1><?php single_cat_title(); ?></h1>
 
 				<?php // posts

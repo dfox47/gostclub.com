@@ -14,8 +14,6 @@ if (get_the_post_thumbnail_url()) {
 	<div class="wrap">
 		<div class="content">
 			<div class="content_main">
-				<?php get_breadcrumbs(); ?>
-
 				<article>
 					<?php if (is_single() && $thumbUrl !== '') { ?>
 						<img class="thumb_img" src="<?php echo $thumbUrl; ?>" alt="" />

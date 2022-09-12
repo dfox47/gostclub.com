@@ -55,3 +55,6 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 		</div>
 	</div>
 <?php } ?>
+
+<?php // breadcrumbs
+if (function_exists('get_breadcrumbs')) get_breadcrumbs(); ?>
