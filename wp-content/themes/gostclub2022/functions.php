@@ -25,16 +25,16 @@ function footerMenu() {
 add_action('after_setup_theme', 'footerMenu');
 
 // theme's custom options
-include "template-parts/theme_options.php";
+//include "template-parts/theme_options.php";
 
 // widgets
-include "template-parts/widgets.php";
+//include "template-parts/widgets.php";
 
 // support woocommerce custom themes
 function woocommerceThemeSupport() {
 	add_theme_support('woocommerce');
 }
-add_action('after_setup_theme', 'woocommerceThemeSupport');
+//add_action('after_setup_theme', 'woocommerceThemeSupport');
 
 function get_current_url() {
 	global $wp;
@@ -54,3 +54,7 @@ function edit_admin_menus() {
 //	$submenu['edit.php?post_type=product'][5][0] = 'Все объекты';
 }
 add_action('admin_menu', 'edit_admin_menus');
+
+// breadcrumbs
+include "template-parts/breadcrumbs.php";
+
