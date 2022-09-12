@@ -68,59 +68,6 @@ let conn = getFtpConnection()
 
 
 
-// supermag [START]
-gulp.task('css', function () {
-	return gulp.src(localCss + 'styles.scss')
-		.pipe(sass())
-		.pipe(cssMinify())
-		.pipe(rename({
-			basename: 'style',
-			// suffix: '.min'
-		}))
-		.pipe(conn.dest(remoteFolder));
-})
-
-gulp.task('css_copy', function () {
-	return gulp.src(localCss + '**/*')
-		.pipe(conn.dest(remoteCss));
-})
-
-gulp.task('hooks_copy', function () {
-	return gulp.src(localHooks + '**/*')
-		.pipe(conn.dest(remoteHooks));
-})
-
-gulp.task('php', function () {
-	return gulp.src(localFolder + '*.php')
-		.pipe(conn.dest(remoteFolder));
-})
-
-gulp.task('template-parts', function () {
-	return gulp.src(localParts + '**/*')
-		.pipe(conn.dest(remoteParts));
-})
-
-gulp.task('js', function () {
-	return gulp.src([
-		localJs + 'jquery-3.4.1.min.js',
-		localJs + '**/*.js'
-	])
-		.pipe(concat('all.js'))
-		// .pipe(uglify())
-		.pipe(rename({
-			suffix: ".min"
-		}))
-		.pipe(conn.dest(remoteFolder));
-})
-
-gulp.task('js_copy', function () {
-	return gulp.src(localJs + '**/*')
-		.pipe(conn.dest(remoteJs));
-})
-// supermag [END]
-
-
-
 // gost club tasks [START]
 gulp.task('gostCss', function () {
 	return gulp.src(gostClubLocalCss + 'styles.scss')
@@ -170,14 +117,6 @@ gulp.task('gostTemplateParts', function () {
 
 
 gulp.task('watch', function() {
-	// gulp.watch(localFolder + '*.php',    gulp.series('php'))
-	gulp.watch(localHooks + '**/*',         gulp.series('hooks_copy'))
-	gulp.watch(localCss + '**/*',           gulp.series('css', 'css_copy'))
-	// gulp.watch(localJs + '**/*',         gulp.series('js', 'js_copy'))
-	gulp.watch(localJs + '**/*',            gulp.series('js_copy'))
-	// gulp.watch(localParts + '**/*',      gulp.series('template-parts'))
-
-	// gost club template
 	gulp.watch(gostClubLocal + '*.php',     gulp.series('gostPhp'))
 	gulp.watch(gostClubLocalCss + '**/*',   gulp.series('gostCss', 'gostCssCopy'))
 	gulp.watch(gostClubLocalJs + '**/*',    gulp.series('gostJsCopy'))
