@@ -1,0 +1,53 @@
+
+.lang_ru {
+	.lang_ru_only {
+		display: block;
+	}
+}
+
+.lang_ru_only {
+	display: none;
+}
+
+.lang_switcher {
+	position: relative;
+	text-transform: uppercase;
+
+	&:hover {
+		.lang_switcher_list {
+			display: block;
+		}
+	}
+
+	&__current {
+		cursor: pointer;
+		padding: .5em 1em;
+	}
+}
+
+.lang_switcher_list {
+	background-color: #000;
+	display: none;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	top: 100%;
+	width: 100%;
+
+	a,
+	a:visited {
+		display: block;
+		padding: 8px;
+		transition: $transition;
+
+		&:hover {
+			color: $c_main;
+		}
+	}
+
+	&__item {}
+
+	&__link {
+		text-decoration: none;
+	}
+}
