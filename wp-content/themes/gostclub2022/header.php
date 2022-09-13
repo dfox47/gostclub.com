@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/style.css?v<?php echo(date("YmdHis")); ?>" />
 </head>
 
-<body>
+<body class="lang_<?php echo substr(get_bloginfo("language"), 0, 2); ?>">
 <?php // header
 include "template-parts/head.php"; ?>
 
