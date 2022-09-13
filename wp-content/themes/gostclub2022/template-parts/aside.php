@@ -1,6 +1,10 @@
 
 <div class="aside">
-	<h3>Рубрики</h3>
+	<h3>
+		<span class="lang_bg_only">Категории</span>
+		<span class="lang_en_only">Categories</span>
+		<span class="lang_ru_only">Рубрики</span>
+	</h3>
 
 	<ul class="aside_cat_list">
 		<?php $categories = get_categories(array(
@@ -20,7 +24,11 @@
 		<?php } ?>
 	</ul>
 
-	<h3>ЧЕТИ ON-LINE</h3>
+	<h3>
+		<span class="lang_bg_only">Чети онлайн</span>
+		<span class="lang_en_only">Read online</span>
+		<span class="lang_ru_only">Читайте онлайн</span>
+	</h3>
 
 	<ul class="aside_list">
 		<li class="aside_list__item">
