@@ -1,5 +1,25 @@
 
 <div class="aside">
+	<h3>Рубрики</h3>
+
+	<ul class="aside_cat_list">
+		<?php $categories = get_categories(array(
+			'hide_empty'    => true,
+			'order'         => 'ASC',
+			'orderby'       => 'name',
+			'parent'        => 0
+		));
+
+		$selected_category  = get_queried_object();
+		$categoryCurrent = $selected_category->term_id;
+
+		foreach ($categories as $category) { ?>
+			<li class="aside_cat_list__item">
+				<a class="aside_cat_list__link <?php if ($categoryCurrent == $category->term_id) {?>active<?php } ?>" href="<?php echo get_category_link($category->term_id) ?>" title="<?php echo $category->name ?>"><?php echo $category->name ?></a>
+			</li>
+		<?php } ?>
+	</ul>
+
 	<h3>ЧЕТИ ON-LINE</h3>
 
 	<ul class="aside_list">
