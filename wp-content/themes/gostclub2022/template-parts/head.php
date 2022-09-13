@@ -13,7 +13,7 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 		<div class="header">
 			<a href="javascript:void(0);">Sign in</a>
 
-			<a class="header_logo" href="/<?php echo substr(get_bloginfo("language"), 0, 2); ?>">GOST</a>
+			<a class="header_logo" href="/<?php echo substr(get_bloginfo("language"), 0, 2); ?>/">GOST</a>
 
 			<div class="header_right">
 				<span class="header_search_icon js-search-toggle"></span>
