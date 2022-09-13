@@ -36,9 +36,11 @@ body {
 
 h1 {
 	color: $c_main;
+	font-family: $font_ptserif_bold;
 	font-size: 64px;
 	font-weight: 400;
 	letter-spacing: -.04em;
+	line-height: 1.1;
 	margin: 0 0 .3em;
 
 	@media #{$desktop} {
@@ -226,30 +228,6 @@ input {
 	padding: 30px 30px 30px 0;
 	width: 75%;
 
-	.wp-block-latest-posts {
-		&__featured-image {
-			a {
-				display: block;
-				width: 100%;
-			}
-
-			img {
-				width: 100%;
-			}
-		}
-
-		&__post-title {
-			color: $c_main;
-			display: block;
-			font-size: 30px;
-			margin: .3em 0;
-		}
-
-		li {
-			padding: 0 0 30px;
-		}
-	}
-
 	@media #{$mobile} {
 		padding-right: 0;
 		width: 100%;
@@ -332,6 +310,36 @@ input {
 
 .thumb_img {
 	width: 100%;
+}
+
+.wp-block-latest-posts {
+	&__featured-image {
+		a {
+			display: block;
+			width: 100%;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__post-title {
+		color: $c_main;
+		display: block;
+		font-family: $font_ptserif_reg;
+		font-size: 30px;
+		margin: .3em 0;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	li {
+		padding: 0 0 50px;
+	}
 }
 
 .wrap {
