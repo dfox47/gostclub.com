@@ -36,9 +36,8 @@ body {
 
 h1 {
 	color: $c_main;
-	font-family: $font_ptserif_bold;
 	font-size: 64px;
-	font-weight: 400;
+	font-weight: 800;
 	letter-spacing: -.04em;
 	line-height: 1.1;
 	margin: 0 0 .3em;
@@ -56,16 +55,15 @@ h1 {
 h2 {
 	color: $c_main;
 	font-size: 40px;
-	font-weight: 400;
+	font-weight: 800;
 	line-height: 1.2;
 }
 
 h3 {
 	background-color: #000;
 	color: #fff;
-	font-family: $font_ptserif_bold;
 	font-size: 20px;
-	font-weight: 400;
+	font-weight: 800;
 	line-height: 1.2;
 	margin: 0 0 30px;
 	padding: .1em .3em;
@@ -350,7 +348,6 @@ input {
 	&__post-title {
 		color: $c_main;
 		display: block;
-		font-family: $font_ptserif_reg;
 		font-size: 30px;
 		margin: .3em 0;
 		text-decoration: none;
