@@ -14,7 +14,7 @@ $c_main:                #ddba74;
 $themeFolder:           '/wp-content/themes/gostclub2022';
 $i:                     $themeFolder + '/i';
 $icons:                 $i + '/icons';
-$fonts:                 $themeFolder + '/fonts';
+$fontsFolder:           $themeFolder + '/fonts';
 
 $transition:            all .3s ease-in-out;
 
@@ -27,55 +27,21 @@ $tablet:                'only screen and (max-width: 1023px)';
 
 // fonts
 $font_arsenica:             'Arsenica-Regular',     Arial, Helvetica, sans-serif;
-//$font_main:                 'Montserrat',           Arial, Helvetica, sans-serif;
-$font_main:                 'PTSerif-Regular',           Arial, Helvetica, sans-serif;
+$font_main:                 'PTSerif-Regular',      Arial, Helvetica, sans-serif;
 $font_montserrat:           'Montserrat',           Arial, Helvetica, sans-serif;
 $font_ptserif_bold:         'PTSerif-Bold',         Arial, Helvetica, sans-serif;
 $font_ptserif_bold_italic:  'PTSerif-BoldItalic',   Arial, Helvetica, sans-serif;
 $font_ptserif_italic:       'PTSerif-Italic',       Arial, Helvetica, sans-serif;
-$font_ptserif_reg:          'PTSerif-Regular',       Arial, Helvetica, sans-serif;
+$font_ptserif_reg:          'PTSerif-Regular',      Arial, Helvetica, sans-serif;
 
-// Arsenica-Regular
-@font-face {
-	font-family: 'Arsenica-Regular';
-	src: url($fonts + '/Arsenica-Regular.eot');
-	src: url($fonts + '/Arsenica-Regular.eot?#iefix') format('embedded-opentype'),
-	url($fonts + '/Arsenica-Regular.woff') format('woff'),
-	url($fonts + '/Arsenica-Regular.ttf') format('truetype');
-}
+$fontsList: 'Arsenica-Regular', 'PTSerif-Bold', 'PTSerif-BoldItalic', 'PTSerif-Italic', 'PTSerif-Regular';
 
-// PTSerif-Bold
-@font-face {
-	font-family: 'PTSerif-Bold';
-	src: url($fonts + '/PTSerif-Bold.eot');
-	src: url($fonts + '/PTSerif-Bold.eot?#iefix') format('embedded-opentype'),
-	url($fonts + '/PTSerif-Bold.woff') format('woff'),
-	url($fonts + '/PTSerif-Bold.ttf') format('truetype');
-}
-
-// PTSerif-BoldItalic
-@font-face {
-	font-family: 'PTSerif-BoldItalic';
-	src: url($fonts + '/PTSerif-BoldItalic.eot');
-	src: url($fonts + '/PTSerif-BoldItalic.eot?#iefix') format('embedded-opentype'),
-	url($fonts + '/PTSerif-BoldItalic.woff') format('woff'),
-	url($fonts + '/PTSerif-BoldItalic.ttf') format('truetype');
-}
-
-// PTSerif-Italic
-@font-face {
-	font-family: 'PTSerif-Italic';
-	src: url($fonts + '/PTSerif-Italic.eot');
-	src: url($fonts + '/PTSerif-Italic.eot?#iefix') format('embedded-opentype'),
-	url($fonts + '/PTSerif-Italic.woff') format('woff'),
-	url($fonts + '/PTSerif-Italic.ttf') format('truetype');
-}
-
-// PTSerif-Regular
-@font-face {
-	font-family: 'PTSerif-Regular';
-	src: url($fonts + '/PTSerif-Regular.eot');
-	src: url($fonts + '/PTSerif-Regular.eot?#iefix') format('embedded-opentype'),
-	url($fonts + '/PTSerif-Regular.woff') format('woff'),
-	url($fonts + '/PTSerif-Regular.ttf') format('truetype');
+@each $font in $fontsList {
+	@font-face {
+		font-family: #{$font};
+		src: url($fontsFolder + '/#{$font}.eot');
+		src: url($fontsFolder + '/#{$font}.eot?#iefix') format('embedded-opentype'),
+		url($fontsFolder + '/#{$font}.woff') format('woff'),
+		url($fontsFolder + '/#{$font}.ttf') format('truetype');
+	}
 }
