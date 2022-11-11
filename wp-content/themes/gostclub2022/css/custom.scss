@@ -214,8 +214,12 @@ input {
 }
 
 .mobile_menu_active {
+	overflow: hidden;
+
 	main {
-		filter: blur(3px);
+		@media #{$mobile} {
+			filter: blur(3px);
+		}
 	}
 
 	.countries_menu {

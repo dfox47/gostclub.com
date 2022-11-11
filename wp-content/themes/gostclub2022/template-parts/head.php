@@ -37,7 +37,7 @@ elseif ($currentLang == 'ru-RU') {
 			if (has_nav_menu('countries')) {
 				wp_nav_menu(array(
 					'container'         => false,
-					'depth'             => 1,
+					'depth'             => 2,
 					'item_spacing'      => 'preserve',
 					'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
 					'menu'              => 'countries',
@@ -67,29 +67,6 @@ else {
 		the_archive_description('<div class="hidden js-category-desc">', '</div>');
 	}
 } ?>
-
-<?php // countries menu || 2d level
-if (has_nav_menu('countries')) { ?>
-	<div class="countries_submenu_wrap">
-		<div class="text-center">
-			<a class="countries_submenu_choose js-countries-submenu-toggle" href="javascript:void(0);">
-				<span class="lang_bg_only">Изберете град</span>
-				<span class="lang_en_only">Choose a city</span>
-				<span class="lang_ru_only">Выберите город</span>
-			</a>
-		</div>
-
-		<?php wp_nav_menu(array(
-			'container'         => false,
-			'depth'             => 2,
-			'item_spacing'      => 'preserve',
-			'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
-			'menu'              => 'countries',
-			'menu_class'        => 'countries_submenu js-countries-submenu',
-			'theme_location'    => 'countries'
-		)); ?>
-	</div>
-<?php } ?>
 
 <?php // breadcrumbs
 if (!is_front_page() && function_exists('breadcrumbs')) breadcrumbs(); ?>

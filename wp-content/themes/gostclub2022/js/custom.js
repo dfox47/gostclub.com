@@ -19,3 +19,16 @@ document.querySelectorAll('.js-countries-submenu-toggle').forEach((e) => {
 		document.documentElement.classList.toggle('countries_submenu_active')
 	})
 })
+
+// show submeny
+const $menuItem = document.querySelectorAll('.menu-item-has-children')
+
+$menuItem.forEach((e) => {
+	e.addEventListener('click', () => {
+		$menuItem.forEach((el) => {
+			el.classList.remove('active')
+		})
+
+		e.classList.add('active')
+	})
+})
