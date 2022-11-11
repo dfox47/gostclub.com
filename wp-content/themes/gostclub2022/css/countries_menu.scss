@@ -126,6 +126,13 @@
 
 		> .menu-item {
 			margin: 8px;
+
+			@media #{$mobile_s} {
+				font-size: 14px;
+				margin: 4px;
+				text-align: center;
+				width: 100%;
+			}
 		}
 
 		a {
