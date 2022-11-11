@@ -153,7 +153,4 @@ function customOptionsContent() { ?>
 			<?php submit_button(); ?>
 		</form>
 	</div>
-<?php }
-
-
-
+<?php } ?>

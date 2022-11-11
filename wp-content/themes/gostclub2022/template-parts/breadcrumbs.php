@@ -1,23 +1,27 @@
-
 <?php function breadcrumbs() {
 	global $post;
 
 	$after          = '</span></li>';
 	$before         = '<li class="breadcrumbs__item"><span class="current">';
-	$home           = 'Home';
 	$homeLink       = get_bloginfo('url');
 	$itemEnd        = '</li>';
 	$itemStart      = '<li class="breadcrumbs__item">'; ?>
 
 	<div class="wrap">
 		<ul class="breadcrumbs">
-			<?php echo $itemStart; ?><a class="breadcrumbs__home" href="<?php echo $homeLink; ?>/"><?php echo $home; ?></a><?php echo $itemEnd; ?>
+			<?php echo $itemStart; ?><a class="breadcrumbs__home" href="<?php echo str_replace('https://' . $_SERVER['SERVER_NAME'], '', $homeLink); ?>/"></a><?php echo $itemEnd; ?>
 
 			<?php if (is_category()) {
-				$thisCat = get_category(get_query_var('cat'), false);
+				$thisCat    = get_category(get_query_var('cat'), false);
+				$parentCat  = $thisCat->parent;
 
-				if ($thisCat->parent != 0) {
-					echo get_category_parents($thisCat->parent, true, ' ');
+				if ($parentCat != 0) {
+					$catsArr = explode(',', substr(get_category_parents($parentCat, true, ','), 0, -1));
+
+					foreach ($catsArr as $category) {
+						$category = str_replace('https://' . $_SERVER['SERVER_NAME'], '', $category);
+						echo $itemStart . $category . $itemEnd;
+					}
 				}
 
 				echo $before . single_cat_title('', false) . $after;
@@ -46,11 +50,15 @@
 					echo $before . get_the_title() . $after;
 				}
 				else {
-					$cat    = get_the_category();
-					$cat    = $cat[0];
-					$cats   = get_category_parents($cat, true, ' ');
+					$cat        = get_the_category();
+					$cat        = $cat[0];
+					$catsArr    = explode(',', substr(get_category_parents($cat, true, ','), 0, -1));
 
-					echo $itemStart . $cats . $itemEnd;
+					foreach ($catsArr as $category) {
+						$category = str_replace('https://' . $_SERVER['SERVER_NAME'], '', $category);
+						echo $itemStart . $category . $itemEnd;
+					}
+
 					echo $before . get_the_title() . $after;
 				}
 			}

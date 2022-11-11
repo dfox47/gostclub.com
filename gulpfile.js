@@ -16,10 +16,10 @@ let sass            = require('gulp-sass')(require('sass'))
 let uglify          = require('gulp-uglify')
 
 // FTP config
-let host            = config.host
-let password        = config.password
-let port            = config.port
-let user            = config.user
+const host          = config.host
+const password      = config.password
+const port          = config.port
+const user          = config.user
 
 let remoteFolder    = '/gostclub.com/public_html/wp-content/themes/supermag/'
 // let remoteFolder    = '/gostclub.com/public_html/wp-content/themes/gostclub2022/'
@@ -87,8 +87,8 @@ gulp.task('gostCssCopy', function () {
 
 gulp.task('gostJs', function () {
 	return gulp.src([
-		localJs + 'jquery-3.4.1.min.js',
-		localJs + '**/*.js'
+		gostClubLocalJs + 'jquery-3.6.0.min.js',
+		gostClubLocalJs + '**/*.js'
 	])
 		.pipe(concat('all.js'))
 		// .pipe(uglify())
@@ -99,8 +99,8 @@ gulp.task('gostJs', function () {
 })
 
 gulp.task('gostJsCopy', function () {
-	return gulp.src(localJs + '**/*')
-		.pipe(conn.dest(remoteJs));
+	return gulp.src(gostClubLocalJs + '**/*')
+		.pipe(conn.dest(gostClubRemoteJs));
 })
 
 gulp.task('gostPhp', function () {
@@ -119,7 +119,7 @@ gulp.task('gostTemplateParts', function () {
 gulp.task('watch', function() {
 	gulp.watch(gostClubLocal + '*.php',     gulp.series('gostPhp'))
 	gulp.watch(gostClubLocalCss + '**/*',   gulp.series('gostCss', 'gostCssCopy'))
-	gulp.watch(gostClubLocalJs + '**/*',    gulp.series('gostJsCopy'))
+	gulp.watch(gostClubLocalJs + '**/*',    gulp.series('gostJs', 'gostJsCopy'))
 	gulp.watch(gostClubLocalParts + '**/*', gulp.series('gostTemplateParts'))
 })
 

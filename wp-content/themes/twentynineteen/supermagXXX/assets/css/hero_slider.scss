@@ -1,0 +1,48 @@
+
+.hero_slider {
+	//display: none;
+	display: block;
+	height: 65vh;
+	width: 100%;
+
+	&__item {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	.owl-carousel {
+		button {
+			&.owl-dot {
+				border: 1px solid #fff;
+			}
+		}
+	}
+
+	.owl-dot {
+		border-radius: 50%;
+		height: 14px;
+		margin: 0 5px;
+		width: 14px;
+
+		&.active {
+			background-color: $c_main;
+		}
+	}
+
+	.owl-dots {
+		bottom: 10px;
+		display: flex;
+		justify-content: center;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		z-index: 5;
+	}
+
+	@media #{$mobile} {
+		height: 50vw;
+	}
+}

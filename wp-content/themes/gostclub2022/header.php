@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html <?php language_attributes(); ?> <?php body_class(); ?>>
@@ -10,13 +9,13 @@
 	<meta name="format-detection" content="telephone=no" />
 
 	<?php // favicon
-	include "template-parts/favicon.php"; ?>
+	include_once "template-parts/favicon.php"; ?>
 
 	<title><?php wp_title(''); ?></title>
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/style.css?v<?php echo(date("YmdHis")); ?>" />
+	<link rel="stylesheet" href="/wp-content/themes/gostclub2022/style.css?v<?php echo(date("YmdHis")); ?>" />
 </head>
 
 <body class="lang_<?php echo substr(get_bloginfo("language"), 0, 2); ?>">

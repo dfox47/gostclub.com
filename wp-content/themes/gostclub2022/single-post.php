@@ -1,4 +1,3 @@
-
 <?php $currentUrl = $_SERVER['REQUEST_URI']; ?>
 
 <?php get_header(); ?>

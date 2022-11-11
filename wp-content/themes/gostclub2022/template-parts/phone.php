@@ -1,4 +1,3 @@
-
 <?php // all options https://brokertop.ru/wp-admin/admin.php?page=theme-custom-options
 $phone = esc_attr(get_option('broker_phone'));
 

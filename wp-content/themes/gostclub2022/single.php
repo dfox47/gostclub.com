@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 
 <main class="main_content_wrap" data-tmp="single.php">

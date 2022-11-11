@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 
 <main data-tmp="category.php">
@@ -6,7 +5,7 @@
 		<div class="content">
 			<div class="content_main">
 				<h1><?php single_cat_title(); ?></h1>
-
+				<?//php echo do_shortcode('[caf_filter id="3345"]'); ?>
 				<?php // posts
 				if (have_posts()) { ?>
 					<ul class="cat_items_list js-news-list">
@@ -16,7 +15,8 @@
 							$thumbUrl = '';
 
 							if (get_the_post_thumbnail_url()) {
-								$thumbUrl = str_replace('https://' . $_SERVER['SERVER_NAME'], '', get_the_post_thumbnail_url());
+								// remove everything before /wp-content/
+								$thumbUrl = strstr(get_the_post_thumbnail_url(), '/wp-content/');
 							} ?>
 
 							<li class="cat_items_list__item">
@@ -28,7 +28,7 @@
 						<?php endwhile; ?>
 					</ul>
 
-					<?php // Загрузить ещё
+					<?php // Load more
 					global $wp_query;
 
 					$total_pages    = $wp_query -> max_num_pages;
@@ -42,6 +42,11 @@
 
 					<div class="pagination_result js-pagination-result"></div>
 				<?php } ?>
+
+				<div class="mobile_show">
+					<?php // aside
+					include "template-parts/cat_list_1.php"; ?>
+				</div>
 			</div>
 
 			<?php // aside

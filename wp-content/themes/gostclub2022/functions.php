@@ -1,6 +1,4 @@
-<?php
-
-// allow menus
+<?php // allow menus
 add_theme_support('menus');
 
 // title at head
@@ -12,17 +10,14 @@ add_theme_support('title-tag');
 // remove ID's from li at menus
 add_filter('nav_menu_item_id', '__return_null', 10, 3);
 
-// header menu
-function headerMenu() {
-	register_nav_menu('header', 'Header menu');
-}
-add_action('after_setup_theme', 'headerMenu');
-
-// footer menu
-function footerMenu() {
-	register_nav_menu('footer', 'Footer menu');
-}
-add_action('after_setup_theme', 'footerMenu');
+// meny
+add_action('after_setup_theme', function() {
+	register_nav_menus(array(
+		'countries'     => 'countries',
+		'footer'        => 'footer',
+		'header'        => 'header'
+	));
+});
 
 // theme's custom options
 //include "template-parts/theme_options.php";
@@ -31,9 +26,9 @@ add_action('after_setup_theme', 'footerMenu');
 //include "template-parts/widgets.php";
 
 // support woocommerce custom themes
-function woocommerceThemeSupport() {
-	add_theme_support('woocommerce');
-}
+//function woocommerceThemeSupport() {
+//	add_theme_support('woocommerce');
+//}
 //add_action('after_setup_theme', 'woocommerceThemeSupport');
 
 function get_current_url() {
@@ -44,17 +39,5 @@ function get_current_url() {
 	return $current_url;
 }
 
-// change menu item name at admin
-function edit_admin_menus() {
-	global $menu, $submenu;
-
-//	$menu[25][0] = 'Отзывы';
-//	$menu[26][0] = 'Объекты';
-
-//	$submenu['edit.php?post_type=product'][5][0] = 'Все объекты';
-}
-add_action('admin_menu', 'edit_admin_menus');
-
 // breadcrumbs
 include "template-parts/breadcrumbs.php";
-

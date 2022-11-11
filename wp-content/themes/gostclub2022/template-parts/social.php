@@ -1,28 +1,21 @@
+<?php // all options https://brokertop.ru/wp-admin/admin.php?page=theme-custom-options
+//$whatsapp = esc_attr(get_option('broker_whatsapp'));
+$i      = "/wp-content/themes/gostclub2022/i";
+$icons  = $i . "/icons"; ?>
 
-<ul class="social_list">
-	<?php // all options https://brokertop.ru/wp-admin/admin.php?page=theme-custom-options
-	$instagram      = esc_attr(get_option('broker_inst'));
-	$telegram       = esc_attr(get_option('broker_telegram'));
-	$whatsapp       = esc_attr(get_option('broker_whatsapp'));
+<ul class="social_links">
+	<?php // whatsapp
+//	if ( isset($whatsapp) ) { ?>
+<!--		<li class="social_links__item">-->
+<!--			<a class="social_links__link" href="//wa.me/--><?php //echo $whatsapp; ?><!--" target="_blank"></a>-->
+<!--		</li>-->
+<!--	--><?php //} ?>
 
-	// whatsapp
-	if ( isset($whatsapp) ) { ?>
-		<li class="social_list__item">
-			<a class="social_list__icon social_list__icon--whatsapp" href="//wa.me/<?php echo $whatsapp; ?>" target="_blank"></a>
-		</li>
-	<?php }
+	<li class="social_links__item">
+		<a class="social_links__link" href="//www.instagram.com/gostclub.balkans/" target="_blank" title="instagram"><img src="<?php echo $icons; ?>/instagram.svg" alt="instagram" /></a>
+	</li>
 
-	// telegram
-	if ( isset($telegram) ) { ?>
-		<li class="social_list__item">
-			<a class="social_list__icon social_list__icon--telegram" href="//t.me/<?php echo $telegram; ?>" target="_blank"></a>
-		</li>
-	<?php }
-
-	// instagram
-	if ( isset($instagram) ) { ?>
-		<li class="social_list__item">
-			<a class="social_list__icon social_list__icon--instagram" href="//www.instagram.com/<?php echo $instagram; ?>" target="_blank"></a>
-		</li>
-	<?php } ?>
+	<li class="social_links__item">
+		<a class="social_links__link" href="//www.facebook.com/gostmagazine" target="_blank" title="facebook"><img src="<?php echo $icons; ?>/facebook.svg" alt="facebook" /></a>
+	</li>
 </ul>

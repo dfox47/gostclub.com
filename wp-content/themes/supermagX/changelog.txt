@@ -1,0 +1,35 @@
+== Change log ==
+
+= 1.1.7 =
+* missing image url added
+* word-break issue solved
+* sanitize function for image changed
+
+= 1.1.6 =
+* Fixed everything pointed by reviewer
+
+= 1.1.5 =
+* Follow front page vs home guidelines
+
+= 1.1.4 =
+* Fixed copyright text
+
+= 1.1.3 =
+* Link fixed in description
+
+= 1.1.2 =
+* Fixed minor issues in theme
+* Image size reduced
+
+= 1.1.1 =
+* Minor changes
+
+= 1.1.0 =
+* Theme Customizer Update with better experience
+
+= 1.0.1 =
+* Added : Documentation added.
+* Added : New screenshot added.
+
+= 1.0.0 =
+* Submitted to WordPress.org

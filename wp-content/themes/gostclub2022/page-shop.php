@@ -1,12 +1,10 @@
-<?php
-/*
+<?php /*
 * Template Name: Shop
 * Template Post Type: post, page, product
-*/
-?>
-
+*/ ?>
 
 <?php get_header(); ?>
+
 <?php // echo do_shortcode("[woof_products per_page=8 columns=3 is_ajax=0 taxonomies=product_cat:9 custom_tpl='woof_tpls/woo_tpl_1.php']"); ?>
 
 	<main class="main_content_wrap">

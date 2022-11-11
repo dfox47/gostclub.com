@@ -31,4 +31,4 @@ function registerMyWidgets() {
 	));
 }
 
-add_action('widgets_init', 'registerMyWidgets');
+add_action('widgets_init', 'registerMyWidgets'); ?>

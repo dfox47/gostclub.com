@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 
 <main data-tmp="index.php">

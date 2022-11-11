@@ -12,6 +12,8 @@ $c_img_bg:              #eee;
 $c_main:                #ddba74;
 
 $themeFolder:           '/wp-content/themes/gostclub2022';
+$i:                     $themeFolder + '/i';
+$icons:                 $i + '/icons';
 $fonts:                 $themeFolder + '/fonts';
 
 $transition:            all .3s ease-in-out;
@@ -25,7 +27,8 @@ $tablet:                'only screen and (max-width: 1023px)';
 
 // fonts
 $font_arsenica:             'Arsenica-Regular',     Arial, Helvetica, sans-serif;
-$font_main:                 'Montserrat',           Arial, Helvetica, sans-serif;
+//$font_main:                 'Montserrat',           Arial, Helvetica, sans-serif;
+$font_main:                 'PTSerif-Regular',           Arial, Helvetica, sans-serif;
 $font_montserrat:           'Montserrat',           Arial, Helvetica, sans-serif;
 $font_ptserif_bold:         'PTSerif-Bold',         Arial, Helvetica, sans-serif;
 $font_ptserif_bold_italic:  'PTSerif-BoldItalic',   Arial, Helvetica, sans-serif;
