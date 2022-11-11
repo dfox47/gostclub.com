@@ -7,8 +7,15 @@ $(document).ready(function() {
 })
 
 // add active class to menu
-document.querySelectorAll('.js-countries-menu').forEach((menu) => {
-	if (menu.querySelector('.current-menu-item')) {
-		menu.classList.add('active')
+document.querySelectorAll('.js-countries-menu').forEach((e) => {
+	if (e.querySelector('.current-menu-item')) {
+		e.classList.add('active')
 	}
+})
+
+// toggle countries submenu
+document.querySelectorAll('.js-countries-submenu-toggle').forEach((e) => {
+	e.addEventListener('click', () => {
+		document.documentElement.classList.toggle('countries_submenu_active')
+	})
 })
