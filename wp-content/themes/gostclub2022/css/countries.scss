@@ -96,6 +96,8 @@
 }
 
 .countries_submenu {
+	background-color: #fff;
+	display: block;
 	font-size: 18px;
 
 	> .menu-item {
@@ -126,7 +128,7 @@
 		> .menu-item {
 			margin: 8px;
 
-			@media #{$mobile_s} {
+			@media #{$mobile} {
 				font-size: 14px;
 				margin: 4px;
 				text-align: center;
@@ -149,4 +151,44 @@
 			}
 		}
 	}
+
+	@media #{$mobile} {
+		display: none;
+		box-shadow: 0 0 10px #444;
+		left: 0;
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		z-index: 9;
+	}
+}
+
+.countries_submenu_active {
+	.countries_submenu {
+		@media #{$mobile} {
+			display: block;
+		}
+	}
+}
+
+.countries_submenu_choose {
+	cursor: pointer;
+	color: #000;
+	display: none;
+	padding: 8px 15px;
+	text-align: center;
+	text-decoration: none;
+	transition: $transition;
+
+	&:hover {
+		color: $c_main;
+	}
+
+	@media #{$mobile} {
+		display: block;
+	}
+}
+
+.countries_submenu_wrap {
+	position: relative;
 }
