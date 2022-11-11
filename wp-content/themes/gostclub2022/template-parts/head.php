@@ -71,7 +71,9 @@ else {
 <?php // countries menu || 2d level
 if (has_nav_menu('countries')) { ?>
 	<div class="countries_submenu_wrap">
-		<div class="text-center"><a class="countries_submenu_choose js-countries-submenu-toggle" href="javascript:void(0);"><span>Choose a city</span></a></div>
+		<div class="text-center">
+			<a class="countries_submenu_choose js-countries-submenu-toggle" href="javascript:void(0);"><span>Choose a city</span></a>
+		</div>
 
 		<?php wp_nav_menu(array(
 			'container'         => false,

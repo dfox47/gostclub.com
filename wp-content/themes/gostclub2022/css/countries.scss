@@ -130,7 +130,7 @@
 
 			@media #{$mobile} {
 				font-size: 14px;
-				margin: 4px;
+				margin: 0;
 				text-align: center;
 				width: 100%;
 			}
@@ -149,6 +149,14 @@
 			&:hover {
 				background-color: $c_main;
 			}
+
+			@media #{$mobile} {
+				border-radius: 0;
+			}
+		}
+
+		@media #{$mobile} {
+			margin: 0;
 		}
 	}
 
@@ -169,6 +177,16 @@
 			display: block;
 		}
 	}
+
+	.countries_submenu_choose {
+		color: $c_main;
+
+		&::after {
+			border-color: $c_main;
+			transform: rotate(135deg);
+			top: 14px;
+		}
+	}
 }
 
 .countries_submenu_choose {
@@ -176,16 +194,36 @@
 	color: #000;
 	display: none;
 	padding: 8px 15px;
+	position: relative;
 	text-align: center;
 	text-decoration: none;
 	transition: $transition;
 
+	&::after {
+		border-bottom: 1px solid #000;
+		border-left: 1px solid #000;
+		content: "";
+		height: 12px;
+		position: absolute;
+		right: -10px;
+		top: 8px;
+		transform: rotate(-45deg);
+		transition: $transition;
+		width: 12px;
+	}
+
 	&:hover {
 		color: $c_main;
+
+		&::after {
+			border-color: $c_main;
+			transform: rotate(135deg);
+			top: 14px;
+		}
 	}
 
 	@media #{$mobile} {
-		display: block;
+		display: inline-block;
 	}
 }
 
