@@ -3,7 +3,7 @@
 // Powered by dfox
 
 // https://fonts.google.com/specimen/Montserrat?subset=cyrillic
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
 
 // colors
 $c_bg:                  #111;
@@ -19,29 +19,23 @@ $fontsFolder:           $themeFolder + '/fonts';
 $transition:            all .3s ease-in-out;
 
 // @medias
-$desktop_hd:            'only screen and (max-width: 1440px)';
 $desktop:               'only screen and (max-width: 1279px)';
+$desktop_hd:            'only screen and (max-width: 1440px)';
 $mobile:                'only screen and (max-width: 767px)';
 $mobile_s:              'only screen and (max-width: 450px)';
 $tablet:                'only screen and (max-width: 1023px)';
 
 // fonts
-$font_arsenica:             'Arsenica-Regular',     Arial, Helvetica, sans-serif;
-$font_main:                 'PTSerif-Regular',      Arial, Helvetica, sans-serif;
-$font_montserrat:           'Montserrat',           Arial, Helvetica, sans-serif;
-$font_ptserif_bold:         'PTSerif-Bold',         Arial, Helvetica, sans-serif;
-$font_ptserif_bold_italic:  'PTSerif-BoldItalic',   Arial, Helvetica, sans-serif;
-$font_ptserif_italic:       'PTSerif-Italic',       Arial, Helvetica, sans-serif;
-$font_ptserif_reg:          'PTSerif-Regular',      Arial, Helvetica, sans-serif;
+$font_main:             'Open Sans', Arial, Helvetica, sans-serif;
 
-$fontsList: 'Arsenica-Regular', 'PTSerif-Bold', 'PTSerif-BoldItalic', 'PTSerif-Italic', 'PTSerif-Regular';
-
-@each $font in $fontsList {
-	@font-face {
-		font-family: #{$font};
-		src: url($fontsFolder + '/#{$font}.eot');
-		src: url($fontsFolder + '/#{$font}.eot?#iefix') format('embedded-opentype'),
-		url($fontsFolder + '/#{$font}.woff') format('woff'),
-		url($fontsFolder + '/#{$font}.ttf') format('truetype');
-	}
-}
+//$fontsList: 'font1', 'font2', 'font3';
+//
+//@each $font in $fontsList {
+//	@font-face {
+//		font-family: #{$font};
+//		src: url($fontsFolder + '/#{$font}.eot');
+//		src: url($fontsFolder + '/#{$font}.eot?#iefix') format('embedded-opentype'),
+//		url($fontsFolder + '/#{$font}.woff') format('woff'),
+//		url($fontsFolder + '/#{$font}.ttf') format('truetype');
+//	}
+//}
