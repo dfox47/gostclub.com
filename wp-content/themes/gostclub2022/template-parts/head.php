@@ -72,7 +72,11 @@ else {
 if (has_nav_menu('countries')) { ?>
 	<div class="countries_submenu_wrap">
 		<div class="text-center">
-			<a class="countries_submenu_choose js-countries-submenu-toggle" href="javascript:void(0);"><span>Choose a city</span></a>
+			<a class="countries_submenu_choose js-countries-submenu-toggle" href="javascript:void(0);">
+				<span class="lang_bg_only">Изберете град</span>
+				<span class="lang_en_only">Choose a city</span>
+				<span class="lang_ru_only">Выберите город</span>
+			</a>
 		</div>
 
 		<?php wp_nav_menu(array(
