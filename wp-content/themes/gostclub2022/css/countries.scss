@@ -68,13 +68,13 @@
 	}
 
 	.menu-item-has-children {
-		padding: 0 20px 0 0;
+		padding: 0 14px 0 0;
 		position: relative;
 
 		&.active {
 			&::after {
 				border-color: $c_main;
-				top: 8px;
+				top: 12px;
 				transform: rotate(135deg);
 			}
 
@@ -97,22 +97,20 @@
 			border-left: 1px solid #fff;
 			content: "";
 			cursor: pointer;
-			height: 12px;
+			height: 8px;
 			position: absolute;
 			right: 10px;
-			top: 4px;
+			top: 7px;
 			transform: rotate(-45deg);
 			transition: $transition;
-			width: 12px;
+			width: 8px;
 
 			@media #{$desktop} {
-				height: 8px;
-				width: 8px;
+				top: 4px;
 			}
 
-			@media #{$desktop} {
-				height: 12px;
-				width: 12px;
+			@media #{$mobile} {
+				top: 10px;
 			}
 		}
 	}
