@@ -41,13 +41,17 @@ const gostClubRemote            = '/wp-content/themes/gostclub2022/'
 const gostClubRemoteCss         = gostClubRemote + 'css/'
 const gostClubRemoteJs          = gostClubRemote + 'js/'
 const gostClubRemoteParts       = gostClubRemote + 'template-parts/'
-const gostClubRemoteWCBlocks    = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
+const gostClubRemoteWCBlocks    = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
+const gostClubRemoteWCLayout    = '/wp-content/plugins/woocommerce/assets/css/'
+const gostClubRemoteIncludes    = '/wp-includes/css/dist/block-library/'
 
 const gostClubLocal             = 'wp-content/themes/gostclub2022/'
 const gostClubLocalCss          = gostClubLocal + 'css/'
 const gostClubLocalJs           = gostClubLocal + 'js/'
 const gostClubLocalParts        = gostClubLocal + 'template-parts/'
 const gostClubLocalWCBlocks     = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
+const gostClubLocalWCLayout     = 'wp-content/plugins/woocommerce/assets/css/'
+const gostClubLocalIncludes     = 'wp-includes/css/dist/block-library/'
 
 
 
@@ -116,6 +120,16 @@ gulp.task('gostWCBlocksCopy', function () {
 	return gulp.src(gostClubLocalWCBlocks + 'wc-blocks-style.css')
 		.pipe(conn.dest(gostClubRemoteWCBlocks))
 })
+
+gulp.task('gostWCLayoutCopy', function () {
+	return gulp.src(gostClubLocalWCLayout + 'woocommerce-layout.css')
+		.pipe(conn.dest(gostClubRemoteWCLayout))
+})
+
+gulp.task('gostWCIncludesCopy', function () {
+	return gulp.src(gostClubLocalIncludes + 'style.min.css')
+		.pipe(conn.dest(gostClubRemoteIncludes))
+})
 // gost club tasks [END]
 
 
@@ -126,6 +140,8 @@ gulp.task('watch', function() {
 	gulp.watch(gostClubLocalJs + '**/*',        gulp.series('gostJs', 'gostJsCopy'))
 	gulp.watch(gostClubLocalParts + '**/*',     gulp.series('gostTemplateParts'))
 	gulp.watch(gostClubLocalWCBlocks + '**/*',  gulp.series('gostWCBlocksCopy'))
+	gulp.watch(gostClubLocalWCLayout + '**/*',  gulp.series('gostWCLayoutCopy'))
+	gulp.watch(gostClubLocalIncludes + '**/*',  gulp.series('gostWCIncludesCopy'))
 })
 
 gulp.task('default', gulp.series('watch'))
