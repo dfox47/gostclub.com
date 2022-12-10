@@ -53,11 +53,15 @@ $dummImg        = $i . '/dumm.png'; ?>
 
 	<ul class="aside_list">
 		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/_____11" target="_blank"><img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/1.jpg" alt="" /></a>
+			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/_____11" target="_blank" title="ГОСТ журнал #10">
+				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/1.jpg" alt="ГОСТ журнал #10" />
+			</a>
 		</li>
 
 		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/small" target="_blank"><img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/2.jpg" alt="ГОСТ журнал #10" /></a>
+			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/small" target="_blank" title="ГОСТ журнал #10">
+				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/2.jpg" alt="ГОСТ журнал #10" />
+			</a>
 		</li>
 
 		<li class="aside_list__item">
