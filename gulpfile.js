@@ -44,6 +44,7 @@ const gostRemoteParts       = gostRemote + 'template-parts/'
 const gostRemoteIncludes    = '/wp-includes/css/dist/block-library/'
 const gostRemoteWCBlocks    = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 const gostRemoteWCLayout    = '/wp-content/plugins/woocommerce/assets/css/'
+const gostRemoteWCVendors   = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 
 const gostLocal             = 'wp-content/themes/gostclub2022/'
 const gostLocalCss          = gostLocal + 'css/'
@@ -52,6 +53,7 @@ const gostLocalParts        = gostLocal + 'template-parts/'
 const gostLocalIncludes     = 'wp-includes/css/dist/block-library/'
 const gostLocalWCBlocks     = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 const gostLocalWCLayout     = 'wp-content/plugins/woocommerce/assets/css/'
+const gostLocalWCVendors    = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 
 
 
@@ -130,6 +132,11 @@ gulp.task('gostWCLayoutCopy', function () {
 	return gulp.src(gostLocalWCLayout + 'woocommerce-layout.css')
 		.pipe(conn.dest(gostRemoteWCLayout))
 })
+
+gulp.task('gostWCVendorsCopy', function () {
+	return gulp.src(gostLocalWCVendors + 'wc-blocks-vendors-style.css')
+		.pipe(conn.dest(gostRemoteWCVendors))
+})
 // gost club tasks [END]
 
 
@@ -142,6 +149,7 @@ gulp.task('watch', function() {
 	gulp.watch(gostLocalParts + '**/*',         gulp.series('gostTemplateParts'))
 	gulp.watch(gostLocalWCBlocks + '**/*',      gulp.series('gostWCBlocksCopy'))
 	gulp.watch(gostLocalWCLayout + '**/*',      gulp.series('gostWCLayoutCopy'))
+	gulp.watch(gostLocalWCVendors + '**/*',     gulp.series('gostWCVendorsCopy'))
 })
 
 gulp.task('default', gulp.series('watch'))
