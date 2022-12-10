@@ -54,10 +54,10 @@ if (is_front_page()) {
 
 	<div class="hero_slider">
 		<div class="js-owl-carousel-auto owl-carousel">
-			<div class="hero_slider__item" style="background-image: url(<?php echo $heroImg; ?>/8.jpg);"></div>
-			<div class="hero_slider__item" style="background-image: url(<?php echo $heroImg; ?>/2.jpg);"></div>
-			<div class="hero_slider__item" style="background-image: url(<?php echo $heroImg; ?>/5.jpg);"></div>
-			<div class="hero_slider__item" style="background-image: url(<?php echo $heroImg; ?>/6.jpg);"></div>
+			<div class="hero_slider__item js-img-bg" data-src="<?php echo $heroImg; ?>/8.jpg"></div>
+			<div class="hero_slider__item js-img-bg" data-src="<?php echo $heroImg; ?>/2.jpg"></div>
+			<div class="hero_slider__item js-img-bg" data-src="<?php echo $heroImg; ?>/5.jpg"></div>
+			<div class="hero_slider__item js-img-bg" data-src="<?php echo $heroImg; ?>/6.jpg"></div>
 		</div>
 	</div>
 <?php }
