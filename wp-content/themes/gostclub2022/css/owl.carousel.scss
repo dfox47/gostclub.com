@@ -8,25 +8,19 @@
 .owl-carousel {
 	display: none;
 	width: 100%;
-	-webkit-tap-highlight-color: transparent;
 	// position relative and z-index fix webkit rendering fonts issue
 	position: relative;
 	z-index: 1;
 
 	&.owl-drag {
 		.owl-item {
-			-ms-touch-action: pan-y;
 			touch-action: pan-y;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
 			user-select: none;
 		}
 	}
 
 	&.owl-grab {
 		cursor: move;
-		cursor: grab;
 	}
 
 	&.owl-hidden {
@@ -67,12 +61,6 @@
 }
 
 .owl-item {
-	-moz-backface-visibility: hidden;
-	-moz-transform: translate3d(0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	-webkit-tap-highlight-color: transparent;
-	-webkit-touch-callout: none;
-	-webkit-transform: translate3d(0, 0, 0);
 	float: left;
 	min-height: 1px;
 	position: relative;
@@ -85,10 +73,7 @@
 
 .owl-stage {
 	position: relative;
-	-ms-touch-action: pan-Y;
 	touch-action: manipulation;
-	-moz-backface-visibility: hidden;
-	// fix firefox animation glitch
 
 	&:after {
 		content: ".";
@@ -102,14 +87,6 @@
 .owl-stage-outer {
 	position: relative;
 	overflow: hidden;
-	// fix for flashing background
-	-webkit-transform: translate3d(0px, 0px, 0px); }
-
-.owl-wrapper {
-	-moz-backface-visibility: hidden;
-	-moz-transform: translate3d(0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	-webkit-transform: translate3d(0, 0, 0);
 }
 
 .owl-nav.disabled,
@@ -120,8 +97,6 @@
 .owl-prev,
 .owl-next,
 .owl-dot {
-	-moz-user-select: none;
-	-webkit-user-select: none;
 	background: none;
 	border: none;
 	color: inherit;
@@ -184,7 +159,6 @@ img.owl-lazy {
 }
 
 .owl-video-play-icon {
-	-webkit-backface-visibility: hidden;
 	background: url(owl.video.play.png) no-repeat;
 	cursor: pointer;
 	height: 80px;
