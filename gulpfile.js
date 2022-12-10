@@ -74,12 +74,12 @@ gulp.task('gostCss', function () {
 			basename: 'style',
 			// suffix: '.min'
 		}))
-		.pipe(conn.dest(gostClubRemote));
+		.pipe(conn.dest(gostClubRemote))
 })
 
 gulp.task('gostCssCopy', function () {
 	return gulp.src(gostClubLocalCss + '**/*')
-		.pipe(conn.dest(gostClubRemoteCss));
+		.pipe(conn.dest(gostClubRemoteCss))
 })
 
 gulp.task('gostJs', function () {
@@ -92,22 +92,22 @@ gulp.task('gostJs', function () {
 		.pipe(rename({
 			suffix: ".min"
 		}))
-		.pipe(conn.dest(gostClubRemote));
+		.pipe(conn.dest(gostClubRemote))
 })
 
 gulp.task('gostJsCopy', function () {
 	return gulp.src(gostClubLocalJs + '**/*')
-		.pipe(conn.dest(gostClubRemoteJs));
+		.pipe(conn.dest(gostClubRemoteJs))
 })
 
 gulp.task('gostPhp', function () {
 	return gulp.src(gostClubLocal + '*.php')
-		.pipe(conn.dest(gostClubRemote));
+		.pipe(conn.dest(gostClubRemote))
 })
 
 gulp.task('gostTemplateParts', function () {
 	return gulp.src(gostClubLocalParts + '**/*')
-		.pipe(conn.dest(gostClubRemoteParts));
+		.pipe(conn.dest(gostClubRemoteParts))
 })
 // gost club tasks [END]
 
