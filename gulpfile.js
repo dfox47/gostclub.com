@@ -37,15 +37,17 @@ const localParts        = localFolder + 'template-parts/'
 
 
 // GOST club template
-const gostClubRemote        = '/wp-content/themes/gostclub2022/'
-const gostClubRemoteCss     = gostClubRemote + 'css/'
-const gostClubRemoteJs      = gostClubRemote + 'js/'
-const gostClubRemoteParts   = gostClubRemote + 'template-parts/'
+const gostClubRemote            = '/wp-content/themes/gostclub2022/'
+const gostClubRemoteCss         = gostClubRemote + 'css/'
+const gostClubRemoteJs          = gostClubRemote + 'js/'
+const gostClubRemoteParts       = gostClubRemote + 'template-parts/'
+const gostClubRemoteWCBlocks    = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 
-const gostClubLocal         = 'wp-content/themes/gostclub2022/'
-const gostClubLocalCss      = gostClubLocal + 'css/'
-const gostClubLocalJs       = gostClubLocal + 'js/'
-const gostClubLocalParts    = gostClubLocal + 'template-parts/'
+const gostClubLocal             = 'wp-content/themes/gostclub2022/'
+const gostClubLocalCss          = gostClubLocal + 'css/'
+const gostClubLocalJs           = gostClubLocal + 'js/'
+const gostClubLocalParts        = gostClubLocal + 'template-parts/'
+const gostClubLocalWCBlocks     = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 
 
 
@@ -109,6 +111,11 @@ gulp.task('gostTemplateParts', function () {
 	return gulp.src(gostClubLocalParts + '**/*')
 		.pipe(conn.dest(gostClubRemoteParts))
 })
+
+gulp.task('gostWCBlocksCopy', function () {
+	return gulp.src(gostClubLocalWCBlocks + 'wc-blocks-style.css')
+		.pipe(conn.dest(gostClubRemoteWCBlocks))
+})
 // gost club tasks [END]
 
 
@@ -118,6 +125,7 @@ gulp.task('watch', function() {
 	gulp.watch(gostClubLocalCss + '**/*',       gulp.series('gostCss', 'gostCssCopy'))
 	gulp.watch(gostClubLocalJs + '**/*',        gulp.series('gostJs', 'gostJsCopy'))
 	gulp.watch(gostClubLocalParts + '**/*',     gulp.series('gostTemplateParts'))
+	gulp.watch(gostClubLocalWCBlocks + '**/*',  gulp.series('gostWCBlocksCopy'))
 })
 
 gulp.task('default', gulp.series('watch'))
