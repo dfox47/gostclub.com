@@ -20,7 +20,7 @@ const password      = config.password
 const port          = config.port
 const user          = config.user
 
-const remoteFolder      = '/gostclub.com/public_html/wp-content/themes/supermag/'
+const remoteFolder      = '/wp-content/themes/supermag/'
 const remoteHooks       = remoteFolder + 'acmethemes/hooks/'
 const remoteAssets      = remoteFolder + 'assets/'
 const remoteCss         = remoteAssets + 'css/'
@@ -37,7 +37,7 @@ const localParts        = localFolder + 'template-parts/'
 
 
 // GOST club template
-const gostClubRemote        = '/gostclub.com/public_html/wp-content/themes/gostclub2022/'
+const gostClubRemote        = '/wp-content/themes/gostclub2022/'
 const gostClubRemoteCss     = gostClubRemote + 'css/'
 const gostClubRemoteJs      = gostClubRemote + 'js/'
 const gostClubRemoteParts   = gostClubRemote + 'template-parts/'
