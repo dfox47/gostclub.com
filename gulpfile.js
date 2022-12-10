@@ -45,12 +45,14 @@ const gostRemoteIncludes    = '/wp-includes/css/dist/block-library/'
 const gostRemoteWCBlocks    = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 const gostRemoteWCLayout    = '/wp-content/plugins/woocommerce/assets/css/'
 const gostRemoteWCVendors   = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
+const gostRemoteWC          = '/wp-content/plugins/woocommerce/assets/css/'
 
 const gostLocal             = 'wp-content/themes/gostclub2022/'
 const gostLocalCss          = gostLocal + 'css/'
 const gostLocalJs           = gostLocal + 'js/'
 const gostLocalParts        = gostLocal + 'template-parts/'
 const gostLocalIncludes     = 'wp-includes/css/dist/block-library/'
+const gostLocalWC           = 'wp-content/plugins/woocommerce/assets/css/'
 const gostLocalWCBlocks     = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
 const gostLocalWCLayout     = 'wp-content/plugins/woocommerce/assets/css/'
 const gostLocalWCVendors    = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
@@ -137,6 +139,11 @@ gulp.task('gostWCVendorsCopy', function () {
 	return gulp.src(gostLocalWCVendors + 'wc-blocks-vendors-style.css')
 		.pipe(conn.dest(gostRemoteWCVendors))
 })
+
+gulp.task('gostWCCopy', function () {
+	return gulp.src(gostLocalWC + 'woocommerce.css')
+		.pipe(conn.dest(gostRemoteWC))
+})
 // gost club tasks [END]
 
 
@@ -147,6 +154,7 @@ gulp.task('watch', function() {
 	gulp.watch(gostLocalIncludes + '**/*',      gulp.series('gostWCIncludesCopy'))
 	gulp.watch(gostLocalJs + '**/*',            gulp.series('gostJs', 'gostJsCopy'))
 	gulp.watch(gostLocalParts + '**/*',         gulp.series('gostTemplateParts'))
+	gulp.watch(gostLocalWC + '**/*',            gulp.series('gostWCCopy'))
 	gulp.watch(gostLocalWCBlocks + '**/*',      gulp.series('gostWCBlocksCopy'))
 	gulp.watch(gostLocalWCLayout + '**/*',      gulp.series('gostWCLayoutCopy'))
 	gulp.watch(gostLocalWCVendors + '**/*',     gulp.series('gostWCVendorsCopy'))
