@@ -37,21 +37,21 @@ const localParts        = localFolder + 'template-parts/'
 
 
 // GOST club template
-const gostClubRemote            = '/wp-content/themes/gostclub2022/'
-const gostClubRemoteCss         = gostClubRemote + 'css/'
-const gostClubRemoteJs          = gostClubRemote + 'js/'
-const gostClubRemoteParts       = gostClubRemote + 'template-parts/'
-const gostClubRemoteWCBlocks    = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
-const gostClubRemoteWCLayout    = '/wp-content/plugins/woocommerce/assets/css/'
-const gostClubRemoteIncludes    = '/wp-includes/css/dist/block-library/'
+const gostRemote            = '/wp-content/themes/gostclub2022/'
+const gostRemoteCss         = gostRemote + 'css/'
+const gostRemoteJs          = gostRemote + 'js/'
+const gostRemoteParts       = gostRemote + 'template-parts/'
+const gostRemoteIncludes    = '/wp-includes/css/dist/block-library/'
+const gostRemoteWCBlocks    = '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
+const gostRemoteWCLayout    = '/wp-content/plugins/woocommerce/assets/css/'
 
-const gostClubLocal             = 'wp-content/themes/gostclub2022/'
-const gostClubLocalCss          = gostClubLocal + 'css/'
-const gostClubLocalJs           = gostClubLocal + 'js/'
-const gostClubLocalParts        = gostClubLocal + 'template-parts/'
-const gostClubLocalWCBlocks     = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
-const gostClubLocalWCLayout     = 'wp-content/plugins/woocommerce/assets/css/'
-const gostClubLocalIncludes     = 'wp-includes/css/dist/block-library/'
+const gostLocal             = 'wp-content/themes/gostclub2022/'
+const gostLocalCss          = gostLocal + 'css/'
+const gostLocalJs           = gostLocal + 'js/'
+const gostLocalParts        = gostLocal + 'template-parts/'
+const gostLocalIncludes     = 'wp-includes/css/dist/block-library/'
+const gostLocalWCBlocks     = 'wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/'
+const gostLocalWCLayout     = 'wp-content/plugins/woocommerce/assets/css/'
 
 
 
@@ -73,75 +73,75 @@ const conn = getFtpConnection()
 
 // gost club tasks [START]
 gulp.task('gostCss', function () {
-	return gulp.src(gostClubLocalCss + 'styles.scss')
+	return gulp.src(gostLocalCss + 'styles.scss')
 		.pipe(sass())
 		.pipe(cssMinify())
 		.pipe(rename({
 			basename: 'style',
 			// suffix: '.min'
 		}))
-		.pipe(conn.dest(gostClubRemote))
+		.pipe(conn.dest(gostRemote))
 })
 
 gulp.task('gostCssCopy', function () {
-	return gulp.src(gostClubLocalCss + '**/*')
-		.pipe(conn.dest(gostClubRemoteCss))
+	return gulp.src(gostLocalCss + '**/*')
+		.pipe(conn.dest(gostRemoteCss))
 })
 
 gulp.task('gostJs', function () {
 	return gulp.src([
-		gostClubLocalJs + 'jquery-3.6.0.min.js',
-		gostClubLocalJs + '**/*.js'
+		gostLocalJs + 'jquery-3.6.0.min.js',
+		gostLocalJs + '**/*.js'
 	])
 		.pipe(concat('all.js'))
 		// .pipe(uglify())
 		.pipe(rename({
 			suffix: ".min"
 		}))
-		.pipe(conn.dest(gostClubRemote))
+		.pipe(conn.dest(gostRemote))
 })
 
 gulp.task('gostJsCopy', function () {
-	return gulp.src(gostClubLocalJs + '**/*')
-		.pipe(conn.dest(gostClubRemoteJs))
+	return gulp.src(gostLocalJs + '**/*')
+		.pipe(conn.dest(gostRemoteJs))
 })
 
 gulp.task('gostPhp', function () {
-	return gulp.src(gostClubLocal + '*.php')
-		.pipe(conn.dest(gostClubRemote))
+	return gulp.src(gostLocal + '*.php')
+		.pipe(conn.dest(gostRemote))
 })
 
 gulp.task('gostTemplateParts', function () {
-	return gulp.src(gostClubLocalParts + '**/*')
-		.pipe(conn.dest(gostClubRemoteParts))
+	return gulp.src(gostLocalParts + '**/*')
+		.pipe(conn.dest(gostRemoteParts))
 })
 
 gulp.task('gostWCBlocksCopy', function () {
-	return gulp.src(gostClubLocalWCBlocks + 'wc-blocks-style.css')
-		.pipe(conn.dest(gostClubRemoteWCBlocks))
-})
-
-gulp.task('gostWCLayoutCopy', function () {
-	return gulp.src(gostClubLocalWCLayout + 'woocommerce-layout.css')
-		.pipe(conn.dest(gostClubRemoteWCLayout))
+	return gulp.src(gostLocalWCBlocks + 'wc-blocks-style.css')
+		.pipe(conn.dest(gostRemoteWCBlocks))
 })
 
 gulp.task('gostWCIncludesCopy', function () {
-	return gulp.src(gostClubLocalIncludes + 'style.min.css')
-		.pipe(conn.dest(gostClubRemoteIncludes))
+	return gulp.src(gostLocalIncludes + 'style.min.css')
+		.pipe(conn.dest(gostRemoteIncludes))
+})
+
+gulp.task('gostWCLayoutCopy', function () {
+	return gulp.src(gostLocalWCLayout + 'woocommerce-layout.css')
+		.pipe(conn.dest(gostRemoteWCLayout))
 })
 // gost club tasks [END]
 
 
 
 gulp.task('watch', function() {
-	gulp.watch(gostClubLocal + '*.php',         gulp.series('gostPhp'))
-	gulp.watch(gostClubLocalCss + '**/*',       gulp.series('gostCss', 'gostCssCopy'))
-	gulp.watch(gostClubLocalJs + '**/*',        gulp.series('gostJs', 'gostJsCopy'))
-	gulp.watch(gostClubLocalParts + '**/*',     gulp.series('gostTemplateParts'))
-	gulp.watch(gostClubLocalWCBlocks + '**/*',  gulp.series('gostWCBlocksCopy'))
-	gulp.watch(gostClubLocalWCLayout + '**/*',  gulp.series('gostWCLayoutCopy'))
-	gulp.watch(gostClubLocalIncludes + '**/*',  gulp.series('gostWCIncludesCopy'))
+	gulp.watch(gostLocal + '*.php',             gulp.series('gostPhp'))
+	gulp.watch(gostLocalCss + '**/*',           gulp.series('gostCss', 'gostCssCopy'))
+	gulp.watch(gostLocalIncludes + '**/*',      gulp.series('gostWCIncludesCopy'))
+	gulp.watch(gostLocalJs + '**/*',            gulp.series('gostJs', 'gostJsCopy'))
+	gulp.watch(gostLocalParts + '**/*',         gulp.series('gostTemplateParts'))
+	gulp.watch(gostLocalWCBlocks + '**/*',      gulp.series('gostWCBlocksCopy'))
+	gulp.watch(gostLocalWCLayout + '**/*',      gulp.series('gostWCLayoutCopy'))
 })
 
 gulp.task('default', gulp.series('watch'))
