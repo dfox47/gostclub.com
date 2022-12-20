@@ -1,6 +1,6 @@
 .hero_slider {
 	display: block;
-	height: 40vw;
+	height: 57vw;
 	width: 100%;
 
 	&__item {
@@ -60,9 +60,5 @@
 
 	.owl-stage-outer {
 		height: 100%;
-	}
-
-	@media #{$mobile} {
-		height: 200px;
 	}
 }
