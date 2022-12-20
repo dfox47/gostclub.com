@@ -11,9 +11,7 @@ if ($currentLang == 'bg') {
 }
 elseif ($currentLang == 'en') {
 	$txtGostJournal = "GOST journal";
-}
-
-?>
+} ?>
 
 <div class="aside">
 	<div class="mobile_hide">
