@@ -1,4 +1,3 @@
-
 // npm install -g gulp-cli
 // npm install gulp gulp-csso gulp-concat vinyl-ftp gulp-util gulp-rename gulp-sass gulp-uglify --save-dev
 
@@ -22,7 +21,6 @@ let port            = config.port
 let user            = config.user
 
 let remoteFolder    = '/gostclub.com/public_html/wp-content/themes/supermag/'
-// let remoteFolder    = '/gostclub.com/public_html/wp-content/themes/gostclub2022/'
 let remoteHooks     = remoteFolder + 'acmethemes/hooks/'
 let remoteAssets    = remoteFolder + 'assets/'
 let remoteCss       = remoteAssets + 'css/'
@@ -30,7 +28,6 @@ let remoteJs        = remoteAssets + 'js/'
 let remoteParts     = remoteFolder + 'template-parts/'
 
 let localFolder     = 'wp-content/themes/supermag/'
-// let localFolder     = 'wp-content/themes/gostclub2022/'
 let localHooks      = localFolder + 'acmethemes/hooks/'
 let localAssets     = localFolder + 'assets/'
 let localCss        = localAssets + 'css/'
@@ -117,10 +114,10 @@ gulp.task('gostTemplateParts', function () {
 
 
 gulp.task('watch', function() {
-	gulp.watch(gostClubLocal + '*.php',     gulp.series('gostPhp'))
-	gulp.watch(gostClubLocalCss + '**/*',   gulp.series('gostCss', 'gostCssCopy'))
-	gulp.watch(gostClubLocalJs + '**/*',    gulp.series('gostJsCopy'))
-	gulp.watch(gostClubLocalParts + '**/*', gulp.series('gostTemplateParts'))
+	gulp.watch(gostClubLocal + '*.php',         gulp.series('gostPhp'))
+	gulp.watch(gostClubLocalCss + '**/*',       gulp.series('gostCss', 'gostCssCopy'))
+	gulp.watch(gostClubLocalJs + '**/*',        gulp.series('gostJsCopy'))
+	gulp.watch(gostClubLocalParts + '**/*',     gulp.series('gostTemplateParts'))
 })
 
 gulp.task('default', gulp.series('watch'))
