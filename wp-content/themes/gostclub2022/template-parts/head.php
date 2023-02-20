@@ -8,12 +8,15 @@ if (get_the_post_thumbnail_url()) {
 $currentLang    = get_bloginfo("language");
 $currentUrl     = $_SERVER['REQUEST_URI'];
 $logoLink       = '/';
+$country        = 'Балкани';
 
 if ($currentLang == 'en-US') {
-	$logoLink = '/en/';
+	$country    = 'Balkans';
+	$logoLink   = '/en/';
 }
 elseif ($currentLang == 'ru-RU') {
-	$logoLink = '/ru/';
+	$country    = 'Балканы';
+	$logoLink   = '/ru/';
 } ?>
 
 	<div class="header_wrap">
@@ -23,7 +26,7 @@ elseif ($currentLang == 'ru-RU') {
 
 				<a class="header_login" href="javascript:void(0);"></a>
 
-				<a class="header_logo" href="<?php echo $logoLink; ?>">GOST <span class="header_logo__country">Balkans</span></a>
+				<a class="header_logo" href="<?= $logoLink; ?>">GOST <span class="header_logo__country"><?= $country; ?></span></a>
 
 				<div class="header_right">
 					<span class="header_search_icon js-search-toggle"></span>
@@ -54,11 +57,11 @@ if (is_front_page()) {
 
 	<div class="hero_slider">
 		<div class="js-owl-carousel-auto owl-carousel">
-			<a class="hero_slider__item js-img-bg" href="//tzarsimeon.bg/" target="_blank" data-src="<?php echo $heroImg; ?>/9.jpg"></a>
-			<a class="hero_slider__item js-img-bg" href="//www.instagram.com/gostclub.balkans/" target="_blank" data-src="<?php echo $heroImg; ?>/8.jpg"></a>
-			<div class="hero_slider__item js-img-bg" data-src="<?php echo $heroImg; ?>/2.jpg"></div>
-			<div class="hero_slider__item js-img-bg" data-src="<?php echo $heroImg; ?>/5.jpg"></div>
-			<div class="hero_slider__item js-img-bg" data-src="<?php echo $heroImg; ?>/6.jpg"></div>
+			<a class="hero_slider__item js-img-bg" href="//tzarsimeon.bg/" target="_blank" data-src="<?= $heroImg; ?>/9.jpg"></a>
+			<a class="hero_slider__item js-img-bg" href="//www.instagram.com/gostclub.balkans/" target="_blank" data-src="<?= $heroImg; ?>/8.jpg"></a>
+			<div class="hero_slider__item js-img-bg" data-src="<?= $heroImg; ?>/2.jpg"></div>
+			<div class="hero_slider__item js-img-bg" data-src="<?= $heroImg; ?>/5.jpg"></div>
+			<div class="hero_slider__item js-img-bg" data-src="<?= $heroImg; ?>/6.jpg"></div>
 		</div>
 	</div>
 <?php }
