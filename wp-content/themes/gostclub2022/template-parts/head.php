@@ -26,7 +26,7 @@ elseif ($currentLang == 'ru-RU') {
 
 				<a class="header_login" href="javascript:void(0);"></a>
 
-				<a class="header_logo" href="<?= $logoLink; ?>">GOST <span class="header_logo__country"><?= $country; ?></span></a>
+				<a class="header_logo" href="<?= $logoLink; ?>">GOST <span class="header_logo__country">Balkans</span></a>
 
 				<div class="header_right">
 					<span class="header_search_icon js-search-toggle"></span>
