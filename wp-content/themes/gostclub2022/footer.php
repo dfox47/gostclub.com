@@ -20,7 +20,7 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 
 <!--LiveInternet counter-->
 <a class="hidden" href="https://www.liveinternet.ru/click" target="_blank">
-	<img id="licntA70C" width="88" height="31" style="border:0" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt="">
+	<img id="licntA70C" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt="">
 </a>
 
 <script>
