@@ -84,8 +84,9 @@ gulp.task('gostCssCopy', function () {
 
 gulp.task('gostJs', function () {
 	return gulp.src([
-		localJs + 'jquery-3.4.1.min.js',
-		localJs + '**/*.js'
+		gostClubLocalJs + 'jquery-3.6.0.min.js',
+		gostClubLocalJs + 'owl.carousel.min.js',
+		gostClubLocalJs + '**/*.js'
 	])
 		.pipe(concat('all.js'))
 		// .pipe(uglify())
@@ -96,8 +97,8 @@ gulp.task('gostJs', function () {
 })
 
 gulp.task('gostJsCopy', function () {
-	return gulp.src(localJs + '**/*')
-		.pipe(conn.dest(remoteJs));
+	return gulp.src(gostClubLocalJs + '**/*')
+		.pipe(conn.dest(gostClubRemoteJs));
 })
 
 gulp.task('gostPhp', function () {
@@ -116,7 +117,7 @@ gulp.task('gostTemplateParts', function () {
 gulp.task('watch', function() {
 	gulp.watch(gostClubLocal + '*.php',         gulp.series('gostPhp'))
 	gulp.watch(gostClubLocalCss + '**/*',       gulp.series('gostCss', 'gostCssCopy'))
-	gulp.watch(gostClubLocalJs + '**/*',        gulp.series('gostJsCopy'))
+	gulp.watch(gostClubLocalJs + '**/*',        gulp.series('gostJs', 'gostJsCopy'))
 	gulp.watch(gostClubLocalParts + '**/*',     gulp.series('gostTemplateParts'))
 })
 
