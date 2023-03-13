@@ -6,14 +6,17 @@ $currentLang = substr(get_bloginfo("language"), 0, 2);
 
 $txtGostJournal = "ГОСТ журнал";
 $txtTopics      = "Рубрики";
+$txtReadOnline  = "Читайте онлайн";
 
 if ($currentLang == 'bg') {
 	$txtGostJournal = "ГОСТ списание";
 	$txtTopics      = "Рубрики";
+	$txtReadOnline  = "Чети онлайн";
 }
 elseif ($currentLang == 'en') {
 	$txtGostJournal = "GOST journal";
 	$txtTopics      = "Topics";
+	$txtReadOnline  = "Read online";
 } ?>
 
 <div class="aside">
@@ -53,11 +56,7 @@ elseif ($currentLang == 'en') {
 		</ul>
 	</div>
 
-	<h3>
-		<span class="lang_bg_only">Чети онлайн</span>
-		<span class="lang_en_only">Read online</span>
-		<span class="lang_ru_only">Читайте онлайн</span>
-	</h3>
+	<h3><?= $txtReadOnline; ?></h3>
 
 	<ul class="aside_list">
 		<li class="aside_list__item">
