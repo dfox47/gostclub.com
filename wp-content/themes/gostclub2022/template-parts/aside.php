@@ -58,71 +58,28 @@ elseif ($currentLang == 'en') {
 
 	<h3><?= $txtReadOnline; ?></h3>
 
+	<?php
+	$arr2 = array(
+		['11','1','//issuu.com/zenitafish/docs/_____11'],
+		['10','2', '//issuu.com/zenitafish/docs/small'],
+		['9','3', '//issuu.com/zenitafish/docs/web-isuu'],
+		['8','4', '//issuu.com/zenitafish/docs/____8'],
+		['7','5', '//issuu.com/zenitafish/docs/spisanie_br_7_fina'],
+		['6','6', '//issuu.com/zenitafish/docs/magazine_01'],
+		['5','7', '//issuu.com/zenitafish'],
+		['4','8', '//issuu.com/zenitafish'],
+		['3','9', '//issuu.com/zenitafish'],
+		['2','10', '//issuu.com/zenitafish/docs/gost_web'],
+		['1','11', '//issuu.com/zenitafish/docs/spisanie_internet.compressed'],
+	); ?>
+
 	<ul class="aside_list">
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/_____11" target="_blank" title="<?= $txtGostJournal ?> #11">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/1.jpg" alt="<?= $txtGostJournal ?> #11">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/small" target="_blank" title="<?= $txtGostJournal ?> #10">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/2.jpg" alt="<?= $txtGostJournal ?> #10">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/web-isuu" target="_blank" title="<?= $txtGostJournal ?> #9">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/3.jpg" alt="<?= $txtGostJournal ?> #9">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/____8" target="_blank" title="<?= $txtGostJournal ?> #8">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/4.jpg" alt="<?= $txtGostJournal ?> #8">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/spisanie_br_7_fina" target="_blank" title="<?= $txtGostJournal ?> #7">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/5.jpg" alt="<?= $txtGostJournal ?> #7">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/magazine_01" target="_blank" title="<?= $txtGostJournal ?> #6">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/6.jpg" alt="<?= $txtGostJournal ?> #6">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish" target="_blank" title="<?= $txtGostJournal ?> #5">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/7.jpg" alt="<?= $txtGostJournal ?> #5">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish" target="_blank" title="<?= $txtGostJournal ?> #4">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/8.jpg" alt="<?= $txtGostJournal ?> #4">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish" target="_blank" title="<?= $txtGostJournal ?> #3">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/9.jpg" alt="<?= $txtGostJournal ?> #3">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/gost_web" target="_blank" title="<?= $txtGostJournal ?> #2">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/10.jpg" alt="<?= $txtGostJournal ?> #2">
-			</a>
-		</li>
-
-		<li class="aside_list__item">
-			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/spisanie_internet.compressed" target="_blank" title="<?= $txtGostJournal ?> #1">
-				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/11.jpg" alt="<?= $txtGostJournal ?> #1">
-			</a>
-		</li>
+		<?php foreach ($arr2 as list($number, $i, $link)) { ?>
+			<li class="aside_list__item">
+				<a class="aside_list__link" href="<?php echo $link;?>" target="_blank" title="<?= $txtGostJournal ?> #<?php echo $number;?>">
+					<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/<?php echo $i; ?>.jpg" alt="<?= $txtGostJournal ?> #<?php echo $number;?>">
+				</a>
+			</li>
+		<?php } ?>
 	</ul>
 </div>
