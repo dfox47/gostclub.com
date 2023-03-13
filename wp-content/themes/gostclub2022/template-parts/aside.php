@@ -5,12 +5,15 @@ $dummImg        = $i . '/dumm.png';
 $currentLang = substr(get_bloginfo("language"), 0, 2);
 
 $txtGostJournal = "ГОСТ журнал";
+$txtTopics      = "Рубрики";
 
 if ($currentLang == 'bg') {
 	$txtGostJournal = "ГОСТ списание";
+	$txtTopics      = "Рубрики";
 }
 elseif ($currentLang == 'en') {
 	$txtGostJournal = "GOST journal";
+	$txtTopics      = "Topics";
 } ?>
 
 <div class="aside">
@@ -18,11 +21,7 @@ elseif ($currentLang == 'en') {
 	include "cat_list_1.php"; ?>
 
 	<div>
-		<h3>
-			<span class="lang_bg_only">Рубрики</span>
-			<span class="lang_en_only">Topics</span>
-			<span class="lang_ru_only">Рубрики</span>
-		</h3>
+		<h3><?= $txtTopics; ?></h3>
 
 		<ul class="aside_cat_list">
 			<?php // separate categories
