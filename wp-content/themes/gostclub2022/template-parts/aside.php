@@ -14,10 +14,8 @@ elseif ($currentLang == 'en') {
 } ?>
 
 <div class="aside">
-	<div class="mobile_hide">
-		<?php // aside
-		include "cat_list_1.php"; ?>
-	</div>
+	<?php // aside
+	include "cat_list_1.php"; ?>
 
 	<div>
 		<h3>
@@ -68,7 +66,7 @@ elseif ($currentLang == 'en') {
 				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/1.jpg" alt="<?= $txtGostJournal ?> #11">
 			</a>
 		</li>
- 
+
 		<li class="aside_list__item">
 			<a class="aside_list__link" href="//issuu.com/zenitafish/docs/small" target="_blank" title="<?= $txtGostJournal ?> #10">
 				<img class="js-img-scroll" src="<?php echo $dummImg; ?>" data-src="<?php echo $journalImg; ?>/2.jpg" alt="<?= $txtGostJournal ?> #10">
