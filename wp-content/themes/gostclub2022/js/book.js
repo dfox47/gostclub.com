@@ -16,7 +16,6 @@ $(document).ready(function() {
 		hardcovers: true,
 		height: 500,
 		numberedPages: [1,-2],
-		// scaleToFit: "#container",
 		scaleToFit: "#main",
 		thumbnailsPosition: 'bottom',
 		turnPageDuration: 1000,
