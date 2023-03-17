@@ -20,20 +20,6 @@ let password        = config.password
 let port            = config.port
 let user            = config.user
 
-let remoteFolder    = '/gostclub.com/public_html/wp-content/themes/supermag/'
-let remoteHooks     = remoteFolder + 'acmethemes/hooks/'
-let remoteAssets    = remoteFolder + 'assets/'
-let remoteCss       = remoteAssets + 'css/'
-let remoteJs        = remoteAssets + 'js/'
-let remoteParts     = remoteFolder + 'template-parts/'
-
-let localFolder     = 'wp-content/themes/supermag/'
-let localHooks      = localFolder + 'acmethemes/hooks/'
-let localAssets     = localFolder + 'assets/'
-let localCss        = localAssets + 'css/'
-let localJs         = localAssets + 'js/'
-let localParts      = localFolder + 'template-parts/'
-
 
 
 // GOST club template
