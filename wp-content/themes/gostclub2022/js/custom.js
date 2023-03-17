@@ -41,13 +41,10 @@ $menuItem.forEach((e) => {
 
 
 
+
 // example https://codepen.io/captain_anonym0us/pen/ybVbpv
 const jouranlsBook = () => {
-	const pages = document.querySelector('.js-journal').getElementsByClassName('wp-block-image')
-
-	console.log('x1')
-
-	if (!pages) return
+	const pages = document.querySelector('.js-journal').getElementsByClassName('wp-block-imageX')
 
 	console.log('x2')
 
@@ -81,4 +78,4 @@ const jouranlsBook = () => {
 	console.log('x4')
 }
 
-jouranlsBook()
+// jouranlsBook()
