@@ -59,17 +59,17 @@ gulp.task('gostCss', () => {
 		.pipe(conn.dest(gostRemote))
 })
 
-gulp.task('gostCssCopy', function () {
+gulp.task('gostCssCopy', () => {
 	return gulp.src(gostLocalCss + '**/*')
 		.pipe(conn.dest(gostRemoteCss))
 })
 
-gulp.task('gostBookCopy', function () {
+gulp.task('gostBookCopy', () => {
 	return gulp.src(gostLocalBook + 'index.html')
 		.pipe(conn.dest(gostRemoteBook))
 })
 
-gulp.task('gostJs', function () {
+gulp.task('gostJs', () => {
 	return gulp.src([
 		gostLocalJs + 'jquery-3.6.0.min.js',
 		gostLocalJs + 'owl.carousel.min.js',
@@ -83,24 +83,24 @@ gulp.task('gostJs', function () {
 		.pipe(conn.dest(gostRemote))
 })
 
-gulp.task('gostJsCopy', function () {
+gulp.task('gostJsCopy', () => {
 	return gulp.src(gostLocalJs + '**/*')
 		.pipe(conn.dest(gostRemoteJs))
 })
 
-gulp.task('gostPhp', function () {
+gulp.task('gostPhp', () => {
 	return gulp.src(gostLocal + '*.php')
 		.pipe(conn.dest(gostRemote))
 })
 
-gulp.task('gostTemplateParts', function () {
+gulp.task('gostTemplateParts', () => {
 	return gulp.src(gostLocalParts + '**/*')
 		.pipe(conn.dest(gostRemoteParts))
 })
 
 
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
 	gulp.watch(gostLocal + '*.php',             gulp.series('gostPhp'))
 	gulp.watch(gostLocalCss + '**/*',           gulp.series('gostCss', 'gostCssCopy'))
 	gulp.watch(gostLocalJs + '**/*',            gulp.series('gostJs', 'gostJsCopy'))
