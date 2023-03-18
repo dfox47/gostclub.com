@@ -24,13 +24,11 @@ let gostRemote          = '/gostclub.com/public_html/wp-content/themes/gostclub2
 let gostRemoteCss       = gostRemote + 'css/'
 let gostRemoteJs        = gostRemote + 'js/'
 let gostRemoteParts     = gostRemote + 'template-parts/'
-let gostRemoteBook      = gostRemote + 'tmp/wowbook-master/'
 
 let gostLocal           = 'wp-content/themes/gostclub2022/'
 let gostLocalCss        = gostLocal + 'css/'
 let gostLocalJs         = gostLocal + 'js/'
 let gostLocalParts      = gostLocal + 'template-parts/'
-let gostLocalBook       = gostLocal + 'tmp/wowbook-master/'
 
 function getFtpConnection() {
 	return ftp.create({
@@ -64,15 +62,11 @@ gulp.task('gostCssCopy', () => {
 		.pipe(conn.dest(gostRemoteCss))
 })
 
-gulp.task('gostBookCopy', () => {
-	return gulp.src(gostLocalBook + 'index.html')
-		.pipe(conn.dest(gostRemoteBook))
-})
-
 gulp.task('gostJs', () => {
 	return gulp.src([
 		gostLocalJs + 'jquery-3.6.0.min.js',
 		gostLocalJs + 'owl.carousel.min.js',
+		gostLocalJs + 'wow_book.js',
 		gostLocalJs + '**/*.js'
 	])
 		.pipe(concat('all.js'))
@@ -105,7 +99,6 @@ gulp.task('watch', () => {
 	gulp.watch(gostLocalCss + '**/*',           gulp.series('gostCss', 'gostCssCopy'))
 	gulp.watch(gostLocalJs + '**/*',            gulp.series('gostJs', 'gostJsCopy'))
 	gulp.watch(gostLocalParts + '**/*',         gulp.series('gostTemplateParts'))
-	gulp.watch(gostLocalBook + 'index.html',    gulp.series('gostBookCopy'))
 })
 
 gulp.task('default', gulp.series('watch'))
