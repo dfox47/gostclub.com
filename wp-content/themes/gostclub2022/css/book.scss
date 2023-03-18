@@ -1,259 +1,3 @@
-/*
-  HTML5 ✰ Boilerplate
-
-  style.css contains a reset, font normalization and some base styles.
-
-  credit is left where credit is due.
-  much inspiration was taken from these projects:
-    yui.yahooapis.com/2.8.1/build/base/base.css
-    camendesign.com/design/
-    praegnanz.de/weblog/htmlcssjs-kickstart
-*/
-
-/*
-  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
-  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
-  html5doctor.com/html-5-reset-stylesheet/
-*/
-
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-	margin:0;
-	padding:0;
-	border:0;
-	outline:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display:block;
-}
-
-nav ul { list-style:none; }
-
-blockquote, q { quotes:none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after { content:''; content:none; }
-
-a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
-
-ins { background-color:#ff9; color:#000; text-decoration:none; }
-
-mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
-
-del { text-decoration: line-through; }
-
-abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
-
-/* tables still need cellspacing="0" in the markup */
-table { border-collapse:collapse; border-spacing:0; }
-
-hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
-
-input, select { vertical-align:middle; }
-
-/* END RESET CSS */
-
-
-/* fonts.css from the YUI Library: developer.yahoo.com/yui/
-   Refer to developer.yahoo.com/yui/3/cssfonts/ for font sizing percentages
-
-  There are three custom edits:
-   * remove arial, helvetica from explicit font stack
-   * we normalize monospace styles ourselves
-   * table font-size is reset in the HTML5 reset above so there is no need to repeat
-*/
-body { font:100%/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */
-
-select, input, textarea, button { font:99% sans-serif; }
-
-/* normalize monospace sizing
- * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
- */
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
-
-
-/*
- * minimal base styles
- */
-
-
-body, select, input, textarea {
-	/* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
-	color: #444;
-	/* set your base font here, to apply evenly */
-	/* font-family: Georgia, serif;  */
-}
-
-/* Headers (h1,h2,etc) have no default font-size or margin,
-   you'll want to define those yourself. */
-h1,h2,h3,h4,h5,h6 { font-weight: bold; }
-
-/* always force a scrollbar in non-IE */
-html { overflow-y: scroll; }
-
-
-/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
-a:hover, a:active { outline: none; }
-
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
-
-
-ul, ol { margin-left: 1.8em; }
-ol { list-style-type: decimal; }
-
-/* Remove margins for navigation lists */
-nav ul, nav li { margin: 0; }
-
-small { font-size: 85%; }
-strong, th { font-weight: bold; }
-
-td, td img { vertical-align: top; }
-
-sub { vertical-align: sub; font-size: smaller; }
-sup { vertical-align: super; font-size: smaller; }
-
-pre {
-	padding: 15px;
-
-	/* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
-	white-space: pre; /* CSS2 */
-	white-space: pre-wrap; /* CSS 2.1 */
-	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-	word-wrap: break-word; /* IE */
-}
-
-textarea { overflow: auto; } /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
-
-.ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */
-
-/* align checkboxes, radios, text inputs with their label
-   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
-input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; }
-.ie7 input[type="checkbox"] { vertical-align: baseline; }
-.ie6 input { vertical-align: text-bottom; }
-
-/* hand cursor on clickable input elements */
-label, input[type=button], input[type=submit], button { cursor: pointer; }
-
-/* webkit browsers add a 2px margin outside the chrome of form elements */
-button, input, select, textarea { margin: 0; }
-
-/* colors for form validity */
-input:valid, textarea:valid   {  }
-input:invalid, textarea:invalid {
-	border-radius: 1px;
-	-moz-box-shadow: 0px 0px 5px red;
-	-webkit-box-shadow: 0px 0px 5px red;
-	box-shadow: 0px 0px 5px red;
-}
-.no-boxshadow input:invalid,
-.no-boxshadow textarea:invalid { background-color: #f0dddd; }
-
-
-/* These selection declarations have to be separate.
-   No text-shadow: twitter.com/miketaylr/status/12228805301
-   Also: hot pink. */
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; }
-
-/*  j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; }
-
-/* make buttons play nice in IE:
-   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
-button {  width: auto; overflow: visible; }
-
-/* bicubic resizing for non-native sized IMG:
-   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
-.ie7 img { -ms-interpolation-mode: bicubic; }
-
-
-
-/*
- * Non-semantic helper classes
- */
-
-/* for image replacement */
-.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
-
-/* Hide for both screenreaders and browsers
-   css-discuss.incutio.com/wiki/Screenreader_Visibility */
-.hidden { display: none; visibility: hidden; }
-
-/* Hide only visually, but have it available for screenreaders
-   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
-.visuallyhidden { position: absolute !important;
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px); }
-
-/* Hide visually and from screenreaders, but maintain layout */
-.invisible { visibility: hidden; }
-
-/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
-.clearfix:before, .clearfix:after {
-	content: "\0020"; display: block; height: 0; visibility: hidden;
-}
-
-.clearfix:after { clear: both; }
-/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
-.clearfix { zoom: 1; }
-
-
-
-
-
-
-/* Primary Styles
-   Author:
-*/
-
-
-/*
- * Media queries for responsive design
- * These follow after primary styles so they will successfully override.
- */
-
-@media all and (orientation:portrait) {
-	/* Style adjustments for portrait mode goes here */
-
-}
-
-@media all and (orientation:landscape) {
-	/* Style adjustments for landscape mode goes here */
-
-}
-
-/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)
-   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
-@media screen and (max-device-width: 480px) {
-
-
-	/* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
-	   j.mp/textsizeadjust
-	html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
-}
-
-/*
- * print styles
- * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
- */
 @media print {
 	* { background: transparent !important; color: #444 !important; text-shadow: none !important; }
 	a, a:visited { color: #444 !important; text-decoration: underline; }
@@ -268,23 +12,20 @@ button {  width: auto; overflow: visible; }
 	h2, h3{ page-break-after: avoid; }
 }
 
-
-/* ******************************************* */
-
 nav {
-
 	height: 26px;
-	text-align: center; }
+	text-align: center;
+}
 nav ul {
-	padding: 0;
-	border-width: 1px;
-	border-style: solid;
 	border-color: #d5d5d5 #d2d2d2 #cdcdcd;
 	border-radius: 6px;
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: 0 1px 1px rgba(#000, .04);
 	display: -moz-inline-box;
 	display: inline-block;
+	padding: 0;
 	vertical-align: baseline;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 nav li {
 	float: left;
@@ -307,7 +48,7 @@ nav a {
 	line-height: 26px;
 	text-shadow: 0 1px #fff;
 	background-color: #2C2C2C;
-	background-image: linear-gradient(top, #333333, #222222);
+	background-image: linear-gradient(top, #333, #222);
 }
 
 nav a:hover {
@@ -334,67 +75,25 @@ nav a:visited {
 
 
 
-
-
-
-@font-face {
-	font-family: 'BebasNeueRegular';
-	src: url('../fonts/BebasNeue-webfont.eot');
-	src: url('../fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/BebasNeue-webfont.woff') format('woff'), url('../fonts/BebasNeue-webfont.ttf') format('truetype'), url('../fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-html,
-body {
-	overflow: hidden;
-}
-body,
-html {
-	height: 100%;
-}
 .wowbook {
 	color: #333;
 }
+
 .wowbook-page-content {
 	background: white;
 }
+
 .wowbook-left .wowbook-gutter-shadow {
-	background-image: url('../images/page_left_background.png');
 	opacity: 0.5;
 	width: 60px;
 }
+
 .wowbook-right .wowbook-gutter-shadow {
-	background-image: url('../images/page_right_background.png');
 	background-position: 0 0;
 	width: 75px;
 }
-body {
-	color: black;
-	background: #ffffff url("../images/wood.jpg");
-	background-position: 50% top;
-	-webkit-box-sizing: border-box;
-	/* Safari/Chrome, other WebKit */
 
-	-moz-box-sizing: border-box;
-	/* Firefox, other Gecko */
-
-	box-sizing: border-box;
-}
-a,
-a:active,
-a:visited {
-	text-decoration: none;
-}
 #container {
-	-webkit-box-sizing: border-box;
-	/* Safari/Chrome, other WebKit */
-
-	-moz-box-sizing: border-box;
-	/* Firefox, other Gecko */
-
-	box-sizing: border-box;
-	/* Opera/IE 8+ */
-
 	height: 100%;
 	max-width: 900px;
 	margin: auto;
@@ -405,151 +104,85 @@ h1,
 h2 {
 	font-size: 32px;
 	font-weight: normal;
-	font-family: 'News Cycle', sans-serif;
-	text-shadow: 0 1px 0 rgba(10, 10, 10, 0.5);
+	text-shadow: 0 1px 0 rgba(10,10,10, .5);
 	margin-top: 1em;
 	margin-bottom: 0.5em;
 }
+
 h2 {
 	font-size: 24px;
 	margin-bottom: 0.5em;
 }
-nav {
+
+.book_nav {
 	height: 46px;
 	left: 0;
 	position: absolute;
 	right: 0;
 	top: 20px;
-	z-index: 2147483647;
-	zoom: 1;
+
+	a {
+		display: block;
+		height: 46px;
+		padding: 0;
+		text-indent: 100%;
+		white-space: nowrap;
+		width: 48px;
+	}
 }
-nav a {
-	display: block;
-	height: 46px;
-	width: 48px;
-	padding: 0;
-	background: #000000 no-repeat;
-	background-position: 8px 7px;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-nav #zoomin {
-	background-image: url(../images/icons/zoom_in.png);
-}
-nav #zoomout {
-	background-image: url(../images/icons/zoom_out.png);
-}
-nav #first {
-	background-image: url(../images/icons/arrow_double_left.png);
-}
-nav #last {
-	background-image: url(../images/icons/arrow_double_right.png);
-}
-nav #next {
-	background-image: url(../images/icons/arrow_right.png);
-}
-nav #back {
-	background-image: url(../images/icons/arrow_left.png);
-}
-nav #slideshow {
-	background-image: url(../images/icons/slideshow_play.png);
-}
-nav #slideshow.wowbook-disabled {
-	background-image: url(../images/icons/slideshow_pause.png);
-}
-nav #flipsound {
-	background-image: url(../images/icons/sound_on.png);
-}
-nav #flipsound.wowbook-disabled {
-	background-image: url(../images/icons/sound_off.png);
-}
-nav #thumbs {
-	background-image: url(../images/icons/thumbs.png);
-}
-nav #fullscreen {
-	background-image: url(../images/icons/fullscreen_on.png);
-}
-nav #fullscreen.wowbook-disabled {
-	background-image: url(../images/icons/fullscreen_off.png);
-}
-nav a:hover {
-	background-color: #2C2C2C;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfc), color-stop(100%, #f0f0f0));
-	background-image: -webkit-linear-gradient(top, #555555, #222222);
-	background-image: -moz-linear-gradient(top, #555555, #222222);
-	background-image: -ms-linear-gradient(top, #555555, #222222);
-	background-image: -o-linear-gradient(top, #555555, #222222);
-	background-image: linear-gradient(top, #555555, #222222);
-}
-nav a:active,
-nav a:hover,
-nav a {
-	outline: none;
-}
+
 @media screen and (max-width: 568px), screen and (max-height: 380px) {
 	#container {
 		padding-top: 35px;
 		padding-bottom: 5px;
 	}
+
 	nav {
 		margin: auto;
-		top: 0px;
+		top: 0;
 	}
+
 	nav li {
 		height: 32px;
 	}
+
 	nav li a {
 		background-size: 50% 50%;
 		height: 32px;
 		width: 32px;
 	}
-	html {
-		-webkit-text-size-adjust: none;
-	}
-	#click_to_open {
-		display: none;
-	}
 }
+
 .wowbook-page-content {
 	padding: 1em;
 }
+
 #main {
 	position: relative;
 }
-#click_to_open {
-	position: absolute;
-	left: 25%;
-	margin-left: -180px;
-	top: 50%;
-	margin-top: -50px;
-}
+
 .js #features {
-	mmargin-left: -12000px;
+	margin-left: -12000px;
 }
 .wowbook-page {
-	mmargin: auto;
+	margin: auto;
 }
 .wowbook-page h1 {
-	font-family: 'BebasNeueRegular', sans-serif;
 	font-size: 32px;
 	color: white;
 	background: #aa2b2b;
 	line-height: 1.5;
-	padding: 5px 5px 0px;
+	padding: 5px 5px 0;
 	margin: 0;
 }
 .wowbook-page .subtitle {
-	font-family: 'BebasNeueRegular', sans-serif;
 	font-size: 18px;
 	color: black;
 	line-height: 1.5;
-	padding: 5px 5px 0px;
-	font-style: italic;
+	padding: 5px 5px 0;
 }
 .wowbook-page p,
 .wowbook-page ul {
-	font-family: 'News Cycle', sans-serif;
 	font-size: 24px;
 	margin-top: 0.5em;
 }
@@ -559,71 +192,39 @@ nav a {
 
 .feature {
 	padding: 1em 1em;
-	font-family: 'BebasNeueRegular', sans-serif;
 	height: 500px;
 	width: 400px;
 	background: white;
 }
+
 .feature h1,
 .feature h2 {
-	font-family: 'BebasNeueRegular', sans-serif;
 	font-size: 38px;
 	color: black;
 }
+
 .wowbook-page .feature.pagefx p {
 	font-size: 22px;
 }
+
 .wowbook-page .feature.pagefx .subtitle {
 	margin-top: 0;
 	font-size: 18px;
 }
+
 .wowbook-page .feature.pagefx h1 {
 	font-size: 48px;
 	color: #aa2b2b;
 	background: none;
 	line-height: 0.7;
-	padding: 5px 0px 0px;
+	padding: 5px 0 0;
 	margin: 0;
 }
-.easy {
-	background: #ffffff url("../images/easy.png") no-repeat left top;
-	background-size: 200% 100%;
-	zoom: 1;
-	ffont-size: 1.5em;
-	ffont-family: lato;
-}
-.easy h1,
-.easy p,
-.easy .subtitle {
-	display: none;
-}
-.wowbook-right .easy {
-	background-position: right top;
-}
-.design {
-	background: #ffffff url("../images/design.png") no-repeat;
-	background-size: 200% 100%;
-}
-.design h1 {
-	background: none;
-	text-indent: -10000px;
-	color: #88bfbf;
-	text-shadow: 1px 1px 0px #447f7f;
-	font-size: 144px;
-	line-height: 0.8;
-	bborder-bottom: 2px solid #88bfbf;
-}
-.design .subtitle {
-	font-family: 'News Cycle', sans-serif;
-	font-style: normal;
-	font-size: 30px;
-	color: #333;
-	position: absolute;
-	top: 27%;
-}
+
 .wowbook-right .design {
 	background-position: right top;
 }
+
 .wowbook-right .design p {
 	text-align: right;
 	position: absolute;
@@ -631,24 +232,27 @@ nav a {
 	font-size: 30px;
 	padding-right: 1em;
 }
+
 .responsive pp {
 	font-size: 16px;
 }
-.responsive hh2 {
-	font-size: 20px;
-}
+
 .responsive h1 {
 	color: white;
 }
+
 .thumbnails p {
 	font-size: 16px;
 }
+
 .thumbnails h2 {
 	font-size: 20px;
 }
+
 .thumbnails h1 {
 	color: white;
 }
+
 #thumbs_holder {
 	position: absolute;
 	top: 50%;
@@ -657,9 +261,9 @@ nav a {
 	left: 0;
 	z-index: 10000;
 }
+
 #thumbs_holder .wowbook-thumbnails {
 	background: none repeat scroll 0 0 #222;
-	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);
 	border-top: 1px solid white;
 	border-top-color: rgba(255, 255, 255, 0.5);
 	border-bottom: 1px solid gray;
@@ -668,38 +272,44 @@ nav a {
 	padding: 10px 0;
 	position: relative;
 }
+
 #thumbs_holder .wowbook-button {
 	background-color: #AA2B2B;
 }
+
 .wowbook-thumbnails {
 	background: none repeat scroll 0 0 #888;
-	background: none repeat scroll 0 0 rgba(128, 128, 128, 0.48);
 	border-top: 1px solid white;
 	border-top-color: rgba(255, 255, 255, 0.5);
 	border-bottom: 1px solid gray;
 	border-bottom-color: rgba(64, 64, 64, 0.5);
 	box-shadow: 0 0 15px rgba(128, 128, 128, 0.48);
 }
+
 .wowbook-horizontal.wowbook-thumbnails {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
 .wowbook-vertical .wowbook-thumbnail {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+
 #thumbs_type,
 #thumbs_position,
 #thumbs_size {
 	text-align: center;
 }
+
 #thumbs_position button {
 	width: 49%;
 }
+
 #zoom-feature {
-	background: #ffffff url("../images/zoom.jpg") no-repeat;
 	background-size: 200% 100%;
 }
+
 #zoom-feature h1 {
 	font-size: 100px;
 	color: #333;
@@ -708,35 +318,39 @@ nav a {
 	padding: 5px 0px 0px;
 	text-align: right;
 }
+
 #zoom-feature2 {
 	background-color: white;
-	background-image: url("../images/zoom.jpg");
 	background-size: 200% 100%;
 	background-position: right top;
 	background-repeat: no-repeat;
 }
+
 .deeplinking {
 	color: white;
-	background: url("../images/chain.jpg") no-repeat;
 	background-size: 200% 100%;
 }
+
 .deeplinking h1 {
 	color: white;
 	background: #3d567d !important;
 }
+
 .deeplinking a,
 .deeplinking a:active,
 .deeplinking a:visited {
 	color: #f8f8f8;
 	text-decoration: underline;
 }
+
 .wowbook-right .deeplinking {
 	background-position: top right;
 }
+
 .wowbook-page .feature.numbering {
-	background: url("../images/numbering.png") #ffffff no-repeat;
 	background-size: 100% 100%;
 }
+
 .wowbook-page .feature.numbering h1 {
 	color: #AA2B2B;
 	background: none;
@@ -744,13 +358,16 @@ nav a {
 	padding-left: 0;
 	padding-right: 0;
 }
+
 .wowbook-page .feature.numbering p {
 	font-size: 23px;
 }
+
 .wowbook-page .feature.numbering .wowbook-page-number {
 	text-indent: 100%;
 	overflow: hidden;
 }
+
 .wowbook-page .feature.slideshow h1 {
 	color: #AA2B2B;
 	background: none;
@@ -758,26 +375,29 @@ nav a {
 	padding-left: 0;
 	padding-right: 0;
 }
+
 .wowbook-page .feature.slideshow a {
 	display: block;
 	text-align: center;
 }
+
 .wowbook-page .feature.flash {
-	background: url("../images/flash.png") #ffffff no-repeat;
 	background-size: 200% 100%;
 	padding-top: 42%;
 	/* 170px/400px */
 
 }
+
 .wowbook-page .feature.flash p {
 	font-size: 20px;
 	padding: 0.7em;
 }
+
 .wowbook-page .feature.flash h1 {
 	display: none;
 }
+
 .feature.flash-demo {
-	background: url("../images/flash.png") #ffffff no-repeat;
 	background-position: top right;
 	background-size: 200% 100%;
 	padding-top: 25%;
@@ -785,23 +405,28 @@ nav a {
 	line-height: 2em;
 	font-size: 1.2em;
 }
+
 .more {
-	background: url("../images/more.png") #ffffff no-repeat;
 	background-size: 200% 100%;
 	padding-top: 30px;
 }
+
 .more h1 {
 	display: none;
 }
+
 .more ul {
 	margin-left: 1em;
 }
+
 .more li {
 	margin-bottom: 0.7em;
 }
+
 .last_cover {
 	padding: 0;
 }
+
 .wowbook-right .more {
 	background-position: top right;
 }
@@ -816,15 +441,6 @@ nav a {
 
 
 
-/*
- * @name wowBook
- * @desc style for wowBook plugin for jQuery
- *
- * @author Marcio Aguiar
- * @version 1.0
- *
- * Date: Wed Dec 8 10:05:49 2010 -0200
- */
 
 .wowbook {
 	position : relative;
@@ -855,11 +471,6 @@ img.wowbook-lazy {
 	width: 100%;
 }
 
-/* marker class */
-.wowbook-left{}
-.wowbook-right{}
-.wowbook-disabled{}
-
 .wowbook-handle {
 	cursor   : pointer;
 	height   : 100%;
@@ -867,8 +478,7 @@ img.wowbook-lazy {
 	top      : 0;
 	width    : 50px;
 	z-index  : 10000;
-	/* without this Chrome will mess the z-index of hardcover when it flips, making
-	   the cover to jump when the "curl page corner on hover" is enabled */
+	// without this Chrome will mess the z-index of hardcover when it flips, making the cover to jump when the "curl page corner on hover" is enabled
 	-webkit-transform: translate3d(0px, 0px, 10000px);
 }
 
@@ -886,7 +496,6 @@ img.wowbook-lazy {
 	padding: 0;
 }
 
-/* shadows */
 .wowbook-shadow-clipper {
 	position : absolute;
 	overflow : hidden;
@@ -903,7 +512,6 @@ img.wowbook-lazy {
 }
 
 .wowbook-shadow-internal {
-	background : url(../images/shadow_internal_fold.png) repeat-y;
 	height     : 500px;
 	width      : 200px;
 	position   : absolute;
@@ -912,7 +520,6 @@ img.wowbook-lazy {
 }
 
 .wowbook-shadow-fold {
-	background : url(../images/shadow_fold.png) right top repeat-y;
 	height     : 500px;
 	width      : 100px;
 	position   : absolute;
@@ -920,22 +527,13 @@ img.wowbook-lazy {
 	-webkit-backface-visibility: hidden; /* eliminate jagged edges */
 }
 
-.wowbook-shadow-fold-flipped  {
-	background-image : url(../images/shadow_fold_flip_h.png);
-}
-
 .wowbook-fold-gradient {
-	background : url(../images/fold_gradient.png) right top repeat-y;
 	height : 500px;
 	width : 125px;
 	position : absolute;
 	top : 0;
 	zoom: 1;
 	-webkit-backface-visibility: hidden; /* eliminate jagged edges */
-}
-
-.wowbook-fold-gradient-flipped {
-	background-image :  url(../images/fold_gradient_flip_h.png);
 }
 
 .wowbook-fold-gradient-container {
@@ -951,13 +549,11 @@ img.wowbook-lazy {
 }
 
 .wowbook-left .wowbook-gutter-shadow {
-	background : url(./images/gutter_shadow_left.png) right top repeat-y;
 	right      : 0;
 	width      : 70px;
 }
 
 .wowbook-right .wowbook-gutter-shadow {
-	background : url(./images/gutter_shadow_right.png) right top repeat-y;
 	left       : 0;
 }
 
@@ -985,40 +581,24 @@ img.wowbook-lazy {
 }
 
 .wowbook-book-shadow{
-	-moz-box-shadow: 0 0 7px #666;
-	-ms-box-shadow: 0 0 7px #666;
-	-webkit-box-shadow: 0 0 7px #666;
-	-o-box-shadow: 0 0 7px #666;
 	box-shadow: 0 0 7px #666; /* if you change this, change the .wowbook-hard-page-shadow too */
 }
 
 .wowbook-hard-page-shadow {
 	background : #888;
-	box-shadow: 0 0 2px 0px #666;
-	background: rgba(96, 96, 96, 0.5);
+	box-shadow: 0 0 2px 0 #666;
+	background: rgba(96,96,96, .5);
 	position   : absolute;
 	top        : 0;
 	z-index    : 999;
 }
 
-.wowbook-page-holded {
-}
-.wowbook-page-holded object {
-	/* visibility: hidden; */
-}
-
-
-/* Thumbnails */
 .wowbook-thumbnails {
 	background: none;
-	left: 0px;
-	top: 0px;
+	image-rendering: optimizeQuality;
+	left: 0;
 	position: absolute;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	image-rendering:optimizeQuality;
+	top: 0;
 	z-index: 10000;
 }
 
@@ -1044,17 +624,9 @@ img.wowbook-lazy {
 .wowbook-thumbnail {
 	cursor : pointer;
 	display : inline-block;
-	*display: inline; /* for IE7 */
-	zoom: 1;	      /* for IE7 */
 	overflow: hidden;
 	position: relative;
 	vertical-align: top;
-}
-
-/* BUGFIX. IE8 apparently ignores background-position
-   when zoom<>1 is applied and the element has position:absolute */
-.wowbook-thumbnail .wowbook-page-content {
-	position: relative;
 }
 
 .wowbook-thumbnail.wowbook-right {
@@ -1091,29 +663,17 @@ img.wowbook-lazy {
 .wowbook-horizontal.wowbook-thumbnails .wowbook-button {
 	width: 30px;
 	height: 100%;
-	background-image: url("../images/icons/arrow_left.png");
 }
 
 .wowbook-horizontal.wowbook-thumbnails .wowbook-next.wowbook-button {
 	left: auto; right: 0;
-	background-image: url("../images/icons/arrow_right.png");
 }
 
 .wowbook-horizontal .wowbook-thumbnail {
 	/* without this, the "nowrap" value set in the "ul" will
 	   be inherited and (probably)	mess with your thumbnails */
 	white-space: normal;
-	/* BUT IE7 NEED THIS */
-	*white-space: nowrap;
 }
-.wowbook-horizontal .wowbook-thumbnail .wowbook-page-content{
-	/* AGAIN, IE7 NEED THIS */
-	*white-space: normal;
-}
-
-
-
-/* Thumbnails - vertical */
 
 .wowbook-vertical.wowbook-thumbnails {
 	display: inline-block;
@@ -1128,17 +688,16 @@ img.wowbook-lazy {
 .wowbook-vertical.wowbook-thumbnails .wowbook-button {
 	height: 30px;
 	width: 100%;
-	background-image: url("../images/arrow_up.png");
 }
 
 .wowbook-vertical.wowbook-thumbnails .wowbook-next.wowbook-button {
 	bottom: 0; top: auto;
-	background-image: url("../images/arrow_down.png");
 }
 
 .wowbook-vertical .wowbook-thumbnail.wowbook-right {
 	margin-right: 0;
 }
+
 .wowbook-vertical .wowbook-thumbnail:first-child {
 	margin-left: 50%;
 }
@@ -1148,7 +707,20 @@ img.wowbook-lazy {
 
 
 
+.book {
+	margin: 30px auto;
 
+	.wowbook-page-number {
+		align-items: center;
+		background-color: #444;
+		color: #fff;
+		display: flex;
+		height: 30px;
+		justify-content: center;
+		padding: 0;
+		width: 30px;
+	}
+}
 
 .book_page {
 	background-position: center;
@@ -1157,8 +729,3 @@ img.wowbook-lazy {
 	background-size: contain;
 	padding: 10px;
 }
-
-
-
-
-
