@@ -1996,37 +1996,48 @@ window.Modernizr = function (d, l, u) {
 			})
 
 			d(a.back).on("click.wowbook", function () {
-				c.back();
+				c.back()
+
 				return ! 1
 			})
 
 			d(a.first).on("click.wowbook", function () {
-				c.gotoPage(0);
+				c.gotoPage(0)
+
 				return ! 1
 			})
 
 			d(a.last).on("click.wowbook", function () {
 				c.gotoPage(c.pages.length - 1);
 				return ! 1
-			});
+			})
+
 			d(a.slideShow).on("click.wowbook", function () {
-				c.toggleSlideShow();
+				c.toggleSlideShow()
+
 				return ! 1
-			});
+			})
+
 			d(a.flipSound).on("click.wowbook", function () {
-				c.toggleFlipSound();
+				c.toggleFlipSound()
+
 				return ! 1
-			});
+			})
+
 			d(a.thumbnails).on("click.wowbook", function () {
-				c.toggleThumbnails();
+				c.toggleThumbnails()
+
 				return ! 1
-			});
+			})
+
 			d(a.fullscreen).on("click.wowbook", function () {
-				c.toggleFullscreen();
+				c.toggleFullscreen()
+
 				return ! 1
 			})
 		},
-		toggleControl: function (a, c) { (a = this.opts.controls[a]) && d(a).toggleClass("wowbook-disabled", c)
+		toggleControl: function (a, c) {
+			(a = this.opts.controls[a]) && d(a).toggleClass("wowbook-disabled", c)
 		}
 	};
 
