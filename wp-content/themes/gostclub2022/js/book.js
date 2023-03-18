@@ -19,8 +19,31 @@ $(document).ready(function() {
 		height: 840,
 		numberedPages: [1,-2],
 		scaleToFit: "#book_wrap",
-		thumbnailsPosition: 'bottom',
 		turnPageDuration: 1000,
-		width: 1200
+		width: 1200,
+		onResize: () => {
+			console.log('xxxx')
+		}
 	})
+
+	const $book = $.wowBook('.js-journal')
+
+	$('.js-goto-page').on('click', function () {
+		let page = $(this).attr('data-page')
+
+		console.log('page | ', page)
+
+		// $book.gotoPage(page)
+		$book.gotoPage(page)
+	})
+
+	$('.js-book-next').on('click', function () {
+		$book.advance()
+	})
+
+	$('.js-book-prev').on('click', function () {
+		$book.back()
+	})
+
+	// alert("This book has "+book.pages.length+" pages.");
 })
