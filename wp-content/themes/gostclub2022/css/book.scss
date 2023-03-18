@@ -16,45 +16,6 @@
 	width: 75px;
 }
 
-.book_nav {
-	height: 46px;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 20px;
-
-	a {
-		display: block;
-		height: 46px;
-		padding: 0;
-		text-indent: 100%;
-		white-space: nowrap;
-		width: 48px;
-	}
-}
-
-@media screen and (max-width: 568px), screen and (max-height: 380px) {
-	#container {
-		padding-top: 35px;
-		padding-bottom: 5px;
-	}
-
-	nav {
-		margin: auto;
-		top: 0;
-	}
-
-	nav li {
-		height: 32px;
-	}
-
-	nav li a {
-		background-size: 50% 50%;
-		height: 32px;
-		width: 32px;
-	}
-}
-
 .wowbook-page-content {
 	padding: 1em;
 }
@@ -611,6 +572,8 @@ img.wowbook-lazy {
 
 .book {
 	margin: 30px auto;
+	overflow: hidden;
+	position: relative;
 
 	.wowbook-page-content {
 		padding: 0;
@@ -626,6 +589,78 @@ img.wowbook-lazy {
 		padding: 0;
 		width: 30px;
 	}
+}
+
+.book_nav {
+	display: flex;
+	justify-content: center;
+
+	&__link {
+		background-color: #000;
+		border-radius: 4px;
+		border: 1px solid #000;
+		color: #fff;
+		display: block;
+		height: 40px;
+		min-width: 40px;
+		position: relative;
+		text-align: center;
+		transition: $transition;
+
+		&:hover {
+			background-color: #fff;
+			color: #000;
+
+			&::after,
+			&::before {
+				background-color: #000;
+			}
+		}
+
+		&--next,
+		&--prev {
+			&::after,
+			&::before {
+				background-color: #fff;
+				content: "";
+				height: 2px;
+				position: absolute;
+				width: 18px;
+			}
+
+			&::after {
+				left: 12px;
+				top: 11px;
+				transform: rotate(45deg);
+			}
+
+			&::before {
+				left: 11px;
+				top: 23px;
+				transform: rotate(-45deg);
+			}
+		}
+
+		&--prev {
+			&::after {
+				left: 10px;
+				top: 23px;
+			}
+
+			&::before {
+				left: 10px;
+				top: 11px;
+			}
+		}
+	}
+
+	&__item {
+		margin: 0 8px;
+	}
+
+	&__next {}
+
+	&__prev {}
 }
 
 .book_page {
