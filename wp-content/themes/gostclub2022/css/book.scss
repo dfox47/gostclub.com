@@ -642,13 +642,16 @@ img.wowbook-lazy {
 		}
 
 		&--prev {
-			&::after {
+			&::after,
+			&::before {
 				left: 10px;
+			}
+
+			&::after {
 				top: 23px;
 			}
 
 			&::before {
-				left: 10px;
 				top: 11px;
 			}
 		}
