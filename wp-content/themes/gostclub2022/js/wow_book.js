@@ -564,17 +564,18 @@ window.Modernizr = function (d, l, u) {
 			this.scale(c / this._originalHeight)
 		},
 		resize: function (a, c) {
-			this.setDimensions(a, c);
+			this.setDimensions(a, c)
+
 			if (this.opts.onResize) this.opts.onResize(this)
 		},
 		responsive: function () {
-			var a = this;
 			d(window).on("resize.wowbook", function () {
-				a.scaleToFit()
+				this.scaleToFit()
 			})
 		},
 		insertPages: function (a, c) {
-			for (var b = 0, e = a.length; b < e; b++) this.insertPage(a[b], !0);
+			for (var b = 0, e = a.length; b < e; b++) this.insertPage(a[b], !0)
+
 			this.updateBook(c)
 		},
 		insertPage: function (a, c) {
@@ -670,9 +671,10 @@ window.Modernizr = function (d, l, u) {
 			return b.length
 		},
 		updateBook: function (a) {
-			this.doPageNumbering();
-			this.findPagesType();
-			this.positionBookShadow();
+			this.doPageNumbering()
+			this.findPagesType()
+			this.positionBookShadow()
+
 			for (var c = this.rtl, b, e = 0, f = this.pages.length; e < f; e++) {
 				b = this.pages[e].toggleClass("wowbook-left", c).toggleClass("wowbook-right", !c).data({
 					pageIndex: e,
@@ -1501,11 +1503,15 @@ window.Modernizr = function (d, l, u) {
 			var b = d(a || this.opts.toc),
 				e,
 				f,
-				k = "";
+				k = ""
+
 			if (0 !== b.length) {
-				e = this.sections;
-				"undefined" === typeof c && (c = this.opts.tocTemplate);
-				c || (k = b.is("UL, OL") ? "<li>": "<div>", c = '<a href="${link}">${section}</a>');
+				e = this.sections
+
+				"undefined" === typeof c && (c = this.opts.tocTemplate)
+
+				c || (k = b.is("UL, OL") ? "<li>": "<div>", c = '<a href="${link}">${section}</a>')
+
 				for (var h = 0, g = e.length; h < g; h++) f = e[h],
 					f = c.replace(/\$\{link\}/g, "#" + this.id + "/" + f.id.substr(1)).replace(/\$\{section\}/g, f.title).replace(/\$\{page\}/g, f.page),
 					d(f).appendTo(b).wrap(k)
@@ -1715,6 +1721,7 @@ window.Modernizr = function (d, l, u) {
 		},
 		touchSupport: function () {
 			var a = this;
+
 			a.elem.bind("touchstart.wowbook", function (c) {
 				var b = c.originalEvent.touches;
 				1 < b.length || (a._touchStarted = {
@@ -1971,26 +1978,33 @@ window.Modernizr = function (d, l, u) {
 		},
 		controllify: function (a) {
 			var c = this;
+
 			d(a.zoomIn).on("click.wowbook", function () {
-				c.zoomIn();
+				c.zoomIn()
+
 				return ! 1
-			});
+			})
+
 			d(a.zoomOut).on("click.wowbook", function () {
-				c.zoomOut();
+				c.zoomOut()
 				return ! 1
-			});
+			})
+
 			d(a.next).on("click.wowbook", function () {
 				c.advance();
 				return ! 1
-			});
+			})
+
 			d(a.back).on("click.wowbook", function () {
 				c.back();
 				return ! 1
-			});
+			})
+
 			d(a.first).on("click.wowbook", function () {
 				c.gotoPage(0);
 				return ! 1
-			});
+			})
+
 			d(a.last).on("click.wowbook", function () {
 				c.gotoPage(c.pages.length - 1);
 				return ! 1
@@ -2015,85 +2029,89 @@ window.Modernizr = function (d, l, u) {
 		toggleControl: function (a, c) { (a = this.opts.controls[a]) && d(a).toggleClass("wowbook-disabled", c)
 		}
 	};
+
 	d.wowBook.defaults = {
-		width: 500,
-		height: 300,
-		startPage: 0,
-		hardcovers: !1,
-		hardPages: !1,
-		centeredWhenClosed: !1,
-		transparentPages: !1,
-		doublePages: ".double",
-		responsive: !1,
-		scaleToFit: "",
-		onResize: null,
-		fullscreenElement: document.documentElement,
-		onFullscreenError: null,
-		use3d: !0,
-		perspective: 2E3,
-		useTranslate3d: "mobile",
 		bookShadow: !0,
-		gutterShadow: !0,
-		shadowThreshold: 20,
-		shadows: !0,
-		foldGradient: !0,
-		foldGradientThreshold: 20,
-		pageNumbers: !0,
-		firstPageNumber: 1,
-		numberedPages: !1,
-		deepLinking: !0,
-		updateBrowserURL: !0,
+		centeredWhenClosed: !1,
+		clipBoundaries: !0,
+		controls: {},
 		curl: !0,
 		curlSize: 40,
-		slideShow: !1,
-		slideShowDelay: 1E3,
-		pauseOnHover: !0,
-		touchEnabled: !0,
-		mouseWheel: !1,
-		handleWidth: !1,
-		handleClickDuration: 300,
-		turnPageDuration: 1E3,
-		turnPageDurationMin: 300,
-		forceBasicPage: !1,
-		sections: ".wowbook-section",
-		zoomLevel: 1,
-		zoomMax: 2,
-		zoomMin: 1,
-		zoomBoundingBox: window,
-		zoomStep: 0.05,
-		onZoom: null,
+		deepLinking: !0,
+		doublePages: ".double",
+		firstPageNumber: 1,
 		flipSound: !0,
 		flipSoundFile: ["page-flip.mp3", "page-flip.ogg"],
 		flipSoundPath: "/wp-content/themes/gostclub2022/sound/",
-		onPlayFlipSound: null,
+		foldGradient: !0,
+		foldGradientThreshold: 20,
+		forceBasicPage: !1,
+		fullscreenElement: document.documentElement,
+		gutterShadow: !0,
+		handleClickDuration: 300,
+		handleWidth: !1,
+		hardPages: !1,
+		hardcovers: !1,
+		height: 300,
 		keyboardNavigation: {
 			back: 37,
 			advance: 39
 		},
-		clipBoundaries: !0,
-		controls: {},
-		onShowPage: null,
+		mouseWheel: !1,
+		numberedPages: !1,
+		onFullscreenError: null,
 		onHoldPage: null,
+		onPlayFlipSound: null,
 		onReleasePage: null,
-		thumbnails: !1,
-		thumbnailsParent: "body",
+		onResize: null,
+		onShowPage: null,
+		onZoom: null,
+		pageNumbers: !0,
+		pauseOnHover: !0,
+		perspective: 2E3,
+		responsive: !1,
+		scaleToFit: "",
+		sections: ".wowbook-section",
+		shadowThreshold: 20,
+		shadows: !0,
+		slideShow: !1,
+		slideShowDelay: 1E3,
+		startPage: 0,
+		thumbnailHeight: null,
 		thumbnailScale: 0.2,
 		thumbnailWidth: null,
-		thumbnailHeight: null,
-		thumbnailsPosition: null,
-		thumbnailsVertical: !0,
-		thumbnailsContainerWidth: null,
+		thumbnails: !1,
+		thumbnailsAnimOptions: {},
 		thumbnailsContainerHeight: null,
+		thumbnailsContainerWidth: null,
+		thumbnailsParent: "body",
+		thumbnailsPosition: null,
 		thumbnailsSprite: null,
-		thumbnailsAnimOptions: {}
+		thumbnailsVertical: !0,
+		touchEnabled: !0,
+		transparentPages: !1,
+		turnPageDuration: 1E3,
+		turnPageDurationMin: 300,
+		updateBrowserURL: !0,
+		use3d: !0,
+		useTranslate3d: "mobile",
+		width: 500,
+		zoomBoundingBox: window,
+		zoomLevel: 1,
+		zoomMax: 2,
+		zoomMin: 1,
+		zoomStep: 0.05
 	};
+
 	window.raf = function () {
 		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
 			function (a) {
 				window.setTimeout(a, 1E3 / 60)
 			}
 	} ();
-	d.browser.ie8mode = d.browser.msie && 8 == document.documentMode;
+
+	d.browser.ie8mode = d.browser.msie && 8 === document.documentMode;
+
 	var g = d.browser.msie && 9 > d.browser.version ? 1 : 0,
 		s = {
 			thin: 2 - g,
