@@ -1987,11 +1987,13 @@ window.Modernizr = function (d, l, u) {
 
 			d(a.zoomOut).on("click.wowbook", function () {
 				c.zoomOut()
+
 				return ! 1
 			})
 
 			d(a.next).on("click.wowbook", function () {
-				c.advance();
+				c.advance()
+
 				return ! 1
 			})
 
@@ -2008,7 +2010,8 @@ window.Modernizr = function (d, l, u) {
 			})
 
 			d(a.last).on("click.wowbook", function () {
-				c.gotoPage(c.pages.length - 1);
+				c.gotoPage(c.pages.length - 1)
+
 				return ! 1
 			})
 
