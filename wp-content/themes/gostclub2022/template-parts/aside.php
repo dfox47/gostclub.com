@@ -58,14 +58,14 @@ elseif ($currentLang == 'en') {
 
 	<h3><?= $txtReadOnline; ?></h3>
 
-	<?php
+	<?php // journal Number | image number | link
 	$arr2 = array(
-		['11','1','//issuu.com/zenitafish/docs/_____11'],
-		['10','2', '//issuu.com/zenitafish/docs/small'],
-		['9','3', '//issuu.com/zenitafish/docs/web-isuu'],
-		['8','4', '//issuu.com/zenitafish/docs/____8'],
+		['11','1','/journal-11/'],
+		['10','2', '/journal-10/'],
+		['9','3', '/journal-9/'],
+		['8','4', '/journal-8/'],
 		['7','5', '//issuu.com/zenitafish/docs/spisanie_br_7_fina'],
-		['6','6', '//issuu.com/zenitafish/docs/magazine_01'],
+		['6','6', '/journal-6/'],
 		['5','7', '//issuu.com/zenitafish'],
 		['4','8', '//issuu.com/zenitafish'],
 		['3','9', '//issuu.com/zenitafish'],
