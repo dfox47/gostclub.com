@@ -64,7 +64,7 @@ elseif ($currentLang == 'en') {
 		['10','2', '/journal-10/'],
 		['9','3', '/journal-9/'],
 		['8','4', '/journal-8/'],
-		['7','5', '//issuu.com/zenitafish/docs/spisanie_br_7_fina'],
+		['7','5', '/journal-7/'],
 		['6','6', '/journal-6/'],
 		['5','7', '//issuu.com/zenitafish'],
 		['4','8', '//issuu.com/zenitafish'],
