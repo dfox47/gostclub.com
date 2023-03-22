@@ -66,11 +66,11 @@ elseif ($currentLang == 'en') {
 		['8','4', '/journal-8/'],
 		['7','5', '/journal-7/'],
 		['6','6', '/journal-6/'],
-		['5','7', '//issuu.com/zenitafish'],
-		['4','8', '//issuu.com/zenitafish'],
-		['3','9', '//issuu.com/zenitafish'],
-		['2','10', '//issuu.com/zenitafish/docs/gost_web'],
-		['1','11', '//issuu.com/zenitafish/docs/spisanie_internet.compressed'],
+		['5','7', '/journal-5/'],
+		['4','8', '/journal-4/'],
+		['3','9', '/journal-3/'],
+		['2','10', '/journal-2/'],
+		['1','11', '/journal-1/']
 	); ?>
 
 	<ul class="aside_list">
