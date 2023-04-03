@@ -26,7 +26,11 @@ elseif ($currentLang == 'ru-RU') {
 
 				<a class="header_login" href="javascript:void(0);"></a>
 
-				<a class="header_logo" href="<?= $logoLink; ?>">GOST <span class="header_logo__country">Balkans</span></a>
+				<a class="header_logo" href="<?= $logoLink; ?>">
+					<span class="header_logo__name">GOST</span>
+					<span class="header_logo__country">Balkans</span>
+					<span class="header_logo__iso">Official e-journal ISSN 2367-8402</span>
+				</a>
 
 				<div class="header_right">
 					<span class="header_search_icon js-search-toggle"></span>
