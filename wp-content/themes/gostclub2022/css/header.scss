@@ -19,6 +19,15 @@
 	}
 }
 
+.header_login {
+	display: inline-block;
+	min-width: 50px;
+
+	@media #{$mobile} {
+		display: none;
+	}
+}
+
 .header_logo {
 	color: #fff;
 	display: block;
@@ -53,15 +62,6 @@
 	&:hover {
 		color: #fff;
 		opacity: .7;
-	}
-}
-
-.header_login {
-	display: inline-block;
-	min-width: 50px;
-
-	@media #{$mobile} {
-		display: none;
 	}
 }
 
