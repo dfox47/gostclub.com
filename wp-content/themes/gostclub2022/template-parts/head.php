@@ -61,11 +61,13 @@ if (is_front_page()) {
 
 	<div class="hero_slider">
 		<div class="js-owl-carousel-auto owl-carousel">
+			<a class="hero_slider__item js-img-bg" href="//nazarov-sofia.com" target="_blank" data-src="<?= $heroImg; ?>/10.jpg"></a>
+
 			<a class="hero_slider__item js-img-bg" href="//tzarsimeon.bg/" target="_blank" data-src="<?= $heroImg; ?>/9.jpg"></a>
 			<a class="hero_slider__item js-img-bg" href="//www.instagram.com/gostclub.balkans/" target="_blank" data-src="<?= $heroImg; ?>/8.jpg"></a>
-			<div class="hero_slider__item js-img-bg" data-src="<?= $heroImg; ?>/2.jpg"></div>
+<!--			<div class="hero_slider__item js-img-bg" data-src="--><?//= $heroImg; ?><!--/2.jpg"></div>-->
 			<div class="hero_slider__item js-img-bg" data-src="<?= $heroImg; ?>/5.jpg"></div>
-			<div class="hero_slider__item js-img-bg" data-src="<?= $heroImg; ?>/6.jpg"></div>
+<!--			<div class="hero_slider__item js-img-bg" data-src="--><?//= $heroImg; ?><!--/6.jpg"></div>-->
 		</div>
 	</div>
 <?php }
