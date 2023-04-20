@@ -20,7 +20,7 @@
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" href="/wp-content/themes/gostclub2022/style.css?v<?php echo(date("YmdHis")); ?>">
+	<link rel="stylesheet" href="/wp-content/themes/gostclub2022/style.css?v<?php echo(date("YmdH")); ?>">
 </head>
 
 <body class="lang_<?php echo substr(get_bloginfo("language"), 0, 2); ?>">
