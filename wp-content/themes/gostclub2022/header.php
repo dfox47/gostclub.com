@@ -11,6 +11,11 @@
 	<?php // favicon
 	include_once "template-parts/favicon.php"; ?>
 
+	<meta name="twitter:image" content="https://gostclub.com/wp-content/themes/gostclub2022/i/favicon/android-icon-192x192.png">
+	<meta property="og:image" content="https://gostclub.com/wp-content/themes/gostclub2022/i/favicon/android-icon-192x192.png">
+	<meta property="og:title" content="GOST Club">
+	<meta property="og:url" content="https://gostclub.com/">
+
 	<title><?php wp_title(''); ?></title>
 
 	<?php wp_head(); ?>
