@@ -34,6 +34,16 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 <?php // all scripts in one file with GULP ?>
 <script src="/wp-content/themes/gostclub2022/all.min.js?v<?php echo(date("Ymd")); ?>"></script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="//www.googletagmanager.com/gtag/js?id=G-F3E6L1LH3M"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-F3E6L1LH3M');
+</script>
+
 <?php wp_footer(); ?>
 
 </body>
